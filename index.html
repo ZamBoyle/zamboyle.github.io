@@ -1,91 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
 
-<!--On ajoute le titre "Page des produits" de la page et on envoie du code html, ici un code js qui fait coucou à la console -->
-    <!DOCTYPE html>
-    <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Eqla 2022 - Johnny Piette</title>
+</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <!-- Bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="./css/site.css">                
-        <script>console.log('Message envoyé dans la console JS depuis le <HEAD>');</script>        <title>Page d'accueil</title>
-    </head>
-
-    <body>
-    
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="./">
-                <img class="d-inline-block align-top" width="30" height="30" src="./Images/logo.png" aria-label="Logo compagnie" /> Crazy Cupcakes
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContenu" aria-controls="navbarContenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="navbarContenu" class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto"><li class='nav-item active'><a class='nav-link' href='index.php'>Accueil <span class="sr-only">(courant)</span></a></li></a></li><li class='nav-item '><a class='nav-link' href='products.php'>Cupcakes </a></li><li class='nav-item '><a class='nav-link' href='about.php'>A propos </a></li><li class='nav-item '><a class='nav-link' href='contacts.php'>Contacts </a></li>
-                </ul>
-                <i class="bi bi-cart mr-2 p-1 border text-white" title="Panier"></i>
-                <form class="form-inline my-2 my-lg-0" action="search.php" method="post">
-                    <input name="what" class="form-control mr-sm-2" type="search" placeholder="Rechercher produits" aria-label="Rechercher produits" required>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" aria-label="Rechercher">Rechercher</button>
-                    <input type="hidden" name="searchBy" value="something">
-                </form>
-            </div>
-        </nav><!-- Votre code HTML à mettre en-dessous -->
-
-<div class="container">
-    <div class="jumbotron bg-dark text-white text-justify mt-2">
-        <h2>Crazy Cupcakes</h2>
-        <p>Fiers de notre savoir faire, venez découvrir nos <span class="font-italic">Crazy Cupcakes</span> faits avec Amour et Passion depuis déjà 20 ans.
-            C'est une histoire familiale que vous pourrez <a href="about.php">découvrir</a>.
-        </p>
-            <div id="monCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
-        <div class="carousel-inner text-center">
-            
-        <div class='carousel-item  active'>
-        <img class='img-fluid img-thumbnail product'  src='./Images/cupcake1.jpg' aria-label='Le Pinky'>
-        </div>
-        
-        <div class='carousel-item '>
-        <img class='img-fluid img-thumbnail product'  src='./Images/cupcake2.jpg' aria-label='Le Brown'>
-        </div>
-        
-        <div class='carousel-item '>
-        <img class='img-fluid img-thumbnail product'  src='./Images/cupcake3.jpg' aria-label='Le Caramel'>
-        </div>
-        
-        <div class='carousel-item '>
-        <img class='img-fluid img-thumbnail product'  src='./Images/cupcake4.jpg' aria-label='Le Blue'>
-        </div>
-        
-        <div class='carousel-item '>
-        <img class='img-fluid img-thumbnail product'  src='./Images/cupcake5.jpg' aria-label='Le Rainbow'>
-        </div>
-                </div>
-        <!-- Contrôles Précédent et Suivant -->
-        <a class="carousel-control-prev" href="#monCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Précédent</span>
-        </a>
-        <a class="carousel-control-next" href="#monCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Suivant</span>
-        </a>
+<body>
+    <div class="container px-2">
+        <h1 class="text-center mt-2">BlindCode 2022</h1>
+        <h2>Formation Git</h2>
+        <h3>Théorie</h3>
+        <ul>
+            <li><a href="Eqla_git/1. Git.html">Page web - Formation Git</a></li>
+            <li><a href="Eqla_git/1. Git.pdf">PDF - Formation Git</a></li>
+        </ul>
+        <h3>Exercices sur la Ligne de commandes</h3>
+        <ul>
+            <li><a href="Eqla_git/Exercices_Terminal.html">Page web - Formation Git</a></li>
+            <li><a class="font-italic" href="Eqla_git/Exercices_Terminal.pdf">PDF - Formation Git</a></li>
+        </ul>
+        <hr/>
+        <p class="fst-italic"><a  href="http://eqla.be">Eqla</a> - 2022</p>
     </div>
-    </div>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
 
-<!-- On ajoute le bas de la page avec éventuellement du html supplémentaire à passer en paramètre -->
-    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-<div class='position-absolute mr-1'  style='bottom:0; right:0;'>
-        <hr class='mb-0'/>
-        (c) 2021 <img class='d-inline-block mb-1' height='15' src='./Images/logo.png' aria-label='Logo compagnie' /> <span class='font-italic'>Crazy Cupcakes</span>
-    </div>    </body>
-
-    </html>
+</html>
