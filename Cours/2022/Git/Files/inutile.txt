@@ -1,0 +1,1 @@
+Ce fichier est inutile et servira à montrer comment désindexer un fichier dans git. ;-)
