@@ -346,16 +346,16 @@ Table des matières
 <ol type="1">
 <li>git status (qu’est-ce qui a changé ?) On voit qu’il est indiqué untracked files. Il y est indiqué nos fichiers genius.js, genius.html, display.js, inutile.txt</li>
 <li>git add genius.js (on l’ajoute dans la zone d’index)</li>
-<li>git status (il indique les changements à commiter. ici genius.js qui est marqué comme “new file”) Pour désindexer un fichier on utilise la commande git reset.</li>
-<li>git reset genius.js (on a retiré les modifications de la zone d’index)</li>
-<li>git status</li>
+<li>git status (il indique les changements à commiter. ici genius.js qui est marqué comme “new file”)</li>
+<li>Faites de même pour genius.html</li>
+<li>Pour les fichiers display.js et inutile.txt faites un git add . Le point ajoutera tous ce qui a été détecté par git comme nouveaux, modifiés, supprimés.</li>
 </ol>
-<p>On</p>
+<p>Pour désindexer un fichier on utilise la commande git reset. 1. git reset inutile.txt (on a retiré les modifications de la zone d’index) 2. git status</p>
 <h2 id="14-notre-premier-commit">
 14. Notre premier commit
 </h2>
 <ol type="1">
-<li>git commit -m “Ajout du fichier genius.js”</li>
+<li>git commit -m “Ajout du fichier genius.js, genius.html, display.js”</li>
 <li>git status (nothing to commit)</li>
 <li>git tag v1 (Je vous expliquerai pourquoi plus tard)</li>
 </ol>
