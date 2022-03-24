@@ -792,7 +792,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 <p>A vous de voir ce qui a lieu de garder dans les modifications. Une fois que c’est fait, vous devez aussi supprimer le &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD, les ====== et le &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Vous enregistrez vos modifications. Vous ajoutez dans la zone d’index, vous commitez et vous poussez vos modifications sur GitHub.</p>
 <p>Maintenant notre dépôt distant est à jour. Mais le dépôt B va avoir quelques problèmes car il va vouloir faire un git push qui va ne pas fonctionner car le dépôt A a déjà pushé ses modifs.</p>
 <blockquote>
-<p>dépôt local A : C1(A) ===&gt; C2(B) ===&gt; C3(A) ===&gt; C4(A)<br/> Joh GitHub : C1(A) ===&gt; C2(B) ===&gt; C3(A) ===&gt; C4(A)<br/> dépôt local B: C1(A) ===&gt; C2(B) ===&gt; C3(A) ===&gt; C4(B)<br/></p>
+<p>dépôt local A : C1(A) ===&gt; C2(B) ===&gt; C3(A) ===&gt; C4(A)<br/> GitHub : C1(A) ===&gt; C2(B) ===&gt; C3(A) ===&gt; C4(A)<br/> dépôt local B: C1(A) ===&gt; C2(B) ===&gt; C3(A) ===&gt; C4(B)<br/></p>
 </blockquote>
 <p>Le dépôt B: fait un git pull mais constate qu’il y a un merge et qu’il devra faire un commit qui va compliquer la lecture de la branche master.</p>
 <p>On fera un git merge –abort</p>
