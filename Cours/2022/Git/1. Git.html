@@ -377,8 +377,13 @@ Table des matières
 <p>Si vous avez modifier plusieurs fichiers ou ajouté un répertoire contenant une centaine de nouveaux fichiers, il sera alors fastidieux d’indexer un à un les nouveaux répertoires/fichiers.</p>
 <p>Si l’on veut ajouter tous les fichiers présents dans le répertoire en cours, on utilisera la commande git add * Le caractère * signifie tous les fichiers du répertoire:</p>
 <pre><code>git add *</code></pre>
-<p>Cepdendant, on utilisera la commande git add . avec le caractère . si l’on veut ajouter tous les fichiers présents dans le répertoire courant plus les répertoires et fichiers/répertoires présents dans ces répertoires</p>
+<p>Cepdendant, on utilisera la commande git add . avec le caractère . si l’on veut ajouter tous les fichiers présents dans le répertoire courant plus les répertoires et fichiers/répertoires présents dans ces répertoires.</p>
 <pre><code>git add .</code></pre>
+<h3 id="134-indexer-fichiers-supprimes">
+13.4 Indexer des fichiers supprimés
+</h3>
+<p>Ca peut sembler paradoxal. Indexer des fichiers supprimés ? Mais enfin ! Ils ont été supprimés ! On s’en …., non ? :-)</p>
+<p>Oui, c’est juste si on les a supprimés localement, c’est qu’ils ne sont plus nécessaires. Mais si ces fichiers font partie de notre dépôts alors il est sans doute intéressant d’indiquer qu’ils sont supprimer. Car ils sinon, ils seront toujours référencés comme non effacés dans le dépôt.</p>
 <h2 id="14-notre-premier-commit">
 14. Notre premier commit
 </h2>
