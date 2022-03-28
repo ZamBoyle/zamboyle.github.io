@@ -383,7 +383,13 @@ Table des matières
 13.4 Indexer des fichiers supprimés
 </h3>
 <p>Ca peut sembler paradoxal. Indexer des fichiers supprimés ? Mais enfin ! Ils ont été supprimés ! On s’en …., non ? :-)</p>
-<p>Oui, c’est juste si on les a supprimés localement, c’est qu’ils ne sont plus nécessaires. Mais si ces fichiers font partie de notre dépôts alors il est sans doute intéressant d’indiquer qu’ils sont supprimer. Car ils sinon, ils seront toujours référencés comme non effacés dans le dépôt.</p>
+<p>Oui, c’est juste si on les a supprimés localement, c’est qu’ils ne sont plus nécessaires. Mais si ces fichiers font partie de notre dépôts alors il est sans doute intéressant d’indiquer qu’ils ont été supprimés. Car sinon, ils seront toujours référencés comme non effacés dans le dépôt.</p>
+<p>Pour indiquer à votre dépôt qu’ils ont été supprimés vous pouvez utiliser soit:</p>
+<ul>
+<li>git add nomfichier1 nomfichier2 nomfichier3 etc</li>
+<li>git add * (mais ici vous allez indexer tous les fichiers modifiés, créés, supprimés du répertoire courant)</li>
+<li>git add . (mais ici vous allez indexer tous les fichiers modifiés, créés, supprimés du répertoire courant et ses répertoires)</li>
+</ul>
 <h2 id="14-notre-premier-commit">
 14. Notre premier commit
 </h2>
