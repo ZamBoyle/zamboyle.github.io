@@ -49,6 +49,7 @@ Table des matières
 <ul>
 <li><a href="#131-indexer-un-fichier">13.1 Indexer un fichier</a></li>
 <li><a href="#132-desindexer-un-fichier">13.2 Désindexer un fichier</a></li>
+<li><a href="#133-indexer-plusieurs-fichiers">13.3 Indexer plusieurs fichiers</a></li>
 </ul></li>
 <li><a href="#14-notre-premier-commit">14. Notre premier commit</a></li>
 <li><a href="#15-modifications-dun-fichier">15. Modifications d’un fichier</a></li>
@@ -370,6 +371,14 @@ Table des matières
 <li>git reset inutile.txt (on a retiré les modifications de la zone d’index)</li>
 <li>git status</li>
 </ol>
+<h3 id="133-indexer-plusieurs-fichiers">
+Indexer plusieurs fichiers
+</h3>
+<p>Si vous avez modifier plusieurs fichiers ou ajouté un répertoire contenant une centaine de nouveaux fichiers, il sera alors fastidieux d’indexer un à un les nouveaux répertoires/fichiers.</p>
+<p>Si l’on veut ajouter tous les fichiers présents dans le répertoire en cours, on utilisera la commande git add * Le caractère * signifie tous les fichiers du répertoire:</p>
+<pre><code>git add *</code></pre>
+<p>Cepdendant, on utilisera la commande git add . avec le caractère . si l’on veut ajouter tous les fichiers présents dans le répertoire courant plus les répertoires et fichiers/répertoires présents dans ces répertoires</p>
+<pre><code>git add *</code></pre>
 <h2 id="14-notre-premier-commit">
 14. Notre premier commit
 </h2>
@@ -634,9 +643,9 @@ sudo apt install gh</code></pre>
 29.1 Mettre un titre h1
 </h3>
 <p>On commence la ligne par un #</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="fu"># Ceci est un titre 1</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="fu">## Ceci est un titre 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="fu"># Ceci est un titre 1</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="fu">## Ceci est un titre 2</span></span></code></pre></div>
 <h3 id="292-afficher-du-code">
 29.2 Afficher du code
 </h3>
@@ -644,8 +653,8 @@ sudo apt install gh</code></pre>
 <p>Exemple pour du code PHP:</p>
 <p>```php<br> name = input(“Quel est votre nom ?”)<br> firstname = input(“Quel est votre prenom ?”)<br> ```</p>
 <p>Donnera le résultat suivant (voir le résultat sur github et pas via un pdf/html):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode php"><code class="sourceCode php"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>name = input<span class="ot">(</span><span class="st">&quot;Quel est votre nom ?&quot;</span><span class="ot">)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>firstname = input<span class="ot">(</span><span class="st">&quot;Quel est votre prenom ?&quot;</span><span class="ot">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode php"><code class="sourceCode php"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>name = input<span class="ot">(</span><span class="st">&quot;Quel est votre nom ?&quot;</span><span class="ot">)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>firstname = input<span class="ot">(</span><span class="st">&quot;Quel est votre prenom ?&quot;</span><span class="ot">)</span></span></code></pre></div>
 <p>On a plusieurs languages supportés: c, php, js, html, etc…</p>
 <h3 id="293-mettre-en-gras">
 29.3 Mettre en gras
@@ -668,11 +677,11 @@ sudo apt install gh</code></pre>
 <h3 id="296-les-tableaux">
 29.6 Les tableaux
 </h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>Colonne 1|Colonne 2|Colonne 3</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>---|---|---</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>Cellule 1|Cellule 2|Cellule 3</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>Cellule 4|Cellule 5|Cellule 6</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>Cellule 7|Cellule 8|Cellule 9</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>Colonne 1|Colonne 2|Colonne 3</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>---|---|---</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>Cellule 1|Cellule 2|Cellule 3</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>Cellule 4|Cellule 5|Cellule 6</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>Cellule 7|Cellule 8|Cellule 9</span></code></pre></div>
 <p>Aura pour résultat:</p>
 <table>
 <thead>
