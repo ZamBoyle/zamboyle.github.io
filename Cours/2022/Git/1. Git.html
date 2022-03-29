@@ -310,14 +310,19 @@ Table des matières
 <p>Une solution est donc de continuer la ligne de commandes pour rediriger le résultat vers le programme clip. Le programme clip.exe de Windows permet d’aller copier le résultat de la commande dans le presse papier. Exemple: dir | clip</p>
 <p>Maintenant si vous ouvrez un notepad et que vous faîtes un CTRL+V. Vous allez copier le résultat de la commande. :-)</p>
 <p>Exemples:</p>
-<pre><code>help | clip
+<pre class="cmd"><code>help | clip
 ver | clip
 dir c:\ | clip</code></pre>
-<p>Le symbole | (lire pipe à l’anglaise) permet de rediriger vers un programme la sortie d’un programme. Si ce programme supporte cette redirection.</p>
+<p>Le caractère | (lire pipe à l’anglaise) permet de rediriger vers un programme la sortie d’un programme. Si ce programme supporte cette redirection.</p>
 <h4>
 5.11.2 dans vscode
 </h4>
-<p>On peut aussi redir</p>
+<p>On peut aussi rediriger la sortie de nos commandes vers vscode directement. Exemple: dir | code -</p>
+<p>Ici l’astuce en plus du | et d’ajouter le caractère - après code. L’ajout du - après code signifie que vscode va lire le résultat de notre commande. Sans le - ça ne fonctionnera pas.</p>
+<p>Exemples:</p>
+<pre class="cmd"><code>help | code -
+ver | code -
+dir c:\ | code -</code></pre>
 <ol start="12" type="1">
 <li><p>Customiser son prompt</p>
 <p>Il correspond à la string(chaîne de caractères) qui se trouve à gauche du curseur dans l’invite de commandes.</p>
@@ -710,9 +715,9 @@ sudo apt install gh</code></pre>
 29.1 Mettre un titre h1
 </h3>
 <p>On commence la ligne par un #</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="fu"># Ceci est un titre 1</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="fu">## Ceci est un titre 2</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="fu"># Ceci est un titre 1</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="fu">## Ceci est un titre 2</span></span></code></pre></div>
 <h3 id="292-afficher-du-code">
 29.2 Afficher du code
 </h3>
@@ -720,8 +725,8 @@ sudo apt install gh</code></pre>
 <p>Exemple pour du code PHP:</p>
 <p>```php<br> name = input(“Quel est votre nom ?”)<br> firstname = input(“Quel est votre prenom ?”)<br> ```</p>
 <p>Donnera le résultat suivant (voir le résultat sur github et pas via un pdf/html):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode php"><code class="sourceCode php"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a>name = input<span class="ot">(</span><span class="st">&quot;Quel est votre nom ?&quot;</span><span class="ot">)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>firstname = input<span class="ot">(</span><span class="st">&quot;Quel est votre prenom ?&quot;</span><span class="ot">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode php"><code class="sourceCode php"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>name = input<span class="ot">(</span><span class="st">&quot;Quel est votre nom ?&quot;</span><span class="ot">)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>firstname = input<span class="ot">(</span><span class="st">&quot;Quel est votre prenom ?&quot;</span><span class="ot">)</span></span></code></pre></div>
 <p>On a plusieurs languages supportés: c, php, js, html, etc…</p>
 <h3 id="293-mettre-en-gras">
 29.3 Mettre en gras
@@ -744,11 +749,11 @@ sudo apt install gh</code></pre>
 <h3 id="296-les-tableaux">
 29.6 Les tableaux
 </h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a>Colonne 1|Colonne 2|Colonne 3</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>---|---|---</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>Cellule 1|Cellule 2|Cellule 3</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>Cellule 4|Cellule 5|Cellule 6</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a>Cellule 7|Cellule 8|Cellule 9</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a>Colonne 1|Colonne 2|Colonne 3</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>---|---|---</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>Cellule 1|Cellule 2|Cellule 3</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a>Cellule 4|Cellule 5|Cellule 6</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>Cellule 7|Cellule 8|Cellule 9</span></code></pre></div>
 <p>Aura pour résultat:</p>
 <table>
 <thead>
