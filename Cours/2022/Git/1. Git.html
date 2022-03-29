@@ -305,11 +305,13 @@ Table des matières
 <ul>
 <li>Vous modifiez des fichiers dans votre répertoire de travail.</li>
 <li>Vous indexez les fichiers modifiés, ce qui ajoute des instantanés (une sorte de photo si vous voulez) de ces fichiers dans la zone d’index.</li>
-<li>Vous validez ces modifications qui sont en zone d’index, ce qui a pour effet de basculer les instantanés des fichiers de l’index dans la base de données du répertoire Git.</li>
+<li>Vous validez ces modifications qui sont en zone d’index, ce qui a pour effet de basculer les instantanés des fichiers de l’index dans la base de données du répertoire Git. <!--
+Si une version particulière d’un fichier est dans le répertoire Git, il est considéré comme validé.
+
+S’il est modifié mais a été ajouté dans la zone d’index, il est indexé.
+
+S’il a été modifié depuis le dernier instantané mais n’a pas été indexé, il est modifié.--></li>
 </ul>
-<p>Si une version particulière d’un fichier est dans le répertoire Git, il est considéré comme validé.</p>
-<p>S’il est modifié mais a été ajouté dans la zone d’index, il est indexé.</p>
-<p>S’il a été modifié depuis le dernier instantané mais n’a pas été indexé, il est modifié.</p>
 <h2 id="9-configurer-les-informations-de-lutilisateur-pour-tous-les-depots-locaux">
 <ol start="9" type="1">
 <li>Configurer les informations de l’utilisateur pour tous les dépôts locaux
