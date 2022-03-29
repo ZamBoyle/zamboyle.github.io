@@ -222,13 +222,17 @@ Table des matières
 <p>L’invite de commandes signifie que le terminal est en attente de commandes. Une commande reçoit de 0 à N paramètres. Par exemple la commande: git version</p>
 <p>git est la commande et version est le paramètre. Vous validez cette commande et son paramètre via la touche ENTER.</p>
 <p>Ouvrez un terminal: Sur windows via la combinaisaon des touches Windows + R et tapez wt suivit d’ENTER.</p>
-<ol type="1">
-<li><p>Pour connaître le répertoire courant où vous êtes:</p>
+<h3>
+5.1. Connaître le répertoire courant
+</h3>
+<p>Le répertoire courant est simplement le répertoire où votre invite de commandes se trouve actuellement. Par défaut, lorsque vous lancez un invites de commandes il se lance dans le répertoire de votre utilisateur. Sous windows c’est par exemple: C:</p>
+<p>Voyons comment connaître le répertoire courant dans lequel vous vous trouvez:</p>
 <ol type="A">
 <li><p>Sur Windows: on regarde ce qu’on appelle le prompt. Il est composé du chemin courant suivit du symbole &gt;. Exemple c:\Windows&gt; le chemin c’est c:\Windows où le c: indique le lecteur et Windows le répertoire. Ou bien on tape la commande echo %cd% ou encore tout simplement cd sans aucun paramètre: ça retourne le répertoire courant. Le plus simple étant donc la commande cd sans aucun paramètre.</p></li>
 <li><p>Sur Mac: on a deux manières. Le prompt est composé du nom de l’ordinateur suivit d’un symbole : ensuite du chemin suivit d’un espace. Il y a ensuite le nom de l’utilisateur terminé par le symbole $. Il est possible que vous voyez le symbole ~ (tilde) dans le chemin. Le symbole tilde signifie le chemin vers votre répertoire utilisateur. Ensuite on peut utiliser la commande pwd qui va donner le répertoire courant. Si vous avez un tilde dans le prompt, vous verrez le chemin complet de l’utilisateur grâce à la commande pwd. Exemple si votre prompt est mcfly:~/Documents john$ la commande pwd donnera le résultat suivant: /home/john/Documents</p></li>
 <li><p>Sur Linux: Même chose que Mac sauf que le prompt est ainsi composé du nom de l’utilisateur suivit du symbole @ ensuite du nom de l’ordinateur d’un symbole : et enfin le chemin terminé par le symbole $. Exemple: john@mcfly:~/Documents$ la commande pwd donnera le résultat suivant: /home/john/Documents</p></li>
-</ol></li>
+</ol>
+<ol start="2" type="1">
 <li><p>Lister les fichiers</p>
 <ol type="A">
 <li>Sur Windows: On utilise la commande dir avec comme paramètre /w. Exemple: dir /w<br></li>
@@ -276,6 +280,10 @@ Table des matières
 <li>Concaténation du résultat dans un fichier avec &gt;&gt; par exemple dir &gt;&gt; listing.txt (Si le fichier existe, le résultat de la commande dir est ajouté au fichier listing.txt sinon le fichier sera créé). Dans le temps (vieux suis, vieux je resterai), on pouvait rediriger vers une imprimante. Par exemple dir &gt; prn</li>
 </ol></li>
 <li><p>Rediriger la sortie d’une commande vers un programme</p></li>
+</ol>
+<p>J’ai vu la difficulté que certains ont à relire ce que l’invite de commandes renvoie comme message/sortie.</p>
+<p>En cherchant un peu/beaucoup j’ai trouvé deux solutions que vous pourriez utiliser.</p>
+<ol start="12" type="1">
 <li><p>Customiser son prompt</p>
 <p>Il correspond à la string(chaîne de caractères) qui se trouve à gauche du curseur dans l’invite de commandes.</p>
 <p>Sous Windows par défaut c’est c:\RépertoireEnCours&gt; il est défini par la commande prompt $p$g</p>
