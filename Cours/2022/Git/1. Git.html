@@ -45,6 +45,9 @@ Table des matières
 <li><a href="#54-changer-de-repertoire">5.4 Changer de répertoire</a></li>
 <li><a href="#55-supprimer-un-repertoire">5.5 Supprimer un répertoire</a></li>
 <li><a href="#56-supprimer-un-fichier">5.6 Supprimer un fichier</a></li>
+<li><a href="#57-renommer-un-fichier-repertoire">5.7 Renommer un fichier/répertoire</a></li>
+<li><a href="#5.8-afficher-le-contenu-d-un-fichier">5.8 Afficher le contenu d’un fichier</a></li>
+<li><a href="#59-creer-un-fichier-avec-un-contenu-vide">5.9 Créer un fichier avec un contenu vide</a></li>
 </ul></li>
 <li><a href="#6-quest-ce-qun-depotrepository-git">6. Qu’est-ce un dépôt/repository Git ?</a></li>
 <li><a href="#7-repertoire-courant-vs-la-zone-dindexation-vs-depot">7. Répertoire courant vs la zone d’indexation vs dépôt</a></li>
@@ -259,7 +262,7 @@ Table des matières
 </h3>
 <p>Sur Windows et Mac/Linux, c’est la commande chdir ou cd (change directory). Exemple: cd cours_git</p>
 <p>Ou peut remonter dans le répertoire parent à l’aide de la commande cd ..</p>
-<h3 id="#55-supprimer-un-repertoire">
+<h3 id="55-supprimer-un-repertoire">
 5.5 Supprimer un répertoire
 </h3>
 <p>ATTENTION cette commande est à utiliser avec énormément de précautions.</p>
@@ -267,7 +270,7 @@ Table des matières
 <li><p>Sur Windows: C’est la commande rmdir (remove directory). Créons le répertoire toto: mkdir toto Supprimons ce répertoire: rmdir toto Cependant si le répertoire toto n’est pas vide, Windows vous le signalera et ne fera rien. Il faudra alors utiliser des paramètres à la commande rmdir à savoir /s (Supprime tous répertoires et fichiers inclus dans le répertoire à supprimer). Exemple: rmdir /s toto (Le système demandera une confirmation)</p></li>
 <li><p>Sur Mac/Linux: C’est aussi la commande rmdir mais on utilise généralement rm on peut coupler cette commande avec les paramètres -rf Exemple: rm -rf toto (le -r supprime le répertoire et sous repertoire de manière récursive. Le -f ne demande aucune confirmation d’effacement et pas d’erreur si le fichier n’existe pas) Si vous faites un rm -rf répertoire (faites très attention à ce que vous faites…)</p></li>
 </ol>
-<h3 id="#56-supprimer-un-fichier">
+<h3 id="56-supprimer-un-fichier">
 5.6 Supprimer un fichier
 </h3>
 <p>Comme pour la commande précédente faites attention à ce que vous effacez</p>
@@ -275,21 +278,21 @@ Table des matières
 <li>Sur Windows: C’est la commande del fichier exemple: del toto.txt<br></li>
 <li>Sur Mac: C’est la commande rm fichier exemple: rm toto.txt</li>
 </ol>
-<h3>
+<h3 id="57-renommer-un-fichier-repertoire">
 5.7 Renommer un fichier/répertoire
 </h3>
 <ol type="1">
 <li>Sur Windows: C’est la commande ren (pour rename). Exemple: ren toto.txt toto2.txt<br></li>
 <li>Sur Mac: On utilise la commande mv (move). Exemple mv toto.txt toto2.txt</li>
 </ol>
-<h3>
+<h3 id="5.8-afficher-le-contenu-d-un-fichier">
 5.8 Afficher le contenu d’un fichier
 </h3>
 <ol type="1">
 <li>Sur Windows: type nomfichier exemple: type toto.txt affichera le contenu du fichier toto.txt<br></li>
 <li>Sur Mac: cat nomfichier exemple: cat toto.txt affichera le contenu du fichier toto.txt</li>
 </ol>
-<h3>
+<h3 id="59-creer-un-fichier-avec-un-contenu-vide">
 5.9 Créer un fichier avec un contenu vide
 </h3>
 <ol type="1">
