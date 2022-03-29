@@ -225,47 +225,52 @@ Table des matières
 <ol type="1">
 <li><p>Pour connaître le répertoire courant où vous êtes:</p>
 <ol type="A">
-<li>Sur Windows: on regarde ce qu’on appelle le prompt. Il est composé du chemin courant suivit du symbole &gt;. Exemple c:\Windows&gt; le chemin c’est c:\Windows où le c: indique le lecteur et Windows le répertoire. Ou bien on tape la commande echo %cd% ou encore tout simplement cd sans aucun paramètre: ça retourne le répertoire courant. Le plus simple étant donc la commande cd sans aucun paramètre.</li>
-<li>Sur Mac: on a deux manières. Le prompt est composé du nom de l’ordinateur suivit d’un symbole : ensuite du chemin suivit d’un espace. Il y a ensuite le nom de l’utilisateur terminé par le symbole $. Il est possible que vous voyez le symbole ~ (tilde) dans le chemin. Le symbole tilde signifie le chemin vers votre répertoire utilisateur. Ensuite on peut utiliser la commande pwd qui va donner le répertoire courant. Si vous avez un tilde dans le prompt, vous verrez le chemin complet de l’utilisateur grâce à la commande pwd. Exemple si votre prompt est mcfly:~/Documents john$ la commande pwd donnera le résultat suivant: /home/john/Documents</li>
-<li>Sur Linux: Même chose que Mac sauf que le prompt est ainsi composé du nom de l’utilisateur suivit du symbole @ ensuite du nom de l’ordinateur d’un symbole : et enfin le chemin terminé par le symbole $. Exemple: john@mcfly:~/Documents$ la commande pwd donnera le résultat suivant: /home/john/Documents</li>
+<li><p>Sur Windows: on regarde ce qu’on appelle le prompt. Il est composé du chemin courant suivit du symbole &gt;. Exemple c:\Windows&gt; le chemin c’est c:\Windows où le c: indique le lecteur et Windows le répertoire. Ou bien on tape la commande echo %cd% ou encore tout simplement cd sans aucun paramètre: ça retourne le répertoire courant. Le plus simple étant donc la commande cd sans aucun paramètre.</p></li>
+<li><p>Sur Mac: on a deux manières. Le prompt est composé du nom de l’ordinateur suivit d’un symbole : ensuite du chemin suivit d’un espace. Il y a ensuite le nom de l’utilisateur terminé par le symbole $. Il est possible que vous voyez le symbole ~ (tilde) dans le chemin. Le symbole tilde signifie le chemin vers votre répertoire utilisateur. Ensuite on peut utiliser la commande pwd qui va donner le répertoire courant. Si vous avez un tilde dans le prompt, vous verrez le chemin complet de l’utilisateur grâce à la commande pwd. Exemple si votre prompt est mcfly:~/Documents john$ la commande pwd donnera le résultat suivant: /home/john/Documents</p></li>
+<li><p>Sur Linux: Même chose que Mac sauf que le prompt est ainsi composé du nom de l’utilisateur suivit du symbole @ ensuite du nom de l’ordinateur d’un symbole : et enfin le chemin terminé par le symbole $. Exemple: john@mcfly:~/Documents$ la commande pwd donnera le résultat suivant: /home/john/Documents</p></li>
 </ol></li>
 <li><p>Lister les fichiers</p>
 <ol type="A">
-<li>Sur Windows: On utilise la commande dir avec comme paramètre /w. Exemple: dir /w</li>
+<li>Sur Windows: On utilise la commande dir avec comme paramètre /w. Exemple: dir /w<br></li>
 <li>Sur Mac/Linux: On utilise la commande dir ou ls ou encore</li>
 </ol></li>
 <li><p>Créer un répertoire</p>
 <ol type="A">
-<li>Sur Windows: c’est la commande mkdir (make directory) qui peut être raccourcie par md. Exemple: mkdir cours_git ou md cours_git</li>
+<li>Sur Windows: c’est la commande mkdir (make directory) qui peut être raccourcie par md. Exemple: mkdir cours_git ou md cours_git<br></li>
 <li>Sur Mac/Linux: c’est la commande mkdir. Exemple mkdir cours_git</li>
 </ol></li>
-<li><p>Changer de répertoire Sur Windows et Mac/Linux, c’est la commande chdir ou cd (change directory). Exemple: cd cours_git Ou peut remonter dans le répertoire parent à l’aide de la commande cd ..</p></li>
-<li><p>Supprimer un répertoire ATTENTION cette commande est à utiliser avec énormément de précautions.</p>
+<li><p>Changer de répertoire</p>
+<p>Sur Windows et Mac/Linux, c’est la commande chdir ou cd (change directory). Exemple: cd cours_git</p>
+<p>Ou peut remonter dans le répertoire parent à l’aide de la commande cd ..</p></li>
+<li><p>Supprimer un répertoire</p>
+<p>ATTENTION cette commande est à utiliser avec énormément de précautions.</p>
 <ol type="A">
-<li>Sur Windows: C’est la commande rmdir (remove directory). Créons le répertoire toto: mkdir toto Supprimons ce répertoire: rmdir toto Cependant si le répertoire toto n’est pas vide, Windows vous le signalera et ne fera rien. Il faudra alors utiliser des paramètres à la commande rmdir à savoir /s (Supprime tous répertoires et fichiers inclus dans le répertoire à supprimer). Exemple: rmdir /s toto (Le système demandera une confirmation)</li>
-<li>Sur Mac/Linux: C’est aussi la commande rmdir mais on utilise généralement rm on peut coupler cette commande avec les paramètres -rf Exemple: rm -rf toto (le -r supprime le répertoire et sous repertoire de manière récursive. Le -f ne demande aucune confirmation d’effacement et pas d’erreur si le fichier n’existe pas) Si vous faites un rm -rf répertoire (faites très attention à ce que vous faites…)</li>
+<li><p>Sur Windows: C’est la commande rmdir (remove directory). Créons le répertoire toto: mkdir toto Supprimons ce répertoire: rmdir toto Cependant si le répertoire toto n’est pas vide, Windows vous le signalera et ne fera rien. Il faudra alors utiliser des paramètres à la commande rmdir à savoir /s (Supprime tous répertoires et fichiers inclus dans le répertoire à supprimer). Exemple: rmdir /s toto (Le système demandera une confirmation)</p></li>
+<li><p>Sur Mac/Linux: C’est aussi la commande rmdir mais on utilise généralement rm on peut coupler cette commande avec les paramètres -rf Exemple: rm -rf toto (le -r supprime le répertoire et sous repertoire de manière récursive. Le -f ne demande aucune confirmation d’effacement et pas d’erreur si le fichier n’existe pas) Si vous faites un rm -rf répertoire (faites très attention à ce que vous faites…)</p></li>
 </ol></li>
-<li><p>Supprimer un fichier Comme pour la commande précédente faites attention à ce que vous effacez</p>
+<li><p>Supprimer un fichier</p>
+<p>Comme pour la commande précédente faites attention à ce que vous effacez</p>
 <ol type="A">
-<li>Sur Windows: C’est la commande del fichier exemple: del toto.txt</li>
+<li>Sur Windows: C’est la commande del fichier exemple: del toto.txt<br></li>
 <li>Sur Mac: C’est la commande rm fichier exemple: rm toto.txt</li>
 </ol></li>
 <li><p>Renommer un fichier/répertoire</p>
 <ol type="A">
-<li>Sur Windows: C’est la commande ren (pour rename). Exemple: ren toto.txt toto2.txt</li>
+<li>Sur Windows: C’est la commande ren (pour rename). Exemple: ren toto.txt toto2.txt<br></li>
 <li>Sur Mac: On utilise la commande mv (move). Exemple mv toto.txt toto2.txt</li>
 </ol></li>
 <li><p>Afficher le contenu d’un fichier</p>
 <ol type="A">
-<li>Sur Windows: type nomfichier exemple: type toto.txt affichera le contenu du fichier toto.txt</li>
+<li>Sur Windows: type nomfichier exemple: type toto.txt affichera le contenu du fichier toto.txt<br></li>
 <li>Sur Mac: cat nomfichier exemple: cat toto.txt affichera le contenu du fichier toto.txt</li>
 </ol></li>
 <li><p>Créer un fichier avec un contenu vide</p>
 <ol type="A">
-<li>Sur Windows: type nul &gt; toto.txt va créer un fichier vide avec comme nom toto.txt</li>
+<li>Sur Windows: type nul &gt; toto.txt va créer un fichier vide avec comme nom toto.txt<br></li>
 <li>Sur Mac: touch toto.txt</li>
 </ol></li>
-<li><p>Les redirections des commandes &gt; et &gt;&gt; On peut rediriger l’entrée standard d’une commande qui est la console vers par exemple un fichier. On a deux types de redirections:</p>
+<li><p>Les redirections des commandes &gt; et &gt;&gt;</p>
+<p>On peut rediriger l’entrée standard d’une commande qui est la console vers par exemple un fichier. On a deux types de redirections:</p>
 <ol type="1">
 <li>Création du fichier avec &gt; par exemple dir &gt; listing.txt (redirige le résultat de la commande dans un nouveau fichier nommé listing.txt)</li>
 <li>Concaténation du résultat dans un fichier avec &gt;&gt; par exemple dir &gt;&gt; listing.txt (Si le fichier existe, le résultat de la commande dir est ajouté au fichier listing.txt sinon le fichier sera créé). Dans le temps (vieux suis, vieux je resterai), on pouvait rediriger vers une imprimante. Par exemple dir &gt; prn</li>
@@ -312,11 +317,11 @@ Table des matières
 </ol>
 <p>Pour que l’on sache qui a fait une action sur un dépôt, il est de mise de configurer les variables globales suivantes:</p>
 <ol type="a">
-<li>git config –global user.name “nom” - Exemple: git config –global user.name “Johnny Piette”</li>
+<li>git config –global user.name “nom” - Exemple: git config –global user.name “Johnny Piette”<br></li>
 <li>git config –global user.email “adresse email”</li>
 </ol>
 <p>Exemple: git config –global user.email “johnny.piette@gmail.com”</p>
-<p>Vérification de la configuration de git globale. git config –global –list</p>
+<p>Vérification de la configuration de git globale.<br> git config –global –list</p>
 <p>Pour supprimer une entrée de notre configuration globale, on utilise: git config –unset –global user.name (Ici ça va supprimer notre prénom et nom).</p>
 <h2 id="10-creation-de-notre-premier-depot-local">
 10. Création de notre premier dépôt local
@@ -390,6 +395,7 @@ Table des matières
 <li>git add * (mais ici vous allez indexer tous les fichiers modifiés, créés, supprimés du répertoire courant)</li>
 <li>git add . (mais ici vous allez indexer tous les fichiers modifiés, créés, supprimés du répertoire courant et ses répertoires)</li>
 </ul>
+<p>Il peut sembler étrange d’utiliser le paramètre add à la commande git. Effectivement, add signifie ajouter et on vient de supprimer des fichiers/répertoires ! Il faut penser que l’on ajoute cette modification (prise au sens large) dans la zone d’index.</p>
 <p>Maintenant vous avez peut-être une bonne raison de ne pas indexer ces suppressions…</p>
 <h2 id="14-notre-premier-commit">
 14. Notre premier commit
