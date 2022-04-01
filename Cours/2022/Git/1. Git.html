@@ -7,6 +7,15 @@
     <title>1. Git.md</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    <style>
+    q, blockquote:before {
+        content: "«";
+    }
+
+    q, blockquote:after {
+        content: "»";
+    }
+</style>
 </head>
 <body>
 <div class='container'>
@@ -552,9 +561,7 @@ S’il a été modifié depuis le dernier instantané mais n’a pas été index
 17. Naviguer dans l’historique de notre dépôt
 </h2>
 <p>Je sais que je parle à une jeune génération mais j’ai grand espoir que vous ayez tous vu “Retour vers le Futur” (Back To The Future). Voici le synopsis du film pour ceux qui ne l’auraient pas vu (veuillez combler ce manque de culture svp !):</p>
-<blockquote>
-<p>L’intrigue relate le voyage dans le passé d’un adolescent, Marty McFly, à bord d’une machine à voyager dans le temps fabriquée par le docteur Emmett Brown, à partir d’une voiture de modèle DeLorean DMC-12. Parti de l’année 1985 et propulsé le 5 novembre 1955, Marty, aidé du « Doc » de 1955, doit résoudre les paradoxes temporels provoqués par ses interventions dans le passé, et trouver le moyen de faire fonctionner la machine pour retourner à son époque d’origine.</p>
-</blockquote>
+<p><q cite="">L’intrigue relate le voyage dans le passé d’un adolescent, Marty McFly, à bord d’une machine à voyager dans le temps fabriquée par le docteur Emmett Brown, à partir d’une voiture de modèle DeLorean DMC-12. Parti de l’année 1985 et propulsé le 5 novembre 1955, Marty, aidé du « Doc » de 1955, doit résoudre les paradoxes temporels provoqués par ses interventions dans le passé, et trouver le moyen de faire fonctionner la machine pour retourner à son époque d’origine.</q></p>
 <p>A l’image de Marty, nous allons retourner dans le passé de notre dépôt git. Celui-ci peut aussi être vu comme une ligne temporelle où se sont déroulés évênements enregistrés dans nos différents commit.</p>
 <p>Pour cela, notre convecteur temporel utilisera la commande git checkout et le nom du SHA-1 du commit, ou le nom du tag du commit ou encore le nom de la branche. Nous verrons plus tard ce qu’est une branche.</p>
 <p>Exemple pratique:</p>
