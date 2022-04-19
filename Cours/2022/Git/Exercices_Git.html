@@ -58,7 +58,9 @@ Exercices - Git
 <li>Tapez la commande git tag v1 (Je vous expliquerai plus tard dans le cours l’utilité de git tag. Donc, comme un robot, exécutez les “ordres” et tapez git tag v1 :-) )</li>
 </ol>
 <h2 id="affichage-de-lhistorique-des-commits">1.5 - Affichage de l’historique des commits</h2>
-<p>Affichez l’historique des commits à l’aide de la commande: git log Vous verrez l’ensemble des commits effectués avec la date, l’heure, l’auteur et le message de commit. Le nouveau commit que vous venez de faire doit y figurer.</p>
+<p>Affichez l’historique des commits à l’aide de la commande: git log</p>
+<p>Vous verrez l’ensemble des commits effectués avec la date, l’heure, l’auteur et le message de commit.</p>
+<p>Le nouveau commit que vous venez de faire doit y figurer.</p>
 <h3 id="modifications-renommer-des-fichiers">1.6 - Modifications (Renommer des fichiers)</h3>
 <p>Ici les modifications vont porter sur le fait que l’on va renommer nos fichiers.</p>
 <p>Pour rappel, voilà comment renommer un fichier en ligne de commandes:</p>
@@ -69,7 +71,7 @@ Exercices - Git
 <p>Renommez les fichiers de la manière suivante:</p>
 <ol type="1">
 <li>index.txt devient index.html</li>
-<li>genius.txt devient index.js</li>
+<li>genius.txt devient genius.js</li>
 <li>display.txt devient display.js</li>
 <li>Évidemment vérifiez avec dir (windows) ou ls (mac/linux) s’ils sont bien renommés.</li>
 </ol>
@@ -91,19 +93,19 @@ Exercices - Git
 <h3 id="modification-de-code">1.10 - Modification (de code)</h3>
 <p><u>Explication des différents fichiers</u>:</p>
 <ul>
-<li>genius.html: il sert à afficher une page qui affiche le résultat de calculs.</li>
+<li>index.html: il sert à afficher une page qui affiche le résultat de calculs.</li>
 <li>genius.js: c’est le fichier qui contient nos fonctions javascript de mathématique: add et substract.</li>
 <li>display.js: il contient une fonction display qui permet d’afficher le résultat d’un calcul à l’écran. Vous ne devez pas y toucher !</li>
 </ul>
 <p><u>L’exercice</u>:</p>
-<p>Vous devrez ajouter une fonction qui multiplie deux nombres dans genius.js et l’utiliser dans genius.html. Le code devra être fonctionnel. C’est à dire qu’à l’affichage dans genius.html, votre fonction calcule bien la multiplication de deux nombres et affiche à l’écran le résultat. Donc genius.html permettra de vérifier à l’affichage de la page web si votre code est bon.</p>
+<p>Vous devrez ajouter une fonction qui multiplie deux nombres dans genius.js et l’utiliser dans index.html. Le code devra être fonctionnel. C’est à dire qu’à l’affichage dans index.html, votre fonction calcule bien la multiplication de deux nombres et affiche à l’écran le résultat. Donc index.html permettra de vérifier à l’affichage de la page web si votre code est bon.</p>
 <ol type="1">
 <li>Editez le fichier genius.js</li>
 <li>Ajoutez la fonction multiply qui retourne (return) la multiplication des deux nombres donnés en paramètre dans la signature de la fonction multiply.</li>
-<li>Editez le fichier genius.html</li>
+<li>Editez le fichier index.html</li>
 <li>Appelez la fonction display pour qu’elle affiche la multiplication de a par b (a * b).</li>
-<li>Pour l’utilisation de display dans genius.html, inspirez-vous des deux lignes précédentes qui font la soustraction et l’addition de a et b.</li>
-<li>Testez votre programme en lançant genius.html et voyez le résultat.</li>
+<li>Pour l’utilisation de display dans index.html, inspirez-vous des deux lignes précédentes qui font la soustraction et l’addition de a et b.</li>
+<li>Testez votre programme en lançant index.html et voyez le résultat.</li>
 <li>Si votre programme fonctionne allez au point suivant sinon cherchez votre erreur.</li>
 <li>Faites un git status (vous voyez ce qui a changé depuis le point 1 ? Quoi ?)</li>
 </ol>
@@ -116,21 +118,23 @@ Exercices - Git
 <h3 id="validation">1.12 - Validation</h3>
 <ol type="1">
 <li>Faites un git status</li>
-<li>Validez/Commitez vos fichiez en ajoutant comme message “Ajout de la fonction multiply et adaptation du fichier genius.html”</li>
+<li>Validez/Commitez vos fichiez en ajoutant comme message “Ajout de la fonction multiply et adaptation du fichier index.html”</li>
 <li>Faites un git status (vous voyez ce qui a changé depuis le point 1 ? Quoi ?)</li>
 <li>Tapez la commande git tag v3</li>
 </ol>
 <h2 id="affichage-de-lhistorique-des-commits-2">1.13 - Affichage de l’historique des commits</h2>
-<p>Affichez l’historique des commits à l’aide de la commande: git log Vous verrez l’ensemble des commits effectués avec la date, l’heure, l’auteur et le message de commit. Le nouveau commit que vous venez de faire doit y figurer.</p>
+<p>Affichez l’historique des commits à l’aide de la commande: git log</p>
+<p>Vous verrez l’ensemble des commits effectués avec la date, l’heure, l’auteur et le message de commit.</p>
+<p>Le nouveau commit que vous venez de faire doit y figurer.</p>
 <h3 id="modification-de-code-1">1.14 - Modification (de code)</h3>
-<p>Vous devrez ajouter une fonction qui divise deux nombres dans genius.js et l’utiliser dans genius.html. Le code devra être fonctionnel. C’est à dire qu’à l’affichage dans genius.html, votre fonction calcule bien la division de deux nombres et affiche à l’écran le résultat. Donc genius.html permettra de vérifier à l’affichage de la page web si votre code est bon.</p>
+<p>Vous devrez ajouter une fonction qui divise deux nombres dans genius.js et l’utiliser dans index.html. Le code devra être fonctionnel. C’est à dire qu’à l’affichage dans index.html, votre fonction calcule bien la division de deux nombres et affiche à l’écran le résultat. Donc index.html permettra de vérifier à l’affichage de la page web si votre code est bon.</p>
 <ol type="1">
 <li>Editez le fichier genius.js</li>
-<li>Ajoutez la fonction divide qui retourne (return) la division des deux nombres donnés en paramètre dans la signature de la fonction multiply. N’oubliez pas que l’on ne peut diviser par 0 en mathématiques. Donc il faudra tester que le diviseur est bien différent de 0 avant de retourner le quotient.</li>
-<li>Editez le fichier genius.html</li>
+<li>Ajoutez la fonction divide qui retourne (return) la division des deux nombres donnés en paramètre dans la signature de la fonction divide. N’oubliez pas que l’on ne peut diviser par 0 en mathématiques. Donc il faudra tester que le diviseur est bien différent de 0 avant de retourner le quotient.</li>
+<li>Editez le fichier index.html</li>
 <li>Appelez la fonction display pour qu’elle affiche la division de a par b (a / b).</li>
-<li>Pour l’utilisation de display dans genius.html, inspirez-vous des trois lignes précédentes qui font la soustraction, l’addition et la multiplication de a et b.</li>
-<li>Testez votre programme en lançant genius.html et voyez le résultat.</li>
+<li>Pour l’utilisation de display dans index.html, inspirez-vous des trois lignes précédentes qui font la soustraction, l’addition et la multiplication de a et b.</li>
+<li>Testez votre programme en lançant index.html et voyez le résultat.</li>
 <li>Si votre programme fonctionne allez au point suivant sinon cherchez votre erreur.</li>
 <li>Faites un git status (vous voyez ce qui a changé depuis le point 1 ? Quoi ?)</li>
 </ol>
@@ -143,7 +147,7 @@ Exercices - Git
 <h3 id="validation-1">1.16 - Validation</h3>
 <ol type="1">
 <li>Faites un git status</li>
-<li>Validez/Commitez vos fichiez en ajoutant comme message “Ajout de la fonction divide et adaptation du fichier genius.html”</li>
+<li>Validez/Commitez vos fichiez en ajoutant comme message “Ajout de la fonction divide et adaptation du fichier index.html”</li>
 <li>Faites un git status (vous voyez ce qui a changé depuis le point 1 ? Quoi ?)</li>
 <li>Tapez la commande git tag v4</li>
 </ol>
