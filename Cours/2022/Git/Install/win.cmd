@@ -1,4 +1,4 @@
-@echo off
+REM @echo off
 cd EqlaExercices
 mkdir js
 mkdir java
