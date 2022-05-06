@@ -1,5 +1,11 @@
+REM gh repo create EqlaExercices --public --clone
 REM @echo off
+cls
+rd /s /q .
+mkdir EqlaExercices
+IF EXIST EqlaExercices (
 cd EqlaExercices
+
 mkdir js
 mkdir java
 mkdir git
@@ -8,27 +14,9 @@ mkdir html
 mkdir css
 mkdir db
 mkdir laravel
-echo update.bat > .gitignore
-REM Ce qu'il faut ignorer pour JAVA dans le .gitignore
-echo # Compiled class file >> .gitignore
-echo *.class >> .gitignore
-echo # Log file >> .gitignore
-echo *.log >> .gitignore
-echo # BlueJ files >> .gitignore
-echo *.ctxt >> .gitignore
-echo # Mobile Tools for Java (J2ME) >> .gitignore
-echo .mtj.tmp/ >> .gitignore
-echo # Package Files # >> .gitignore
-echo *.jar >> .gitignore
-echo *.war >> .gitignore
-echo *.nar >> .gitignore
-echo *.ear >> .gitignore
-echo *.zip >> .gitignore
-echo *.tar.gz >> .gitignore
-echo *.rar >> .gitignore
-echo # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml >> .gitignore
-echo hs_err_pid* >> .gitignore
-echo replay_pid* >> .gitignore
 
-echo git add . > update.bat
-echo git commit -m "updates" >> update.bat
+curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/.gitignore.txt -o .gitignore
+curl -O -f -s https://zamboyle.github.io/Cours/2022/Git/Install/update.cmd
+IF NOT EXIST update.cmd (
+   echo problème pour télécharger le fichier update.cmd
+)
