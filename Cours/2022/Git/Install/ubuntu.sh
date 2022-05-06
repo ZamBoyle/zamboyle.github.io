@@ -11,7 +11,7 @@ else
     createDirectoryRepo()
 fi
 
-createDirectoryRepo() {
+createDirectoryRepo () {
     if [[ ! -f ~/EqlaExercices ]] 
     then
         cd ~
