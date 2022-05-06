@@ -8,6 +8,7 @@ mkdir css
 mkdir db
 mkdir laravel
 echo update.bat > .gitignore
+REM Ce qu'il faut ignorer pour JAVA dans le .gitignore
 echo # Compiled class file >> .gitignore
 echo *.class >> .gitignore
 echo # Log file >> .gitignore
