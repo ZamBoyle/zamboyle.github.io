@@ -3,7 +3,7 @@ if [[ ! -f ~/EqlaExercices ]]
 then
     cd ~
     gh repo create EqlaExercices --public --clone
-    if [[ -f EqlaExercices ]] 
+    if [[ -d ~/EqlaExercices ]] 
     then
         cd EqlaExercices
         mkdir js java git github html accessibilite css db laravel intro
