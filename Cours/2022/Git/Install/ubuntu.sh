@@ -18,6 +18,5 @@ then
         else
             echo problème pour télécharger le fichier update.sh
         fi
-        rm ../ubuntu.sh
     fi
 fi
