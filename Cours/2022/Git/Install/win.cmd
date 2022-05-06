@@ -1,6 +1,6 @@
 IF NOT EXISTS %userprofile%\Documents\EqlaExercices (
     gh repo create EqlaExercices --public --clone
-    cd %userprofile%\Documents
+    cd %userprofile%\Documents\EqlaExercices
     IF EXIST EqlaExercices (
         cd EqlaExercices
         mkdir js java git github html accessibilite css db laravel Intro 2>NUL
