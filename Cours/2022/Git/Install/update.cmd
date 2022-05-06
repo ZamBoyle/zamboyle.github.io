@@ -1,4 +1,4 @@
 git add .
-git commit -m "updates"
+git commit -m "Initial Commit"
 git push --set-upstream origin master
 pause
