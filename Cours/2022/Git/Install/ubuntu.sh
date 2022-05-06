@@ -1,22 +1,27 @@
 #!/bin/bash
-if [[ ! -f ~/EqlaExercices ]] 
+if (gh auth status --hostname "github.com" > /dev/null 2>&1); 
 then
-    cd ~
-    gh repo create EqlaExercices --public --clone
-    if [[ -d ~/EqlaExercices ]] 
+    if [[ ! -f ~/EqlaExercices ]] 
     then
-        cd EqlaExercices
-        mkdir js java git github html accessibilite css db laravel intro
-
-        curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitignore.txt -o .gitignore
-        curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/update.cmd -o update.sh
-
-        if [[  -f update.sh ]] 
+        cd ~
+        gh repo create EqlaExercices --public --clone
+        if [[ -d ~/EqlaExercices ]] 
         then
-            chmod +x update.sh
-            ./update.sh
-        else
-            echo problème pour télécharger le fichier update.sh
+            cd EqlaExercices
+            mkdir js java git github html accessibilite css db laravel intro
+
+            curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitignore.txt -o .gitignore
+            curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/update.cmd -o update.sh
+
+            if [[  -f update.sh ]] 
+            then
+                chmod +x update.sh
+                ./update.sh
+            else
+                echo problème pour télécharger le fichier update.sh
+            fi
         fi
     fi
+else
+    echo 'Vous devez être authentifié sur GitHub avec gh auparant.'
 fi
