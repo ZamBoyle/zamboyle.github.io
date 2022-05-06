@@ -1,14 +1,14 @@
 #!/bin/bash
 if (gh auth status --hostname "github.com" > /dev/null 2>&1); 
 then
-    createDirectoryRepo()
+    createDirectoryRepo
 else
     echo 'Vous devez être authentifié sur GitHub avec gh auparant.'
     while(!(gh auth status --hostname "github.com" > /dev/null 2>&1))
     do
         gh auth login -s delete_repo
     done
-    createDirectoryRepo()
+    createDirectoryRepo
 fi
 
 createDirectoryRepo () {
