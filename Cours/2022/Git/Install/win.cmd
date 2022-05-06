@@ -1,7 +1,6 @@
 REM gh repo create EqlaExercices --public --clone
 REM @echo off
 cls
-rd /s /q .
 mkdir EqlaExercices
 IF EXIST EqlaExercices (
 cd EqlaExercices
