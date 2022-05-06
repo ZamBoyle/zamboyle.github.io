@@ -212,8 +212,30 @@ Table des matières
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="fu">mkdir</span> html</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="fu">mkdir</span> css</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a><span class="fu">mkdir</span> db</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&quot;update.bat&quot;</span> <span class="op">&gt;</span> .gitignore</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a><span class="bu">echo</span> <span class="st">&quot;git add .&quot;</span> <span class="op">&gt;</span> update.bat</span></code></pre></div>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="bu">echo</span> update.bat <span class="op">&gt;</span> .gitignore</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a><span class="bu">echo</span> <span class="co"># Compiled class file &gt;&gt; .gitignore</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="bu">echo</span> *.class <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a><span class="bu">echo</span> <span class="co"># Log file &gt;&gt; .gitignore</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="bu">echo</span> *.log <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="bu">echo</span> <span class="co"># BlueJ files &gt;&gt; .gitignore</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a><span class="bu">echo</span> *.ctxt <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a><span class="bu">echo</span> <span class="co"># Mobile Tools for Java (J2ME) &gt;&gt; .gitignore</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="bu">echo</span> .mtj.tmp/ <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="bu">echo</span> <span class="co"># Package Files # &gt;&gt; .gitignore</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a><span class="bu">echo</span> *.jar <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="bu">echo</span> *.war <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a><span class="bu">echo</span> *.nar <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a><span class="bu">echo</span> *.ear <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a><span class="bu">echo</span> *.zip <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a><span class="bu">echo</span> *.tar.gz <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a><span class="bu">echo</span> *.rar <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a><span class="bu">echo</span> <span class="co"># virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml &gt;&gt; .gitignore</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true"></a><span class="bu">echo</span> hs_err_pid* <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true"></a><span class="bu">echo</span> replay_pid* <span class="op">&gt;&gt;</span> .gitignore</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true"></a><span class="bu">echo</span> git add . <span class="op">&gt;</span> update.bat</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true"></a><span class="bu">echo</span> git commit -m <span class="st">&quot;updates&quot;</span> <span class="op">&gt;&gt;</span> update.bat</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true"></a><span class="fu">chmod</span> +x update.bat</span></code></pre></div>
 <h2 id="4-nouveau-windows-terminal">
 <ol start="4" type="1">
 <li>Nouveau Windows Terminal
