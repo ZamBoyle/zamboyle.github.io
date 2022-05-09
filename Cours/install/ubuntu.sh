@@ -9,8 +9,8 @@ function createDirectoryRepo () {
             cd EqlaExercices
             mkdir js java git github html accessibilite css db laravel intro
 
-            curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitignore.txt -o .gitignore
-            curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/update.txt -o update.sh
+            curl -f -s https://zamboyle.github.io/install/gitignore.txt -o .gitignore
+            curl -f -s https://zamboyle.github.io/install/update.txt -o update.sh
 
             if [[  -f update.sh ]] 
             then

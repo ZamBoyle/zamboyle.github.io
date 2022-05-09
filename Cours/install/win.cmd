@@ -7,8 +7,8 @@
             cd EqlaExercices
             mkdir js java git github html accessibilite css db laravel intro
 
-            curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitignore.txt -o .gitignore
-            curl -O -f -s https://zamboyle.github.io/Cours/2022/Git/Install/update.txt
+            curl -f -s https://zamboyle.github.io/install/gitignore.txt -o .gitignore
+            curl -O -f -s https://zamboyle.github.io/install/update.txt
 
             IF EXIST update.cmd (
                 echo pause >> update.cmd
@@ -34,8 +34,8 @@ IF NOT EXISTS %userprofile%\Documents\EqlaExercices (
         cd EqlaExercices
         mkdir js java git github html accessibilite css db laravel intro
 
-        curl -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitignore.txt -o .gitignore
-        curl -O -f -s https://zamboyle.github.io/Cours/2022/Git/Install/update.cmd
+        curl -f -s https://zamboyle.github.io/install/gitignore.txt -o .gitignore
+        curl -O -f -s https://zamboyle.github.io/install/update.cmd
         
         update.cmd
         IF NOT EXIST update.cmd (
