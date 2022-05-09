@@ -5,7 +5,6 @@ IF NOT EXIST %userProfile%\tmp\ (
     mkdir %userProfile%\tmp\
 ) 
 cd %userProfile%\tmp\
-cls
 CALL :Menu
 EXIT /B 0
 
