@@ -7,7 +7,7 @@ IF NOT EXIST %userProfile%\tmp\ (
 cd %userProfile%\tmp\
 cls
 CALL :Menu
-EXIT /B %ERRORLEVEL% 
+EXIT /B 0
 
 :Menu
 echo BlindCode - Mons 2022
