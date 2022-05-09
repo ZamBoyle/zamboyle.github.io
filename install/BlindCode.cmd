@@ -76,7 +76,7 @@ EXIT /B O
 
 :NVDA
 echo Telechargement de NVDA
-curl -l https://www.nvda-fr.org/r?p=nvda -o nvda.exe
+curl -L https://www.nvda-fr.org/r?p=nvda -o nvda.exe
 echo Installation de NVDA. Veuillez patienter.
 nvda --minimal --install-silent
 echo Installation de NVDA terminee
