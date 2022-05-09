@@ -8,56 +8,6 @@ cd %userProfile%\tmp\
 CALL :Menu
 EXIT /B 0
 
-:Menu
-echo =========================
-echo = BlindCode - Mons 2022 =
-echo =========================
-echo 1. Installer Git
-echo 2. Installer Gh - GitHub CLI
-echo 3. Installer VSCode
-echo 4. Installer OpenJDK d'Oracle
-echo 5. Installer Extensions Java pour VSCode
-echo 6. Installer NVDA
-echo =========================================
-CALL :IsGitConfigured && ( 
-    echo 7. Configurer Git: Git est deja configure.
-) || (
-echo 7. Configurer Git
-)
-
-CALL :IsAuth && (    
-    echo 8. Configurer Gh: Gh est deja configure.
-) || (
-    echo 8. Configurer Gh
-)
-echo =========================================
-CALL :IsAuth && CALL :IsGitConfigured && (
-    echo 9. Creer le depot EqlaExercice sur GitHub.    
-) || (
-    echo 9. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
-)
-echo =========================================
-echo 10. Quitter
-echo.
-set /p choix=Votre choix ?
-echo.
-
-if %choix% LEQ  0 CALL :Menu
-if %choix% GEQ 11 CALL :Menu
-
-if %choix%  EQU 1 CALL :Git
-if %choix%  EQU 2 CALL :Gh
-if %choix%  EQU 3 CALL :VSCode
-if %choix%  EQU 4 CALL :OpenJDK
-if %choix%  EQU 5 CALL :ExtensionsVSCode
-if %choix%  EQU 6 CALL :NVDA
-
-if %choix%  EQU 7 CALL :ConfigureGit
-if %choix%  EQU 8 CALL :ConfigureGh
-if %choix%  EQU 9 CALL :CreateRepository
-if %choix%  EQU 10 GOTO :End
-
-GOTO :Menu
 
 :IsAuth
 gh auth status --hostname "github.com" > NULL 2>&1 && (
@@ -143,6 +93,59 @@ IF NOT EXIST %USERPROFILE%\Documents\EqlaExercices(
     )
 )
 EXIT /B O
+
+:Menu
+echo =========================
+echo = BlindCode - Mons 2022 =
+echo =========================
+echo 1. Installer Git
+echo 2. Installer Gh - GitHub CLI
+echo 3. Installer VSCode
+echo 4. Installer OpenJDK d'Oracle
+echo 5. Installer Extensions Java pour VSCode
+echo 6. Installer NVDA
+echo =========================================
+CALL :IsGitConfigured && ( 
+    echo 7. Configurer Git: Git est deja configure.
+) || (
+echo 7. Configurer Git
+)
+
+CALL :IsAuth && (    
+    echo 8. Configurer Gh: Gh est deja configure.
+) || (
+    echo 8. Configurer Gh
+)
+echo =========================================
+CALL :IsAuth && CALL :IsGitConfigured && (
+    echo 9. Creer le depot EqlaExercice sur GitHub.    
+) || (
+    echo 9. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
+)
+echo =========================================
+echo 10. Quitter
+echo.
+set /p choix=Votre choix ?
+echo.
+
+if %choix% LEQ  0 CALL :Menu
+if %choix% GEQ 11 CALL :Menu
+
+if %choix%  EQU 1 CALL :Git
+if %choix%  EQU 2 CALL :Gh
+if %choix%  EQU 3 CALL :VSCode
+if %choix%  EQU 4 CALL :OpenJDK
+if %choix%  EQU 5 CALL :ExtensionsVSCode
+if %choix%  EQU 6 CALL :NVDA
+
+if %choix%  EQU 7 CALL :ConfigureGit
+if %choix%  EQU 8 CALL :ConfigureGh
+if %choix%  EQU 9 CALL :CreateRepository
+if %choix%  EQU 10 GOTO :End
+
+GOTO :Menu
+
+
 
 :End
 echo.
