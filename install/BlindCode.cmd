@@ -21,7 +21,7 @@ echo =========================================
 git config --global --list | findstr user.aa > NULL
 if ERRORLEVEL 1 ( 
     echo 6. Configurer Git
-) ELSE (echo 6. Git est déjà configuré.)
+) ELSE (echo 6. Configurer Git: Git est déjà configuré.)
 echo 7. Configurer Gh
 echo =========================================
 echo 8. Creer le depot EqlaExercice sur GitHub (Git & Gh doivent configurés avant !)
