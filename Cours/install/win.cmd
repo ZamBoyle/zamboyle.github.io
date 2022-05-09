@@ -20,12 +20,8 @@
     )
 EXIT /B 0
 
-
 :authOnGitHub
 EXIT /B 0
-
-
-
 
 IF NOT EXISTS %userprofile%\Documents\EqlaExercices (
     cd %userprofile%\Documents\
