@@ -29,7 +29,7 @@ set /p choix=Votre choix ?
 echo.
 
 if %choix% LEQ  0 CALL :Menu
-if %choix% GEQ 9 CALL :Menu
+if %choix% GEQ 10 CALL :Menu
 
 if %choix%  EQU 1 CALL :Git
 if %choix%  EQU 2 CALL :Gh
