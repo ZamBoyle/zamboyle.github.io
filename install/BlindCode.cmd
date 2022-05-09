@@ -100,7 +100,6 @@ echo Installation de VSCode. Veuillez patienter.
 vscode /VERYSILENT /NORESTART /MERGETASKS=!runcode
 echo Installation de VSCode terminee
 echo.
-
 EXIT /B O
 
 :NVDA
