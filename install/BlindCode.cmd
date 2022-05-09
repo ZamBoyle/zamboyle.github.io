@@ -59,6 +59,7 @@ curl -L https://github.com/cli/cli/releases/download/v2.9.0/gh_2.9.0_windows_amd
 echo Installation de Gh. Veuillez patienter.
 gh.msi /qn /norestart
 Echo Installation de Gh terminee
+echo.
 EXIT /B O
 
 :VSCode
@@ -67,8 +68,18 @@ curl -L "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-us
 Echo Installation de VSCode. Veuillez patienter.
 vscode /VERYSILENT /NORESTART /MERGETASKS=!runcode
 Echo Installation de VSCode terminee
+echo.
 
 EXIT /B O
+
+:NVDA
+echo Telechargement de NVDA
+curl -l https://www.nvda-fr.org/r?p=nvda -o nvda.exe
+Echo Installation de NVDA. Veuillez patienter.
+Echo Installation de NVDA terminee
+echo.
+EXIT /B O
+
 
 :ExtensionsVSCode
 echo Installation des extensions VSCode
