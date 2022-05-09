@@ -3,7 +3,7 @@
 :Main
 IF NOT EXIST %userProfile%\tmp\ (
     mkdir %userProfile%\tmp\
-)
+) 
 cd %userProfile%\tmp\
 cls
 CALL :Menu
@@ -13,20 +13,23 @@ EXIT /B 0
 echo BlindCode - Mons 2022
 echo =====================
 echo 1. Installer Git
-echo 2. Installer Gh (GitHub CLI)
+echo 2. Installer Gh - GitHub CLI
 echo 3. Installer VSCode
 echo 4. Installer Extensions Java pour VSCode
 echo 5. Installer NVDA
 echo =========================================
-git config --global --list | findstr user.name > NULL 2>&1 && (
-    echo 6. Configurer Git: Git est déjà configuré.
+git config --global --list | findstr  "user.mail user.name" > NULL 2>&1 && (
+    echo 6. Configurer Git: Git est deja configure.
 ) || (
 echo 6. Configurer Git
 )
-
-echo 7. Configurer Gh
+gh auth status --hostname "github.com" > NULL 2>&1 && (
+    echo 7. Configurer Gh: Gh est deja configure
+) || (
+    echo 7. Configurer Gh
+)
 echo =========================================
-echo 8. Creer le depot EqlaExercice sur GitHub (Git & Gh doivent configurés avant !)
+echo 8. Creer le depot EqlaExercice sur GitHub (Git et Gh doivent configures avant !)
 echo =========================================
 echo 9. Quitter
 echo.
@@ -102,6 +105,7 @@ EXIT /B O
 EXIT /B O
 
 :ConfigureGh
+gh auth login -s delete_repo
 EXIT /B O
 
 :CreateRepository
