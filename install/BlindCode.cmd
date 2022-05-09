@@ -16,20 +16,29 @@ echo 1. Installer Git
 echo 2. Installer Gh (GitHub CLI)
 echo 3. Installer VSCode
 echo 4. Installer Extensions Java pour VSCode
-echo 5. Creer le depot EqlaExercice
-echo 6. Quitter
+echo =========================================
+echo 5. Configurer Git
+echo 6. Configurer Gh
+echo =========================================
+echo 7. Creer le depot EqlaExercice
+echo =========================================
+echo 8. Quitter
 echo.
 set /p choix=Votre choix ?
 echo.
 
 if %choix% LEQ  0 CALL :Menu
-if %choix% GEQ 7 CALL :Menu
+if %choix% GEQ 9 CALL :Menu
 
 if %choix%  EQU 1 CALL :Git
 if %choix%  EQU 2 CALL :Gh
 if %choix%  EQU 3 CALL :VSCode
 if %choix%  EQU 4 CALL :ExtensionsVSCode
-if %choix%  EQU 6 GOTO :End
+
+if %choix%  EQU 5 CALL :ConfigureGit
+if %choix%  EQU 6 CALL :ConfigureGh
+if %choix%  EQU 7 CALL :CreateRepository
+if %choix%  EQU 8 GOTO :End
 
 GOTO :Menu
 
@@ -66,6 +75,16 @@ echo Installation des extensions VSCode
 for %%i in (ms-ceintl.vscode-language-pack-fr vscjava.vscode-java-pack) do call code --force --install-extension %%i
 echo Fin d'installation des extensions VSCode
 echo.
+EXIT /B O
+
+
+:ConfigureGit
+EXIT /B O
+
+:ConfigureGh
+EXIT /B O
+
+:CreateRepository
 EXIT /B O
 
 :End
