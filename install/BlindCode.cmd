@@ -49,7 +49,7 @@ echo Telechargement du fichier de reponse pour l'installation de Git: gitunatten
 curl -O -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitunattended.txt
 echo Installation de Git. Veuillez patienter.
 git  /VERYSILENT /LOADINF="gitunattended.txt"
-Echo Installation de Git terminee
+echo Installation de Git terminee
 echo.
 EXIT /B O
 
@@ -58,16 +58,16 @@ echo Telechargement de Gh (Github CLI)
 curl -L https://github.com/cli/cli/releases/download/v2.9.0/gh_2.9.0_windows_amd64.msi -o gh.msi
 echo Installation de Gh. Veuillez patienter.
 gh.msi /qn /norestart
-Echo Installation de Gh terminee
+echo Installation de Gh terminee
 echo.
 EXIT /B O
 
 :VSCode
 echo Telechargement de VSCode
 curl -L "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user" -o vscode.exe
-Echo Installation de VSCode. Veuillez patienter.
+echo Installation de VSCode. Veuillez patienter.
 vscode /VERYSILENT /NORESTART /MERGETASKS=!runcode
-Echo Installation de VSCode terminee
+echo Installation de VSCode terminee
 echo.
 
 EXIT /B O
@@ -75,8 +75,8 @@ EXIT /B O
 :NVDA
 echo Telechargement de NVDA
 curl -l https://www.nvda-fr.org/r?p=nvda -o nvda.exe
-Echo Installation de NVDA. Veuillez patienter.
-Echo Installation de NVDA terminee
+echo Installation de NVDA. Veuillez patienter.
+echo Installation de NVDA terminee
 echo.
 EXIT /B O
 
