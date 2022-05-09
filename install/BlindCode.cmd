@@ -75,11 +75,11 @@ git config --global --list | findstr  "user.mail user.name" > NULL 2>&1 && (
 
 :git
 echo Telechargement de Git
-curl -L https://github.com/git-for-windows/git/releases/download/v2.36.0.windows.1/Git-2.36.0-64-bit.exe -o git.exe
+curl -L https://github.com/git-for-windows/git/releases/download/v2.36.0.windows.1/Git-2.36.0-64-bit.exe -o gitinstall.exe
 echo Telechargement du fichier de reponse pour l'installation de Git: gitunattended.txt
 curl -O -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitunattended.txt
 echo Installation de Git. Veuillez patienter.
-git  /VERYSILENT /LOADINF="gitunattended.txt"
+gitinstall.exe  /VERYSILENT /LOADINF="gitunattended.txt"
 echo Installation de Git terminee
 echo.
 EXIT /B O
