@@ -19,7 +19,7 @@ echo 4. Installer Extensions Java pour VSCode
 echo 5. Installer NVDA
 echo =========================================
 git config --global --list | findstr user.aa > NULL
-if ERRORLEVEL EQU 1 ( 
+if ERRORLEVEL 1 ( 
     echo 6. Configurer Git
 ) ELSE (echo 6. Git est déjà configuré.)
 echo 7. Configurer Gh
