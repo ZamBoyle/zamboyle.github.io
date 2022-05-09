@@ -18,10 +18,13 @@ echo 3. Installer VSCode
 echo 4. Installer Extensions Java pour VSCode
 echo 5. Installer NVDA
 echo =========================================
-echo 6. Configurer Git
+git config --global --list | findstr user.aa > NULL
+if %ERRORLEVEL% EQU 1 ( 
+    echo 6. Configurer Git
+) ELSE (echo 6. Git est déjà configuré.)
 echo 7. Configurer Gh
 echo =========================================
-echo 8. Creer le depot EqlaExercice
+echo 8. Creer le depot EqlaExercice sur GitHub (Git & Gh doivent configurés avant !)
 echo =========================================
 echo 9. Quitter
 echo.
@@ -93,6 +96,7 @@ EXIT /B O
 
 
 :ConfigureGit
+
 EXIT /B O
 
 :ConfigureGh
