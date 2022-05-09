@@ -10,26 +10,32 @@ CALL :Menu
 EXIT /B 0
 
 :Menu
-echo BlindCode - Mons 2022
-echo =====================
+echo =========================
+echo = BlindCode - Mons 2022 =
+echo =========================
 echo 1. Installer Git
 echo 2. Installer Gh - GitHub CLI
 echo 3. Installer VSCode
 echo 4. Installer Extensions Java pour VSCode
 echo 5. Installer NVDA
 echo =========================================
-git config --global --list | findstr  "user.mail user.name" > NULL 2>&1 && (
+CALL :IsGitConfigured && ( 
     echo 6. Configurer Git: Git est deja configure.
 ) || (
 echo 6. Configurer Git
 )
-gh auth status --hostname "github.com" > NULL 2>&1 && (
-    echo 7. Configurer Gh: Gh est deja configure
+
+CALL :IsAuth && (    
+    echo 7. Configurer Gh: Gh est deja configure.
 ) || (
     echo 7. Configurer Gh
 )
 echo =========================================
-echo 8. Creer le depot EqlaExercice sur GitHub (Git et Gh doivent configures avant !)
+CALL :IsAuth && CALL :IsGitConfigured && (
+    echo 8. Creer le depot EqlaExercice sur GitHub.    
+) || (
+    echo 8. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
+)
 echo =========================================
 echo 9. Quitter
 echo.
@@ -51,6 +57,20 @@ if %choix%  EQU 8 CALL :CreateRepository
 if %choix%  EQU 9 GOTO :End
 
 GOTO :Menu
+
+:IsAuth
+gh auth status --hostname "github.com" > NULL 2>&1 && (
+    EXIT /B 0
+) || (
+    EXIT /B 1
+)
+
+:IsGitConfigured
+git config --global --list | findstr  "user.mail user.name" > NULL 2>&1 && (
+    EXIT /B 0
+) || (
+    EXIT /B 1
+)
 
 :git
 echo Telechargement de Git
@@ -101,7 +121,12 @@ EXIT /B O
 
 
 :ConfigureGit
-
+git config --global --unset-all user.name
+git config --global --unset-all user.email
+set /p gitname=Comment t'appelles-tu (Prenom + Nom) ?
+set /p gitemail=Quelle est tron adresse email ?
+git config --global user.name "%gitname%"
+git config --global user.email "%gitemail%"
 EXIT /B O
 
 :ConfigureGh
@@ -109,6 +134,14 @@ gh auth login -s delete_repo
 EXIT /B O
 
 :CreateRepository
+IF NOT EXIST %USERPROFILE%\Documents\EqlaExercices(
+    Mkdir %USERPROFILE%\Documents\EqlaExercices
+    cd %USERPROFILE%\Documents\EqlaExercices
+) ELSE (
+    IF NOT EXIST .git (
+
+    )
+)
 EXIT /B O
 
 :End
