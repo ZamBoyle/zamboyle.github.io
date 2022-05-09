@@ -16,13 +16,14 @@ echo 1. Installer Git
 echo 2. Installer Gh (GitHub CLI)
 echo 3. Installer VSCode
 echo 4. Installer Extensions Java pour VSCode
+echo 5. Installer NVDA
 echo =========================================
-echo 5. Configurer Git
-echo 6. Configurer Gh
+echo 6. Configurer Git
+echo 7. Configurer Gh
 echo =========================================
-echo 7. Creer le depot EqlaExercice
+echo 8. Creer le depot EqlaExercice
 echo =========================================
-echo 8. Quitter
+echo 9. Quitter
 echo.
 set /p choix=Votre choix ?
 echo.
@@ -34,11 +35,12 @@ if %choix%  EQU 1 CALL :Git
 if %choix%  EQU 2 CALL :Gh
 if %choix%  EQU 3 CALL :VSCode
 if %choix%  EQU 4 CALL :ExtensionsVSCode
+if %choix%  EQU 5 CALL :NVDA
 
-if %choix%  EQU 5 CALL :ConfigureGit
-if %choix%  EQU 6 CALL :ConfigureGh
-if %choix%  EQU 7 CALL :CreateRepository
-if %choix%  EQU 8 GOTO :End
+if %choix%  EQU 6 CALL :ConfigureGit
+if %choix%  EQU 7 CALL :ConfigureGh
+if %choix%  EQU 8 CALL :CreateRepository
+if %choix%  EQU 9 GOTO :End
 
 GOTO :Menu
 
@@ -76,6 +78,7 @@ EXIT /B O
 echo Telechargement de NVDA
 curl -l https://www.nvda-fr.org/r?p=nvda -o nvda.exe
 echo Installation de NVDA. Veuillez patienter.
+nvda --minimal --install-silent
 echo Installation de NVDA terminee
 echo.
 EXIT /B O
