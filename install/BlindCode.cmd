@@ -8,7 +8,6 @@ cd %userProfile%\tmp\
 CALL :Menu
 EXIT /B 0
 
-
 :IsAuth
 gh auth status --hostname "github.com" > NULL 2>&1 && (
     EXIT /B 0
@@ -61,14 +60,12 @@ echo Installation de NVDA terminee
 echo.
 EXIT /B O
 
-
 :ExtensionsVSCode
 echo Installation des extensions VSCode
-for %%i in (ms-ceintl.vscode-language-pack-fr vscjava.vscode-java-pack) do call code --force --install-extension %%i
+for %%i in (ms-ceintl.vscode-language-pack-fr vscjava.vscode-java-pack onecentlin.laravel-extension-pack) do call code --force --install-extension %%i
 echo Fin d'installation des extensions VSCode
 echo.
 EXIT /B O
-
 
 :ConfigureGit
 git config --global --unset-all user.name
@@ -94,6 +91,28 @@ IF NOT EXIST %USERPROFILE%\Documents\EqlaExercices(
 )
 EXIT /B O
 
+:OpenJDK
+REM curl -L https://aka.ms/download-jdk/microsoft-jdk-17.0.2.8.1-windows-x64.msi -o MSOpenJDK.msi
+echo Telechargement d'OpenJDK
+curl -L https://download.java.net/java/GA/jdk18.0.1.1/65ae32619e2f40f3a9af3af1851d6e19/2/GPL/openjdk-18.0.1.1_windows-x64_bin.zip -o openjdk.zip
+rem culr -L https://aka.ms/download-jdk/microsoft-jdk-11.0.14.1_1-31205-windows-x64.msi -o ms-openjdk.msi
+echo Fin du telechargement d'OpenJDK
+echo Decompression d'openjdk
+tar -zxvf openjdk.zip
+echo Decompression terminee
+move jdk-18.0.1.1 C:\PROGRA~1
+REM setx /m PATH "%PATH%;C:\Progra~1\jdk-18.0.1.1\bin"
+setx /m JAVA_HOME "C:\Progra~1\jdk-18.0.1.1"
+set pathkey="HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment"
+for /F "usebackq skip=2 tokens=2*" %%A IN (`reg query %pathkey% /v Path`) do (reg add %pathkey% /f /v Path /t REG_SZ /d "%%B;C:\Progra~1\jdk-18.0.1.1\bin")
+rem msiexec ms-openjdk.msi /i ADDLOCAL=FeatureMain,FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome INSTALLDIR="c:\Program Files\Microsoft\" /quiet
+
+REM or set pathkey="HKEY_CURRENT_USER\Environment" for user path.
+REM powershell -command "& {$md=\"[DllImport(`\"user32.dll\"\",SetLastError=true,CharSet=CharSet.Auto)]public static extern IntPtr SendMessageTimeout(IntPtr hWnd,uint Msg,UIntPtr wParam,string lParam,uint fuFlags,uint uTimeout,out UIntPtr lpdwResult);\"; $sm=Add-Type -MemberDefinition $md -Name NativeMethods -Namespace Win32 -PassThru;$result=[uintptr]::zero;$sm::SendMessageTimeout(0xffff,0x001A,[uintptr]::Zero,\"Environment\",2,5000,[ref]$result)}"
+
+
+EXIT /B 0
+
 :Menu
 echo =========================
 echo = BlindCode - Mons 2022 =
@@ -102,7 +121,7 @@ echo 1. Installer Git
 echo 2. Installer Gh - GitHub CLI
 echo 3. Installer VSCode
 echo 4. Installer OpenJDK d'Oracle
-echo 5. Installer Extensions Java pour VSCode
+echo 5. Installer VsCode Extensions: Java, Langue FR, Laravel Extension Pack
 echo 6. Installer NVDA
 echo =========================================
 CALL :IsGitConfigured && ( 
@@ -118,9 +137,9 @@ CALL :IsAuth && (
 )
 echo =========================================
 CALL :IsAuth && CALL :IsGitConfigured && (
-    echo 9. Creer le depot EqlaExercice sur GitHub.    
+    REM echo 9. Creer le depot EqlaExercice sur GitHub.    
 ) || (
-    echo 9. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
+    REM echo 9. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
 )
 echo =========================================
 echo 10. Quitter
@@ -140,7 +159,7 @@ if %choix%  EQU 6 CALL :NVDA
 
 if %choix%  EQU 7 CALL :ConfigureGit
 if %choix%  EQU 8 CALL :ConfigureGh
-if %choix%  EQU 9 CALL :CreateRepository
+REM if %choix%  EQU 9 CALL :CreateRepository
 if %choix%  EQU 10 GOTO :End
 
 GOTO :Menu
