@@ -157,8 +157,8 @@ echo =========================
 echo 1. Installer Git
 echo 2. Installer Gh - GitHub CLI
 echo 3. Installer VSCode
-echo 4. Installer OpenJDK d'Oracle
-echo 5. Installer VsCode Extensions: Java, Langue FR, Laravel Extension Pack
+echo 4. Installer VSCode Extensions: Java, Langue FR, Laravel Extension Pack
+echo 5. Installer OpenJDK d'Oracle
 echo 6. Installer NVDA
 echo =========================================
 CALL :IsGitConfigured && ( 
@@ -190,8 +190,8 @@ if %choix% GEQ 11 CALL :Menu
 if %choix%  EQU 1 CALL :Git
 if %choix%  EQU 2 CALL :Gh
 if %choix%  EQU 3 CALL :VSCode
-if %choix%  EQU 4 CALL :OpenJDK
-if %choix%  EQU 5 CALL :ExtensionsVSCode
+if %choix%  EQU 4 CALL :ExtensionsVSCode
+if %choix%  EQU 5 CALL :OpenJDK
 if %choix%  EQU 6 CALL :NVDA
 
 if %choix%  EQU 7 CALL :ConfigureGit
