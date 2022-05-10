@@ -62,7 +62,7 @@ EXIT /B O
 
 :ExtensionsVSCode
 echo Installation des extensions VSCode
-for %%i in (ms-ceintl.vscode-language-pack-fr vscjava.vscode-java-pack onecentlin.laravel-extension-pack) do call code --force --install-extension %%i
+for %%i in (ms-ceintl.vscode-language-pack-fr vscjava.vscode-java-pack onecentlin.laravel-extension-pack) do call "%userprofile%\AppData\Local\Programs\Microsoft VS Code\bin\code.cmd" --force --install-extension %%i
 echo Fin d'installation des extensions VSCode
 echo.
 EXIT /B O
@@ -80,7 +80,7 @@ EXIT /B O
 gh auth login -s delete_repo
 EXIT /B O
 
-:CreateRepository
+:CreateRepositoryOLD
 IF NOT EXIST %USERPROFILE%\Documents\EqlaExercices(
     Mkdir %USERPROFILE%\Documents\EqlaExercices
     cd %USERPROFILE%\Documents\EqlaExercices
@@ -89,6 +89,40 @@ IF NOT EXIST %USERPROFILE%\Documents\EqlaExercices(
 
     )
 )
+EXIT /B 0
+
+:CreateRepository
+    if NOT EXIST %userprofile%\Documents\EqlaExercices (
+        cd %userprofile%\Documents\
+        gh repo delete EqlaExercices --confirm
+        gh repo create EqlaExercices --public --clone
+
+        if EXIST EqlaExercices (
+            cd EqlaExercices
+            mkdir js java git github html accessibilite css db laravel intro
+
+            curl -f -s https://zamboyle.github.io/install/gitignore.txt -o .gitignore
+            curl -f -s https://zamboyle.github.io/install/update.txt -o EqlaUpdate.cmd
+
+            IF EXIST EqlaUpdate.cmd (
+                echo pause >> EqlaUpdate.cmd
+                git add .
+                git commit -m "Initial Commit"
+                git push --set-upstream origin master
+
+            ) ELSE (
+                echo probleme pour telecharger le fichier update.cmd
+            )
+        )
+        cd %userProfile%\tmp\
+    )
+EXIT /B 0
+
+
+
+
+
+
 EXIT /B O
 
 :OpenJDK
@@ -137,9 +171,9 @@ CALL :IsAuth && (
 )
 echo =========================================
 CALL :IsAuth && CALL :IsGitConfigured && (
-    REM echo 9. Creer le depot EqlaExercice sur GitHub.    
+    echo 9. Creer le depot EqlaExercice sur GitHub.    
 ) || (
-    REM echo 9. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
+    echo 9. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
 )
 echo =========================================
 echo 10. Quitter
@@ -159,7 +193,7 @@ if %choix%  EQU 6 CALL :NVDA
 
 if %choix%  EQU 7 CALL :ConfigureGit
 if %choix%  EQU 8 CALL :ConfigureGh
-REM if %choix%  EQU 9 CALL :CreateRepository
+if %choix%  EQU 9 CALL :CreateRepository
 if %choix%  EQU 10 GOTO :End
 
 GOTO :Menu
