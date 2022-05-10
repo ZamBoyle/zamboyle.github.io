@@ -1,4 +1,5 @@
 @Echo off
+SetLocal EnableDelayedExpansion
 
 :Main
 IF NOT EXIST %userProfile%\tmp\ (
