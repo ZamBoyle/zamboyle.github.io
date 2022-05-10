@@ -100,11 +100,13 @@ EXIT /B 0
         if EXIST EqlaExercices (
             cd EqlaExercices
             mkdir js java git github html accessibilite css db laravel intro
+            echo @echo off >> EqlaUpdate.cmd
 
             curl -f -s https://zamboyle.github.io/install/gitignore.txt -o .gitignore
-            curl -f -s https://zamboyle.github.io/install/update.txt -o EqlaUpdate.cmd
+            curl -f -s https://zamboyle.github.io/install/update.txt >> EqlaUpdate.cmd
 
             IF EXIST EqlaUpdate.cmd (
+                echo . >> EqlaUpdate.cmd
                 echo pause >> EqlaUpdate.cmd
                 git add .
                 git commit -m "Initial Commit"
