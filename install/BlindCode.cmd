@@ -121,13 +121,6 @@ EXIT /B 0
     )
 EXIT /B 0
 
-
-
-
-
-
-EXIT /B O
-
 :OpenJDK
 REM curl -L https://aka.ms/download-jdk/microsoft-jdk-17.0.2.8.1-windows-x64.msi -o MSOpenJDK.msi
 echo Telechargement d'OpenJDK
