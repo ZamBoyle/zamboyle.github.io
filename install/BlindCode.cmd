@@ -194,8 +194,6 @@ if %choix%  EQU 10 GOTO :End
 
 GOTO :Menu
 
-
-
 :End
 echo.
 echo Bonne journee !
