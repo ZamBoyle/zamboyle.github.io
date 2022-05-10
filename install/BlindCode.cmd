@@ -81,7 +81,7 @@ EXIT /B O
 gh auth login -s delete_repo
 EXIT /B O
 
-:CreateRepositoryOLD
+:EECreateRepositoryOLD
 IF NOT EXIST %USERPROFILE%\Documents\EqlaExercices(
     Mkdir %USERPROFILE%\Documents\EqlaExercices
     cd %USERPROFILE%\Documents\EqlaExercices
@@ -92,7 +92,7 @@ IF NOT EXIST %USERPROFILE%\Documents\EqlaExercices(
 )
 EXIT /B 0
 
-:CreateRepository
+:CreateRepo
     if NOT EXIST %userprofile%\Documents\EqlaExercices (
         cd %userprofile%\Documents\
         gh repo delete EqlaExercices --confirm
@@ -189,7 +189,7 @@ if %choix%  EQU 6 CALL :NVDA
 
 if %choix%  EQU 7 CALL :ConfigureGit
 if %choix%  EQU 8 CALL :ConfigureGh
-if %choix%  EQU 9 CALL :CreateRepository
+if %choix%  EQU 9 CALL :CreateRepo
 if %choix%  EQU 10 GOTO :End
 
 GOTO :Menu
