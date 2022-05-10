@@ -29,6 +29,7 @@ echo Telechargement du fichier de reponse pour l'installation de Git: gitunatten
 curl -O -f -s https://zamboyle.github.io/Cours/2022/Git/Install/gitunattended.txt
 echo Installation de Git. Veuillez patienter.
 gitinstall.exe  /VERYSILENT /LOADINF="gitunattended.txt"
+git config --global core.safecrlf false
 echo Installation de Git terminee
 echo.
 EXIT /B O
@@ -106,7 +107,7 @@ EXIT /B 0
             curl -f -s https://zamboyle.github.io/install/update.txt >> EqlaUpdate.cmd
 
             IF EXIST EqlaUpdate.cmd (
-                echo . >> EqlaUpdate.cmd
+                echo. >> EqlaUpdate.cmd
                 echo pause >> EqlaUpdate.cmd
                 git add .
                 git commit -m "Initial Commit"
