@@ -114,8 +114,8 @@ echo =========================
 echo = BlindCode - Mons 2022 =
 echo =========================
 
-CALL :IsGitInstalled && ( echo 1. Réinstaller Git : DEJA INSTALLE.) || ( echo 1. Installer Git)
-CALL :IsGhInstalled && ( echo 2. Réinstaller Gh : DEJA INSTALLE.) || ( echo 2. Installer Gh)
+CALL :IsGitInstalled && ( echo 1. Reinstaller Git : DEJA INSTALLE.) || ( echo 1. Installer Git)
+CALL :IsGhInstalled && ( echo 2. Reinstaller Gh : DEJA INSTALLE.) || ( echo 2. Installer Gh)
 CALL :IsGitInstalled && (
     CALL :IsGitConfigured && ( 
         echo 3. Configurer Git: DEJA CONFIGURE.
@@ -134,8 +134,8 @@ CALL :IsGhInstalled && (
 
 CALL :IsAuth && CALL :IsGitConfigured && (
     echo 5. Creer le depot EqlaExercice sur GitHub.    
-    ) || (
 )
+
 echo =========================
 echo 6. Quitter
 echo.
