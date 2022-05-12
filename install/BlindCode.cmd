@@ -3,6 +3,8 @@ SetLocal EnableDelayedExpansion
 
 
 :Main
+CALL :IsVSCodeInstalled
+
 IF NOT EXIST %userProfile%\tmp\ (
     mkdir %userProfile%\tmp\
 ) 
@@ -40,6 +42,17 @@ git --version >nul 2>&1 && (
 gh --version >nul 2>&1 && (
     EXIT /B 0
 ) || (
+    EXIT /B 1
+)
+
+:IsVSCodeInstalled
+set VSCODE_DEV=
+set ELECTRON_RUN_AS_NODE=1
+REM "%userprofile%\AppData\Local\Programs\Microsoft VS Code\bin\code.cmd" --version >nul 2>&1 && (
+REM "%userprofile%\AppData\Local\Programs\Microsoft VS Code\Code.exe" "%userprofile%\AppData\Local\Programs\Microsoft VS Code\resources\app\out\cli.js" --ms-enable-electron-run-as-node --version >nul 2>&1 && (
+IF EXIST "%userprofile%\AppData\Local\Programs\Microsoft VS Code\Code.exe" (
+    EXIT /B 0
+) ELSE (
     EXIT /B 1
 )
 
@@ -163,8 +176,6 @@ rem msiexec ms-openjdk.msi /i ADDLOCAL=FeatureMain,FeatureEnvironment,FeatureJar
 
 REM or set pathkey="HKEY_CURRENT_USER\Environment" for user path.
 REM powershell -command "& {$md=\"[DllImport(`\"user32.dll\"\",SetLastError=true,CharSet=CharSet.Auto)]public static extern IntPtr SendMessageTimeout(IntPtr hWnd,uint Msg,UIntPtr wParam,string lParam,uint fuFlags,uint uTimeout,out UIntPtr lpdwResult);\"; $sm=Add-Type -MemberDefinition $md -Name NativeMethods -Namespace Win32 -PassThru;$result=[uintptr]::zero;$sm::SendMessageTimeout(0xffff,0x001A,[uintptr]::Zero,\"Environment\",2,5000,[ref]$result)}"
-
-
 EXIT /B 0
 
 :Menu
@@ -172,9 +183,9 @@ echo =========================
 echo = BlindCode - Mons 2022 =
 echo =========================
 
-CALL :IsGitInstalled && (echo 1. Installer Git : DEJA INSTALLE) || (echo echo 1. Installer Git)
-CALL :IsGhInstalled &&(echo 2. Installer Gh : DEJA INSTALLE) || ( echo Installer Gh)
-echo 3. Installer VSCode
+CALL :IsGitInstalled && ( echo 1. Installer Git : DEJA INSTALLE) || ( echo echo 1. Installer Git)
+CALL :IsGhInstalled && ( echo 2. Installer Gh : DEJA INSTALLE) || ( echo Installer Gh)
+CALL :IsVSCodeInstalled && ( echo 3. Installer VSCode : DEJA INSTALLE) || ( echo 3. Installer VSCode)
 echo 4. Installer VSCode Extensions: Java, Langue FR, Laravel Extension Pack
 echo 5. Installer OpenJDK d'Oracle
 echo 6. Installer NVDA
