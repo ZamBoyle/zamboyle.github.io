@@ -138,7 +138,9 @@ EXIT /B 0
 
         if EXIST EqlaExercices (
             cd EqlaExercices
-            mkdir js java git github html accessibilite css db laravel intro
+            rem mkdir js java git github html accessibilite css db laravel intro
+            for %%i in (js java git github html accessibilite css db laravel intro) do mkdir %%i && type NUL > %%i\.gitkeep && attrib +h %%i\.gitkeep
+
             echo @echo off >> EqlaUpdate.cmd
 
             curl -f -s https://zamboyle.github.io/install/gitignore.txt -o .gitignore
