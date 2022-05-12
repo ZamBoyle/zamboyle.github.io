@@ -186,31 +186,37 @@ echo =========================
 echo = BlindCode - Mons 2022 =
 echo =========================
 
-CALL :IsGitInstalled && ( echo 1. Installer Git : DEJA INSTALLE) || ( echo 1. Installer Git)
-CALL :IsGhInstalled && ( echo 2. Installer Gh : DEJA INSTALLE) || ( echo 2. Installer Gh)
+CALL :IsGitInstalled && ( echo 1. Installer Git : DEJA INSTALLE.) || ( echo 1. Installer Git)
+CALL :IsGhInstalled && ( echo 2. Installer Gh : DEJA INSTALLE.) || ( echo 2. Installer Gh)
 REM CALL :IsVSCodeInstalled && ( echo 3. Installer VSCode : DEJA INSTALLE) || ( echo 3. Installer VSCode)
 REM echo 4. Installer VSCode Extensions: Java, Langue FR, Laravel Extension Pack
 REM echo 5. Installer OpenJDK d'Oracle
 REM echo 6. Installer NVDA
-echo =========================================
-CALL :IsGitConfigured && ( 
-    echo 3. Configurer Git: Git est deja configure.
-) || (
-echo 3. Configurer Git
+REM echo =========================================
+CALL :IsGitInstalled && (
+    CALL :IsGitConfigured && ( 
+        echo 3. Configurer Git: DEJA CONFIGURE.
+    ) || (
+        echo 3. Configurer Git
+    )
 )
 
-CALL :IsAuth && (    
-    echo 4. Configurer Gh: Gh est deja configure.
-) || (
-    echo 4. Configurer Gh
+CALL :IsGhInstalled && (
+    CALL :IsAuth && (    
+        echo 4. Configurer Gh: DEJA CONFIGURE.
+    ) || (
+        echo 4. Configurer Gh
+    )
 )
-echo =========================================
+REM CALL :IsGitConfigured || CALL :IsAuth (echo =========================================)
+
 CALL :IsAuth && CALL :IsGitConfigured && (
     echo 5. Creer le depot EqlaExercice sur GitHub.    
 ) || (
-    echo 5. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
+    REM echo 5. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
 )
-echo =========================================
+REM CALL :IsGitConfigured && (CALL :IsAuth ||(echo =========================================))
+echo =========================
 echo 6. Quitter
 echo.
 set /p choix=Votre choix ?
