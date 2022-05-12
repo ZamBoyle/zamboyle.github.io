@@ -211,7 +211,7 @@ CALL :IsAuth && CALL :IsGitConfigured && (
     echo 5. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
 )
 echo =========================================
-echo 10. Quitter
+echo 6. Quitter
 echo.
 set /p choix=Votre choix ?
 echo.
