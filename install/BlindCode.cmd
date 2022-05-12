@@ -36,6 +36,14 @@ git --version >nul 2>&1 && (
     EXIT /B 1
 )
 
+:IsGhInstalled
+gh --version >nul 2>&1 && (
+    EXIT /B 0
+) || (
+    EXIT /B 1
+)
+
+
 
 
 :git
@@ -163,8 +171,9 @@ EXIT /B 0
 echo =========================
 echo = BlindCode - Mons 2022 =
 echo =========================
-echo 1. Installer Git
-echo 2. Installer Gh - GitHub CLI
+
+CALL :IsGitInstalled && (echo 1. Installer Git : DEJA INSTALLE) || (echo echo 1. Installer Git)
+CALL :IsGhInstalled &&(echo 2. Installer Gh : DEJA INSTALLE) || ( echo Installer Gh)
 echo 3. Installer VSCode
 echo 4. Installer VSCode Extensions: Java, Langue FR, Laravel Extension Pack
 echo 5. Installer OpenJDK d'Oracle
