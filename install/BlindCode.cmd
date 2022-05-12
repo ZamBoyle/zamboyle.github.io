@@ -194,21 +194,21 @@ REM echo 5. Installer OpenJDK d'Oracle
 REM echo 6. Installer NVDA
 echo =========================================
 CALL :IsGitConfigured && ( 
-    echo 7. Configurer Git: Git est deja configure.
+    echo 3. Configurer Git: Git est deja configure.
 ) || (
-echo 7. Configurer Git
+echo 3. Configurer Git
 )
 
 CALL :IsAuth && (    
-    echo 8. Configurer Gh: Gh est deja configure.
+    echo 4. Configurer Gh: Gh est deja configure.
 ) || (
-    echo 8. Configurer Gh
+    echo 4. Configurer Gh
 )
 echo =========================================
 CALL :IsAuth && CALL :IsGitConfigured && (
-    echo 9. Creer le depot EqlaExercice sur GitHub.    
+    echo 5. Creer le depot EqlaExercice sur GitHub.    
 ) || (
-    echo 9. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
+    echo 5. Creer le depot EqlaExercice sur GitHub [Git et Gh doivent configures avant !]
 )
 echo =========================================
 echo 10. Quitter
@@ -217,7 +217,7 @@ set /p choix=Votre choix ?
 echo.
 
 if %choix% LEQ  0 CALL :Menu
-if %choix% GEQ 11 CALL :Menu
+if %choix% GEQ 7 CALL :Menu
 
 if %choix%  EQU 1 CALL :Git
 if %choix%  EQU 2 CALL :Gh
@@ -226,10 +226,10 @@ REM if %choix%  EQU 4 CALL :ExtensionsVSCode
 REM if %choix%  EQU 5 CALL :OpenJDK
 REM if %choix%  EQU 6 CALL :NVDA
 
-if %choix%  EQU 7 CALL :ConfigureGit
-if %choix%  EQU 8 CALL :ConfigureGh
-if %choix%  EQU 9 CALL :CreateRepo
-if %choix%  EQU 10 GOTO :End
+if %choix%  EQU 3 CALL :ConfigureGit
+if %choix%  EQU 4 CALL :ConfigureGh
+if %choix%  EQU 5 CALL :CreateRepo
+if %choix%  EQU 6 GOTO :End
 
 GOTO :Menu
 
