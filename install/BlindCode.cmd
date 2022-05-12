@@ -2,7 +2,6 @@
 SetLocal EnableDelayedExpansion
 
 :Main
-CALL :IsVSCodeInstalled
 
 IF NOT EXIST %userProfile%\tmp\ (
     mkdir %userProfile%\tmp\
