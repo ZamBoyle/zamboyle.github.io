@@ -1,6 +1,7 @@
 @Echo off
 SetLocal EnableDelayedExpansion
 
+
 :Main
 IF NOT EXIST %userProfile%\tmp\ (
     mkdir %userProfile%\tmp\
@@ -18,13 +19,13 @@ gh auth status --hostname "github.com" > NULL 2>&1 && (
 
 :IsGitConfigured
 
-IF :IsGitConfigured EQU 0 (
+CALL :IsGitInstalled && (
     git config --global --list | findstr  "user.mail user.name" > NULL 2>&1 && (
         EXIT /B 0
     ) || (
         EXIT /B 1
     )
-) ELSE (
+) || (
     EXIT /B 1
 )
 
