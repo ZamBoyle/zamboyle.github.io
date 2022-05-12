@@ -17,11 +17,25 @@ gh auth status --hostname "github.com" > NULL 2>&1 && (
 )
 
 :IsGitConfigured
-git config --global --list | findstr  "user.mail user.name" > NULL 2>&1 && (
+
+IF :IsGitConfigured EQU 0 (
+    git config --global --list | findstr  "user.mail user.name" > NULL 2>&1 && (
+        EXIT /B 0
+    ) || (
+        EXIT /B 1
+    )
+) ELSE (
+    EXIT /B 1
+)
+
+:IsGitInstalled
+git --version >nul 2>&1 && (
     EXIT /B 0
 ) || (
     EXIT /B 1
 )
+
+
 
 :git
 echo Telechargement de Git
