@@ -132,6 +132,7 @@ EXIT /B 0
 :CreateRepo
     if NOT EXIST %userprofile%\Documents\EqlaExercices (
         cd %userprofile%\Documents\
+
         gh repo delete EqlaExercices --confirm
         gh repo create EqlaExercices --public --clone
 
@@ -148,8 +149,8 @@ EXIT /B 0
                 echo pause >> EqlaUpdate.cmd
                 git add .
                 git commit -m "Initial Commit"
+                git config --global --add safe.directory %userprofile%\Documents\EqlaExercices                
                 git push --set-upstream origin master
-
             ) ELSE (
                 echo probleme pour telecharger le fichier update.cmd
             )
