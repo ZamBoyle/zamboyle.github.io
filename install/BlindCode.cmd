@@ -188,10 +188,10 @@ echo =========================
 
 CALL :IsGitInstalled && ( echo 1. Installer Git : DEJA INSTALLE) || ( echo 1. Installer Git)
 CALL :IsGhInstalled && ( echo 2. Installer Gh : DEJA INSTALLE) || ( echo 2. Installer Gh)
-CALL :IsVSCodeInstalled && ( echo 3. Installer VSCode : DEJA INSTALLE) || ( echo 3. Installer VSCode)
-echo 4. Installer VSCode Extensions: Java, Langue FR, Laravel Extension Pack
-echo 5. Installer OpenJDK d'Oracle
-echo 6. Installer NVDA
+REM CALL :IsVSCodeInstalled && ( echo 3. Installer VSCode : DEJA INSTALLE) || ( echo 3. Installer VSCode)
+REM echo 4. Installer VSCode Extensions: Java, Langue FR, Laravel Extension Pack
+REM echo 5. Installer OpenJDK d'Oracle
+REM echo 6. Installer NVDA
 echo =========================================
 CALL :IsGitConfigured && ( 
     echo 7. Configurer Git: Git est deja configure.
@@ -221,10 +221,10 @@ if %choix% GEQ 11 CALL :Menu
 
 if %choix%  EQU 1 CALL :Git
 if %choix%  EQU 2 CALL :Gh
-if %choix%  EQU 3 CALL :VSCode
-if %choix%  EQU 4 CALL :ExtensionsVSCode
-if %choix%  EQU 5 CALL :OpenJDK
-if %choix%  EQU 6 CALL :NVDA
+REM if %choix%  EQU 3 CALL :VSCode
+REM if %choix%  EQU 4 CALL :ExtensionsVSCode
+REM if %choix%  EQU 5 CALL :OpenJDK
+REM if %choix%  EQU 6 CALL :NVDA
 
 if %choix%  EQU 7 CALL :ConfigureGit
 if %choix%  EQU 8 CALL :ConfigureGh
