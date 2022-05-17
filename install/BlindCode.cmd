@@ -37,7 +37,7 @@ git --version >nul 2>&1 && (
 )
 
 :IsGhInstalled
-gh --version >nul 2>&1 && (
+"C:\Program Files\GitHub CLI\gh" --version >nul 2>&1 && (
     EXIT /B 0
 ) || (
     EXIT /B 1
