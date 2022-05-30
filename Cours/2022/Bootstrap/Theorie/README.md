@@ -65,7 +65,7 @@ Si vous devez continuer de supporter Internet Explorer alors vous devrez vous to
 
 ### 5. Comment Utiliser Bootstrap ?
 
-Bootstrap est un Framework qui est composé d’un ensemble de fichiers. Pour utiliser Bootstrap, il nous faut donc utiliser des fichiers que vous pourrez trouver à cette adresse : https://getbootstrap.com/docs/4.6/getting-started/download/
+Bootstrap est un Framework qui est composé d’un ensemble de fichiers. Pour utiliser Bootstrap, il nous faut donc utiliser des fichiers que vous pourrez trouver à cette adresse : https://getbootstrap.com/docs/5.2/getting-started/download/
 
 Il y a deux manières d’utiliser ces fichiers :
 
@@ -80,11 +80,11 @@ Cependant, avec Bootstrap 4.x et versions antérieures, il est impératif d’aj
 
 C’est pourquoi Bootstrap 5 n’utilise plus jQuery. Le JavaScript moderne permet de s’en affranchir.
 
-Vous aurez des exemples d’intégration à la page suivante : https://getbootstrap.com/docs/4.6/getting-started/introduction/
+Vous aurez des exemples d’intégration à la page suivante : https://getbootstrap.com/docs/5.2/getting-started/introduction/
 
 Pour vous simplifier la tâche, j’ai créé dans le répertoire Exercices/Templates un fichier html modèle pour commencer vos exercices. Il se nomme Template.html et les ressources nécessaires pointent sur des CDN. Maintenant, libre à vous de l’utiliser ou non.
 
-Dans ce fichier, j’ai fait pointer vers la dernière version 4.6 de Bootstrap. De plus, j’ai ajouté un fichier CSS supplémentaire (Icones Bootstrap) que nous discuterons plus tard mais comme ça nous avons notre page web modèle Bootstrap déjà prête pour cela.
+Dans ce fichier, j’ai fait pointer vers la dernière version 4.6 de Bootstrap. De plus, j’ai ajouté un fichier CSS supplémentaire (Icônes Bootstrap) que nous discuterons plus tard mais comme ça nous avons notre page web modèle Bootstrap déjà prête pour cela.
 
 ## IV. Intégration des Fichiers Bootstrap
 
