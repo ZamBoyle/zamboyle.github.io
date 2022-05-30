@@ -231,18 +231,19 @@ Elle n'existe plus dans Bootstrap 5. Elle permettait de justifier le texte. La r
 ### 2. Alignement du texte fonction de l’écran
 
 Des abréviations peuvent s’ajouter à certaines classes pour conditionner l’action en fonction de l’écran.
-    • sm (small) :résolution supérieure ou égale à 576 pixels et inférieure à 768 pixels.
-    • md (medium): résolution supérieure ou égale à 768 pixels et inférieure à 992 pixels. 
-    • lg (large): résolution supérieure ou égale à 992 pixels et inférieure à 1200 pixels
-    • xl (extra large): résolution ou égale à 1200 pixels.
+- sm (small) :résolution supérieure ou égale à 576 pixels et inférieure à 768 pixels.
+- md (medium): résolution supérieure ou égale à 768 pixels et inférieure à 992 pixels. 
+- lg (large): résolution supérieure ou égale à 992 pixels et inférieure à 1200 pixels
+- xl (extra large): résolution supérieure ou égale à 1200 pixels.
+- xxl (extra extra large): résolution supérieure ou égale à 1400 pixels.
+
 
 Dans la littérature Bootstrap on voit souvent l’utilisation du caractère * pour certaines classes. Ça veut dire qu’il le faut remplacer par une valeur numérique ou du texte.
-Exemples :
-    .text-*-right : .text-xl-right
-    .text-*-center : .text-md-center
-    .text-*-left : .text-sm-left
 
-D’après la feuille de style de Bootstrap, je n’ai pas trouvé ces abréviations pour la classe text-justify.
+Exemples :
+    .text-\*-start : .text-xl-right
+    .text-\*-center : .text-md-center
+    .text-\*-end : .text-sm-left
 
 ### 3. Les classes de mise en forme
 
@@ -252,14 +253,24 @@ La classe .font-weight-normal: met le texte normal.
 La classe .font-weight-light: met dans une font claire.
 La classe .font-weight-lighter: met dans une font encore plus claire.
 La classe .font-italic: met en le texte en italic.
-    4. Transformation du texte
+
+### 4. Transformation du texte
 La classe .text-lowercase: texte converti en minuscules.
 La classe .text-uppercase: TEXTE CONVERTI EN MAJUSCULES.
 La classe .text-capitalize: Première Lettre De Chaque Mot Est En Majuscule.
+
 Exemples :
+```html
 <p>.text-lowercase: <span class="text-lowercase">TEXTE CONVERTI EN MINUSCULES </span>.</p>
 <p>.text-uppercase: <span class="text-uppercase">texte converti en majuscules</span>.</p>
 <p>.text-capitalize: <span class="text-capitalize">première lettre de chaque mot est en majuscule.</span></p>
+```
+Résultat:
+```
+texte converti en miniscules.
+TEXTE CONVERTI EN MAJUSCULES.
+Première Lettre De Chaque Mot Est En Majuscule.
+```
 
 ## VII. Les images
 Sur le site Bootstrap : https://getbootstrap.com/docs/4.6/content/images/
