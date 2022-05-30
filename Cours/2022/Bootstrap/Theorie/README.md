@@ -228,8 +228,6 @@ Elle n'existe plus dans Bootstrap 5. Elle permettait de justifier le texte. La r
 <p class="text-end">Le texte est aligné à droite sur tout type d'écran.</p>
 ```
 
-
-
 ### 2. Alignement du texte fonction de l’écran
 
 Des abréviations peuvent s’ajouter à certaines classes pour conditionner l’action en fonction de l’écran.
@@ -262,15 +260,17 @@ Exemples :
 <p>.text-lowercase: <span class="text-lowercase">TEXTE CONVERTI EN MINUSCULES </span>.</p>
 <p>.text-uppercase: <span class="text-uppercase">texte converti en majuscules</span>.</p>
 <p>.text-capitalize: <span class="text-capitalize">première lettre de chaque mot est en majuscule.</span></p>
-    VII. Les images
+
+## VII. Les images
 Sur le site Bootstrap : https://getbootstrap.com/docs/4.6/content/images/
 Nous allons voir que Bootstrap permet de facilement rendre une image responsive, en faire une jolie vignette, aligner celle-ci.
 Evidemment toutes ces classes peuvent être combinées entre elles comme dans le précédent exemple.
-    1. Responsive
+
+### 1. Responsive
 Bootstrap permet de rapidement permettre à une image d’être responsive. Ajouter la classe .img-fluid et votre image va s’auto-adapter en fonction de l’écran. 
 <img src="Images/logo_eqla.png" class="img-fluid" alt="logo d'Eqla"width="10000px"  />
 Ici on a ajouté l’attribut width="10000px". L’image ne fera bien sûr jamais 10000 pixels. Bootstrap veille au grain. 😊
-    2. Thumbnail
+### 2. Thumbnail
 La classe .img-thumbnail ajoute à l’image un bord blanc arrondi.
 <img src="/Images/paris.jpg" class="img-thumbnail" alt="Image de paris" />
     3. Alignement
@@ -283,7 +283,10 @@ On peut aussi définir ces alignements en fonction du périphérique :.float-*-
     • md : medium
     • lg : large
     • xl : extra-large
-    VIII. Le composant Jumbotron
+
+
+
+VIII. Le composant Jumbotron
 Sur le site Bootstrap : https://getbootstrap.com/docs/4.6/components/jumbotron/
 Le Jumbotron est une boite rectangulaire qui va permettre de mettre en avant un certain message. Il est très grand et donne directement un impact visuel. On ne peut pas passer à côté quand on arrive sur une page.
 Pour définir un jumbotron, on va ajouter une classe .jumbotron à un élément conteneur de type div. On va ensuite pouvoir placer plus ou moins n’importe quel contenu HTML à l’intérieur.
