@@ -1,6 +1,6 @@
 (function () {
 	
-	var previewForm = document.getElementById('previewform');
+	var previewForm = document.getElementsByTagName("body");
 
 	var url = location.search.substring(1).replace(/\/\/github\.com/, '//raw.githubusercontent.com').replace(/\/blob\//, '/'); //Get URL of the raw file
 

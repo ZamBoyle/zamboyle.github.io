@@ -48,66 +48,9 @@
 			color: #666;
 		}
 	</style>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			let imgUrl = "../assets/img/Sexyboy.png"
-			let colors = ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "muted", "white"]
-			let nb = 100;
-			let previous = document.body;
-			let padding = "p-2";
-			for (let index = 0; index < colors.length; index++) {
-				var element = document.createElement("div");
-				element.className = padding + " mt-2 bg-" + colors[index];
-				previous.appendChild(element);
-				previous = element;
-				setTimeout(function(){console.log("j'attends 1 seconde."+index)},1000);
-				console.log((index+1)+". Hello");
-				//delay(1000).then(() => console.log('ran after 1 second1 passed'));
-			}
-			let imgElement = document.createElement("img");
-			imgElement.setAttribute("src", imgUrl);
-			imgElement.className = "img-fluid w-100";
-			previous.appendChild(imgElement);
-
-
-			function delay(time) {
-				return new Promise(resolve => setTimeout(resolve, time));
-			}
-
-
-
-		});
-
-
-	</script>
 </head>
 
 <body>
-
-	<!-- <div class="border bg-info rounded p-3">
-		<div class="border bg-danger rounded p-3">
-			<div class="border bg-warning rounded p-3">
-				<img class="img-fluid border rounded bg-success w-100"
-					src="https://getbootstrap.com/docs/5.2/assets/img/bootstrap-icons.png">
-			</div>
-		</div>
-	</div> -->
-
-
-	<form id="previewform" onsubmit="location.href='/?'+this.file.value;return false">
-		<h1>GitHub &amp; BitBucket HTML Preview</h1>
-		<p>
-			Enter URL of the HTML file to preview:
-			<input type="url" id="file" value="" placeholder="e.g. https://github.com/user/repo/blob/master/index.html"
-				size="60" autofocus>
-			<input type="submit" value="Preview">
-		</p>
-		<p>or prepend to the URL:
-			<code><strong>http://htmlpreview.github.io/?</strong>https://github.com/twbs/bootstrap/blob/gh-pages/2.3.2/index.html</code>
-		</p>
-		<p id="footer">Developed by <a href="https://github.com/niutech">niu tech</a> | Contribute on <a
-				href="https://github.com/htmlpreview/htmlpreview.github.com">GitHub</a></p>
-	</form>
 
 	<script src="./htmlpreview.js"></script>
 	<!-- Bootstrap Librairie JavaScript -->
