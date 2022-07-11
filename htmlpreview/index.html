@@ -50,24 +50,26 @@
 	</style>
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
-			let imgUrl = "../assets/img/Sexyboy.png"
-			let colors = ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "white"]
-			let nb = 10;
-			let previous = document.body;
-			let padding = "px-1 py-1";
-			for (let cpt = 0; cpt < nb; cpt++) {
-				for (let index = 0; index < colors.length; index++) {
-					var element = document.createElement("div");
-					element.className = padding + " bg-" + colors[index];
-					previous.appendChild(element);
-					previous = element;
+			if (location.search == '') {
+				let imgUrl = "../assets/img/Sexyboy.png"
+				let colors = ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "white"]
+				let nb = 10;
+				let previous = document.body;
+				let padding = "px-1 py-1";
+				for (let cpt = 0; cpt < nb; cpt++) {
+					for (let index = 0; index < colors.length; index++) {
+						var element = document.createElement("div");
+						element.className = padding + " bg-" + colors[index];
+						previous.appendChild(element);
+						previous = element;
+					}
 				}
-			}
 
-			let imgElement = document.createElement("img");
-			imgElement.setAttribute("src", imgUrl);
-			imgElement.className = "img-fluid w-100";
-			previous.appendChild(imgElement);
+				let imgElement = document.createElement("img");
+				imgElement.setAttribute("src", imgUrl);
+				imgElement.className = "img-fluid w-100";
+				previous.appendChild(imgElement);
+			}
 		});
 
 
