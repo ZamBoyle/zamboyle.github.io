@@ -23,11 +23,32 @@ function loadImage(tomato) {
         }
     });
 }
+const body = document.getElementsByTagName("h1")[0];
+body.innerHTML = "Begin";
 
 navigator.mediaDevices
     .enumerateDevices()
     .then(function (devices) {
+        body.innerHTML += "enumerateDevices";
+        const hasCamera = devices.some(device => device.kind === "videoinput");
+        if (hasCamera) {
+            document.body.innerHTML += "Caméra détectée!";
+        } else {
+            document.body.innerHTML += "Aucune caméra trouvée.";
+        }
+    })
+    .catch(function (error) {
+        document.body.innerHTML += "Une erreur s'est produite : " + error;
+    });
+body.innerHTML = "End";
+
+/*
+navigator.mediaDevices
+    .enumerateDevices()
+    .then(function (devices) {
         let cameraId;
+
+        document.getElementsByTagName("body")[0].innerHTML = devices.length + " caméras trouvées";
 
         // Trouvez l'id de la caméra arrière
         devices.forEach(function (device) {
@@ -55,8 +76,9 @@ navigator.mediaDevices
     })
     .catch(function (error) {
         console.log("Une erreur s'est produite : " + error);
+        document.getElementsByTagName("body")[0].innerHTML = "Une erreur s'est produite : " + error;
     });
-
+*/
 const video = document.getElementById("camera");
 const canvasElement = document.getElementById("canvas");
 const canvas = canvasElement.getContext("2d");
