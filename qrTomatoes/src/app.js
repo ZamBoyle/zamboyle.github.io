@@ -81,7 +81,7 @@ navigator.mediaDevices
     .catch(function (error) {
         if (error.name === 'OverconstrainedError') {
             // Tentez d'accéder à la caméra avec des contraintes moins restrictives
-            navigator.mediaDevices.getUserMedia({ video: true });
+            return navigator.mediaDevices.getUserMedia({ video: true });
         }
         else {
             console.log("Une erreur s'est produite : " + error);
