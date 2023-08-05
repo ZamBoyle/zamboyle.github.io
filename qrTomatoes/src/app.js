@@ -47,7 +47,7 @@ if (navigator && navigator.mediaDevices){// && navigator.mediaDevices.enumerateD
 }
 body.innerHTML += "4. End" + nl;
 */
-body.innerHTML = navigator.mediaDevices ? "2. navigator.mediaDevices" + nl : "2. Pas de navigator" + nl;
+//body.innerHTML = navigator.mediaDevices ? "2. navigator.mediaDevices" + nl : "2. Pas de navigator" + nl;
 navigator.mediaDevices
     .enumerateDevices()
     .then(function (devices) {
