@@ -24,8 +24,8 @@ function loadImage(tomato) {
     });
 }
 const body = document.getElementsByTagName("h1")[0];
-const nl = "<br>";
-body.innerHTML = "1. Begin" + nl;
+//const nl = "<br>";
+//body.innerHTML = "1. Begin" + nl;
 /*
 if (navigator && navigator.mediaDevices){// && navigator.mediaDevices.enumerateDevices) {
     navigator.mediaDevices
