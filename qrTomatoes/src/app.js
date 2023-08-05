@@ -24,31 +24,35 @@ function loadImage(tomato) {
     });
 }
 const body = document.getElementsByTagName("h1")[0];
-body.innerHTML = "Begin";
-
-navigator.mediaDevices
-    .enumerateDevices()
-    .then(function (devices) {
-        body.innerHTML += "enumerateDevices";
-        const hasCamera = devices.some(device => device.kind === "videoinput");
-        if (hasCamera) {
-            document.body.innerHTML += "Caméra détectée!";
-        } else {
-            document.body.innerHTML += "Aucune caméra trouvée.";
-        }
-    })
-    .catch(function (error) {
-        document.body.innerHTML += "Une erreur s'est produite : " + error;
-    });
-body.innerHTML = "End";
-
+const nl = "<br>";
+body.innerHTML = "1. Begin" + nl;
 /*
+if (navigator && navigator.mediaDevices){// && navigator.mediaDevices.enumerateDevices) {
+    navigator.mediaDevices
+        .enumerateDevices()
+        .then(function (devices) {
+            body.innerHTML += "2. enumerateDevices" + nl;
+            const hasCamera = devices.some(device => device.kind === "videoinput");
+            if (hasCamera) {
+                body.innerHTML += "3. Caméra détectée!" + nl;
+            } else {
+                body.innerHTML += "3. Aucune caméra trouvée." + nl;
+            }
+        })
+        .catch(function (error) {
+            body.innerHTML += "3. Une erreur s'est produite : " + error + nl;
+        });
+} else {
+    body.innerHTML += "2. Pas de navigator" + nl;
+}
+body.innerHTML += "4. End" + nl;
+*/
+body.innerHTML = navigator.mediaDevices ? "2. navigator.mediaDevices" + nl : "2. Pas de navigator" + nl;
 navigator.mediaDevices
     .enumerateDevices()
     .then(function (devices) {
         let cameraId;
-
-        document.getElementsByTagName("body")[0].innerHTML = devices.length + " caméras trouvées";
+        //body.innerHTML += devices.length + " caméras trouvées"+nl;
 
         // Trouvez l'id de la caméra arrière
         devices.forEach(function (device) {
@@ -78,7 +82,7 @@ navigator.mediaDevices
         console.log("Une erreur s'est produite : " + error);
         document.getElementsByTagName("body")[0].innerHTML = "Une erreur s'est produite : " + error;
     });
-*/
+
 const video = document.getElementById("camera");
 const canvasElement = document.getElementById("canvas");
 const canvas = canvasElement.getContext("2d");
@@ -184,8 +188,8 @@ function tick() {
                 (async function () {
                     const image = await loadImage(tomato);
                     // Calcul de la largeur et de la hauteur du rectangle
-                    let rectWidth = (code.location.topRightCorner.x - code.location.topLeftCorner.x)*2;
-                    let rectHeight = (code.location.bottomLeftCorner.y - code.location.topLeftCorner.y)*2;
+                    let rectWidth = (code.location.topRightCorner.x - code.location.topLeftCorner.x) * 2;
+                    let rectHeight = (code.location.bottomLeftCorner.y - code.location.topLeftCorner.y) * 2;
                     // Position de l'image
                     let imageX = code.location.topLeftCorner.x;
                     let imageY = code.location.topLeftCorner.y - rectHeight;
