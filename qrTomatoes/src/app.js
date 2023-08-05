@@ -79,8 +79,15 @@ navigator.mediaDevices
         videoElement.srcObject = stream;
     })
     .catch(function (error) {
-        console.log("Une erreur s'est produite : " + error);
-        document.getElementsByTagName("body")[0].innerHTML = "Une erreur s'est produite : " + error;
+        if (error.name === 'OverconstrainedError') {
+            // Tentez d'accéder à la caméra avec des contraintes moins restrictives
+            navigator.mediaDevices.getUserMedia({ video: true });
+        }
+        else {
+            console.log("Une erreur s'est produite : " + error);
+            document.getElementsByTagName("body")[0].innerHTML = "Une erreur s'est produite : " + error;
+        }
+
     });
 
 const video = document.getElementById("camera");
