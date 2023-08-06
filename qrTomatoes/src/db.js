@@ -37,4 +37,41 @@ export const tomatoes = [
             "La tomate jaune est une variété de tomate de couleur jaune. Elle est plus douce que la tomate rouge et a une saveur plus sucrée. Elle est souvent utilisée dans les salades et les sauces.",
         urlImage: "5_Jaune.jpg",
     },
+    {
+        id: 6,
+        nom: "Tomate Black Cherry",
+        description:
+            "La tomate Black cherry ou ´Cerise Noire´ est une variété productive et rustique, de mi-saison, peu sensible au mildiou. Les petits fruits pourpres à noirs, de 15 à 30 g, sont d´une saveur douce et sucrée. La tomate Black cherry cerise noire est ferme, résiste bien à l´éclatement. Idéale en apéritif en mélange avec d´autres variétés de tomates cerises ! Salade et autres.",
+        urlImage: "6_Black_Cherry.jpg"
+    },
+    {
+        id: 7,
+        nom: "Tomate Gourmandia",
+        description:
+            `La Gourmandia est une variété hybride appartenant à la catégorie Cœur de Bœuf et a la forme caractéristique de ce type de tomates.<br>
+            Ses fruits sont riches en goût et dégagent un arôme unique.<br>
+            Ils mûrissent de l’intérieur vers l’extérieur et le collet peut rester vert longtemps. La couleur verte disparaît quand le fruit est mûr.`,
+        urlImage: "7_Gourmandia.jpg",
+    },
+    {
+        id: 8,
+        nom: "Tomate Coeur de Boeuf",
+        description:
+            "",
+        urlImage: "8_Coeur_de_boeuf.jpg",
+    },
+    {
+        id: 9,
+        nom: "Tomate Marmande",
+        description:
+            "",
+        urlImage: "9_Marmande.jpg",
+    },
+    {
+        id: 10,
+        nom: "Tomate Grappe F1",
+        description:
+            "",
+        urlImage: "10_Grappe_F1.jpg",
+    },
 ];

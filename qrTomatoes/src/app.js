@@ -1,8 +1,6 @@
 "use strict";
 import { tomatoes } from "./db.js";
 
-window.tomatoes = tomatoes;
-
 tomatoes.forEach(tomato => {
     console.log(tomato);
 });
