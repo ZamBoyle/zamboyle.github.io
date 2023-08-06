@@ -175,13 +175,20 @@ function tick() {
       const tomato = tomatoes.find(
         (tomato) => tomato.id == parseInt(code.data)
       );
-      if (tomato) {
-        /*                         let h1 = document.querySelector('h1');
+      if (!tomato) {
+        tomato.nom = "Tomate non trouvée...";
+        tomato.description = "";
+        tomato.urlImage = "0_Unknown.jpg";
+        tomato.id = 0;
+        document.title = "Tomate non trouvée...";
+      }
+
+      /*                         let h1 = document.querySelector('h1');
                                         let p = document.createElement('p');
                                         p.innerHTML = tomato.urlImage;
                                         h1.appendChild(p); */
-        // On charge l'image de la tomate
-        /*                         let image = new Image();
+      // On charge l'image de la tomate
+      /*                         let image = new Image();
                                         image.onload = function () {
                                             // Une fois l'image chargée, on la dessine au-dessus du rectangle
                                             let imageX = code.location.topLeftCorner.x;
@@ -189,47 +196,52 @@ function tick() {
                                             overlay.drawImage(image, imageX, imageY, image.width, image.height);
                                         };
                                         image.src = tomato.urlImage; // On suppose que imageUrl est une propriété de l'objet tomato     */
-        // Création d'une fonction asynchrone à l'intérieur de tick
-        (async function () {
-          const image = await loadImage(tomato);
-          // Calcul de la largeur et de la hauteur du rectangle
-          let rectWidth =
-            (code.location.topRightCorner.x - code.location.topLeftCorner.x) *
-            2;
-          let rectHeight =
-            (code.location.bottomLeftCorner.y - code.location.topLeftCorner.y) *
-            2;
-          // Position de l'image
-          let imageX = code.location.topLeftCorner.x;
-          let imageY = code.location.topLeftCorner.y - rectHeight;
-          // Dessin de l'image avec la largeur et la hauteur du rectangle
-          overlay.drawImage(image, imageX, imageY, rectWidth, rectHeight);
+      // Création d'une fonction asynchrone à l'intérieur de tick
+      (async function () {
+        const image = await loadImage(tomato);
+        // Calcul de la largeur et de la hauteur du rectangle
+        let rectWidth =
+          (code.location.topRightCorner.x - code.location.topLeftCorner.x) * 2;
+        let rectHeight =
+          (code.location.bottomLeftCorner.y - code.location.topLeftCorner.y) *
+          2;
+        // Position de l'image
+        let imageX = code.location.topLeftCorner.x;
+        let imageY = code.location.topLeftCorner.y - rectHeight;
+        // Dessin de l'image avec la largeur et la hauteur du rectangle
+        overlay.drawImage(image, imageX, imageY, rectWidth, rectHeight);
 
-          // Dessin du nom de la tomate
-          const padding = 5;  // Espacement autour du texte
-          let textSize = 20;  // Taille du texte maximale
-          
+        // Dessin du nom de la tomate
+        const padding = 5; // Espacement autour du texte
+        let textSize = 20; // Taille du texte maximale
+
+        overlay.font = `${textSize}px Arial`;
+        let textWidth = overlay.measureText(tomato.nom).width;
+
+        // Ajustez la taille du texte jusqu'à ce qu'il s'adapte à la largeur du rectangle
+        while (textWidth + 2 * padding > rectWidth && textSize > 0) {
+          textSize -= 1; // Réduisez la taille du texte
           overlay.font = `${textSize}px Arial`;
-          let textWidth = overlay.measureText(tomato.nom).width;
-          
-          // Ajustez la taille du texte jusqu'à ce qu'il s'adapte à la largeur du rectangle
-          while (textWidth + 2 * padding > rectWidth && textSize > 0) {
-              textSize -= 1;  // Réduisez la taille du texte
-              overlay.font = `${textSize}px Arial`;
-              textWidth = overlay.measureText(tomato.nom).width;
-          }
-          
-          // Dessiner un fond blanc derrière le texte
-          overlay.fillStyle = "white";
-          overlay.fillRect(imageX, imageY - textSize - 2 * padding, rectWidth, textSize + 2 * padding);
-          
-          // Dessiner le nom de la tomate en noir
-          overlay.fillStyle = "black";
-          overlay.fillText(tomato.nom, imageX + (rectWidth - textWidth) / 2, imageY - padding);
-        })();
-      } else {
-        document.title = "Tomate non trouvée...";
-      }
+          textWidth = overlay.measureText(tomato.nom).width;
+        }
+
+        // Dessiner un fond blanc derrière le texte
+        overlay.fillStyle = "white";
+        overlay.fillRect(
+          imageX,
+          imageY - textSize - 2 * padding,
+          rectWidth,
+          textSize + 2 * padding
+        );
+
+        // Dessiner le nom de la tomate en noir
+        overlay.fillStyle = "black";
+        overlay.fillText(
+          tomato.nom,
+          imageX + (rectWidth - textWidth) / 2,
+          imageY - padding
+        );
+      })();
     }
   }
   requestAnimationFrame(tick);
