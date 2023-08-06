@@ -221,7 +221,7 @@ body.innerHTML += "4. End" + nl;
     let tomate = tomatoes.find((tomate) => tomate.id == id);
     if (tomate) {
       let info = `<h2>${tomate.nom}</h2>`;
-      info += `<img src='${tomate.urlImage}' class='border rounded' height='200px;'>`;
+      info += `<img src='img/${tomate.urlImage}' class='border rounded' height='200px;'>`;
       info += '<div class="flex-grow-1 ms-3">';
       info += `<p class="font-weight-bold">${tomate.description}</p>`;
       info += "</div>";
