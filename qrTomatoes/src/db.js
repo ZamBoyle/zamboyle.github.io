@@ -4,7 +4,7 @@ export const tomatoes = [
         nom: "Tomate Maya F1",
         description:
             "Savoureuse tomate rayée brun-jaune, très décorative dans le potager! Cette variété a de beaux fruits ronds, jaunes avec des rayures brunes à violettes à partir du calice.",
-        urlImage: "../img/1_Maya_F1.jpg",
+        urlImage: "img/1_Maya_F1.jpg",
     },
     {
         id: 2,
