@@ -205,17 +205,34 @@ body.innerHTML += "4. End" + nl;
             let imageY = code.location.topLeftCorner.y - rectHeight;
             // Dessin de l'image avec la largeur et la hauteur du rectangle
             overlay.drawImage(image, imageX, imageY, rectWidth, rectHeight);
+
+            // Dessin du nom de la tomate
+            const padding = 5; // Espacement autour du texte
+            const textSize = 20; // Taille du texte
+
+            overlay.font = `${textSize}px Arial`;
+            const textWidth = overlay.measureText(tomato.nom).width;
+
+            // Dessiner un fond blanc derrière le texte
+            overlay.fillStyle = "white";
+            overlay.fillRect(
+              imageX,
+              imageY - textSize - 2 * padding,
+              textWidth + 2 * padding,
+              textSize + 2 * padding
+            );
+
+            // Dessiner le nom de la tomate en noir
+            overlay.fillStyle = "black";
+            overlay.fillText(tomato.nom, imageX + padding, imageY - padding);
           })();
         } else {
           document.title = "Tomate non trouvée...";
         }
       }
     }
-
     requestAnimationFrame(tick);
   }
-
-  tick();
 
   function getTomatoInfo(id) {
     let tomate = tomatoes.find((tomate) => tomate.id == id);
@@ -230,6 +247,5 @@ body.innerHTML += "4. End" + nl;
       return "<h2>Tomate non trouvée...</h2>";
     }
   }
-
   tick();
 });
