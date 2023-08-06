@@ -206,24 +206,26 @@ function tick() {
           overlay.drawImage(image, imageX, imageY, rectWidth, rectHeight);
 
           // Dessin du nom de la tomate
-          const padding = 5; // Espacement autour du texte
-          const textSize = 20; // Taille du texte
-
+          const padding = 5;  // Espacement autour du texte
+          let textSize = 20;  // Taille du texte maximale
+          
           overlay.font = `${textSize}px Arial`;
-          const textWidth = overlay.measureText(tomato.nom).width;
-
+          let textWidth = overlay.measureText(tomato.nom).width;
+          
+          // Ajustez la taille du texte jusqu'à ce qu'il s'adapte à la largeur du rectangle
+          while (textWidth + 2 * padding > rectWidth && textSize > 0) {
+              textSize -= 1;  // Réduisez la taille du texte
+              overlay.font = `${textSize}px Arial`;
+              textWidth = overlay.measureText(tomato.nom).width;
+          }
+          
           // Dessiner un fond blanc derrière le texte
           overlay.fillStyle = "white";
-          overlay.fillRect(
-            imageX,
-            imageY - textSize - 2 * padding,
-            textWidth + 2 * padding,
-            textSize + 2 * padding
-          );
-
+          overlay.fillRect(imageX, imageY - textSize - 2 * padding, rectWidth, textSize + 2 * padding);
+          
           // Dessiner le nom de la tomate en noir
           overlay.fillStyle = "black";
-          overlay.fillText(tomato.nom, imageX + padding, imageY - padding);
+          overlay.fillText(tomato.nom, imageX + (rectWidth - textWidth) / 2, imageY - padding);
         })();
       } else {
         document.title = "Tomate non trouvée...";
