@@ -11,8 +11,8 @@
     <meta http-equiv='pragma' content='no-cache'>
 
     <!-- Bootstrap CSS v5.2.1 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/site.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
 
 </head>
 
@@ -20,25 +20,26 @@
     <header>
         <!-- place navbar here -->
     </header>
-<!--     <main class="container d-flex flex-column"> -->
+    <!--     <main class="container d-flex flex-column"> -->
     <main class="container">
         <h1 class="text-center">QR Tomatoes</h1>
-<!--         <div class="row mx-2" style="height: 400px;">
- -->            <div id="camera-container" style="height: 400px;"
-                class="align-items-center justify-content-center overflow-hidden position-relative">
-                <video id="camera" autoplay class="position-absolute top-0 border border-2 rounded-5 h-100"></video>
-                <canvas id="canvas" class="h-100" style="display: none;"></canvas>
-                <canvas id="overlay" class="position-absolute top-0 h-100"></canvas>
+        <!--         <div class="row mx-2" style="height: 400px;">
+ -->
+        <div id="camera-container" style="height: 400px;"
+            class="align-items-center justify-content-center overflow-hidden position-relative">
+            <video id="camera" autoplay class="position-absolute top-0"></video>
+            <canvas id="canvas"  style="display: none;"></canvas>
+            <canvas id="overlay" class="position-absolute top-0"></canvas>
             <!-- </div> -->
         </div>
-        <hr/>
+        <hr />
         <!-- <div class="row mb-4 mx-2"> -->
-            <div class="row">
-                <div id="result" class="col-12">
-                    <h2>Tomate non trouvée...</h2>
-                    <img src='img/0_Unknown.jpg' class='border rounded float-start"' height='100px;'>
-                </div>
+        <div class="row">
+            <div id="result" class="col-12">
+                <h2>Tomate non trouvée...</h2>
+                <img src='img/0_Unknown.jpg' class='border rounded float-start"' height='100px;'>
             </div>
+        </div>
         <!-- </div> -->
     </main>
     <footer>
@@ -47,7 +48,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jsQR.js"></script>
     <script src="js/app.js" type="module"></script>
-<!--     <script type="text/javascript">  
+    <!--     <script type="text/javascript">  
         //get the date and time
         var currentDate = (new Date()).getTime();  
         
@@ -62,7 +63,7 @@
         // append new script element to body.
         document.body.appendChild(newScriptElement);  
      </script> -->
-    
+
 </body>
 
 </html>
