@@ -23,13 +23,18 @@
     <!--     <main class="container d-flex flex-column"> -->
     <main class="container">
         <h1 class="text-center">QR Tomatoes</h1>
-        <div id="camera-container" style="height: 400px;"
+<!--         <div id="camera-container"  style="height: 400px;"
             class="align-items-center justify-content-center overflow-hidden position-relative">
             <video id="camera" autoplay class="position-absolute top-0"></video>
             <canvas id="canvas"  style="display: none;"></canvas>
             <canvas id="overlay" class="position-absolute top-0"></canvas>
-            <!-- </div> -->
+        </div> -->
+        <div id="camera-container" style="height: 400px;" class="d-flex align-items-center justify-content-center position-relative overflow-hidden">
+            <video id="camera" autoplay class="position-absolute top-0 left-0 right-0 bottom-0" style="margin: auto;"></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <canvas id="overlay" class="position-absolute top-0"></canvas>
         </div>
+        
         <hr />
         <!-- <div class="row mb-4 mx-2"> -->
         <div class="row">
