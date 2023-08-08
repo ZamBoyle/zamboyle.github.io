@@ -5,7 +5,7 @@ const ctx = canvas.getContext("2d");
 const descriptionDiv = document.getElementById("description");
 
 const tomatoImage = new Image();
-tomatoImage.src = './img/tomate.png'; // Remplacez 'path_to_your_image.png' par le chemin réel de votre image.
+tomatoImage.src = '../img/tomate.png'; // Remplacez 'path_to_your_image.png' par le chemin réel de votre image.
 
 
 let GAP; 
@@ -94,7 +94,7 @@ canvas.addEventListener('click', (event) => {
             if (x > startX && x < endX && y > startY && y < endY) {
                 descriptionDiv.innerHTML = `
                     <h2>${tomato.nom}</h2>
-                    <img src="./img/${tomato.urlImage}" alt="${tomato.nom}" width="200">
+                    <img src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200">
                     <p>${tomato.description}</p>
                 `;
             }
