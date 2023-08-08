@@ -42,11 +42,11 @@ function drawGarden() {
             if (tomato.visible === false) return;
 
             ctx.drawImage(tomatoImage, position.x - imageSize / 2, position.y - imageSize / 2, imageSize, imageSize);
-            ctx.font = "15px Arial";
+            ctx.font = "20px Arial";
             ctx.fillStyle = 'black';
             
             const textWidth = ctx.measureText(tomato.id).width;
-            const textHeight = 11;  // estimation basée sur une police de 15px
+            const textHeight = 18;  // estimation basée sur une police de 15px
 
             ctx.fillText(tomato.id, position.x - textWidth / 2, position.y + textHeight / 2);
         }
