@@ -74,7 +74,7 @@ canvas.addEventListener('click', (event) => {
             if (x > startX && x < endX && y > startY && y < endY) {
                 descriptionDiv.innerHTML = `
                     <h2>${tomato.nom}</h2>
-                    <img src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200">
+                    <img class="border rounded-2" src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200">
                     <p>${tomato.description}</p>
                 `;
             }

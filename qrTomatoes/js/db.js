@@ -65,8 +65,8 @@ export const tomatoes = [
         nom: "Tomate Coeur de Boeuf",
         description:
             "",
-        urlImage: "8_Coeur_de_boeuf.jpg",
-        visible: false
+        urlImage: "8_Coeur_De_Boeuf.jpg",
+        visible: true
     },
     {
         id: 9,
