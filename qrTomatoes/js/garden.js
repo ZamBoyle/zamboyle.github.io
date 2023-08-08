@@ -5,16 +5,15 @@ const ctx = canvas.getContext("2d");
 const descriptionDiv = document.getElementById("description");
 
 const tomatoImage = new Image();
-tomatoImage.src = '../img/tomate.png'; // Remplacez 'path_to_your_image.png' par le chemin réel de votre image.
-
+tomatoImage.src = '../img/tomate.png';
 
 let GAP; 
 let positions = [];
 
-const PLANTS_PER_ROW = 5;  // nombre de plants par ligne
+const PLANTS_PER_ROW = 5;
 
 function drawGarden() {
-    positions = []; // Réinitialisez les positions à chaque redessin
+    positions = [];
 
     // Adaptez GAP en fonction de la largeur de la fenêtre
     GAP = Math.min(canvas.parentElement.offsetWidth / (PLANTS_PER_ROW + 2), 150);
@@ -34,41 +33,24 @@ function drawGarden() {
         }
     }
 
-/*     tomatoes.forEach((tomato, index) => {
-        if (index < positions.length) {
-            const position = positions[index];
-            ctx.beginPath();
-            ctx.arc(position.x, position.y, 10, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'blue';
-            ctx.fill();
-            ctx.font = "15px Arial";
-            ctx.fillText(tomato.id, position.x - 5, position.y - 15);
-            ctx.closePath();
-        }
-    }); */
-
     tomatoes.forEach((tomato, index) => {
         if (index < positions.length) {
             const position = positions[index];
             const imageSize = GAP * 0.8;
-    
-            // Dessine l'image
+            
+            // Vérifie si la tomate est visible
+            if (tomato.visible === false) return;
+
             ctx.drawImage(tomatoImage, position.x - imageSize / 2, position.y - imageSize / 2, imageSize, imageSize);
-    
-            // Définit le style du texte
             ctx.font = "15px Arial";
-            ctx.fillStyle = 'black';  // La couleur du texte
-    
-            // Calcule la largeur du texte pour le centrer correctement
+            ctx.fillStyle = 'black';
+            
             const textWidth = ctx.measureText(tomato.id).width;
             const textHeight = 11;  // estimation basée sur une police de 15px
-    
-            // Dessine le texte centré sur l'image
+
             ctx.fillText(tomato.id, position.x - textWidth / 2, position.y + textHeight / 2);
         }
     });
-    
-    
 }
 
 drawGarden();
@@ -81,16 +63,14 @@ canvas.addEventListener('click', (event) => {
     const imageSize = GAP * 0.8;
 
     tomatoes.forEach((tomato, index) => {
-        if (index < positions.length) {
+        if (index < positions.length && tomato.visible !== false) {
             const position = positions[index];
 
-            // Déterminez les coordonnées du rectangle de l'image
             const startX = position.x - imageSize / 2;
             const startY = position.y - imageSize / 2;
             const endX = startX + imageSize;
             const endY = startY + imageSize;
 
-            // Vérifiez si le clic a eu lieu à l'intérieur du rectangle
             if (x > startX && x < endX && y > startY && y < endY) {
                 descriptionDiv.innerHTML = `
                     <h2>${tomato.nom}</h2>
@@ -101,6 +81,13 @@ canvas.addEventListener('click', (event) => {
         }
     });
 });
+
+window.addEventListener('load', function() {
+    drawGarden();
+});
+
+
+
 
 
 
