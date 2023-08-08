@@ -4,41 +4,49 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const descriptionDiv = document.getElementById("description");
 
+let GAP; 
+let positions = [];
+
 const PLANTS_PER_ROW = 5;  // nombre de plants par ligne
-const GAP = 100;           // espace entre les plants sur le canvas
 
-const TOTAL_TOMATOES = tomatoes.length;
-const ACTUAL_ROWS = Math.ceil(TOTAL_TOMATOES / PLANTS_PER_ROW);
+function drawGarden() {
+    positions = []; // Réinitialisez les positions à chaque redessin
 
-// Ajustements de la taille du canvas
-canvas.width = (PLANTS_PER_ROW + 1) * GAP;
-canvas.height = (ACTUAL_ROWS + 1) * GAP;
+    // Adaptez GAP en fonction de la largeur de la fenêtre
+    GAP = Math.min(canvas.parentElement.offsetWidth / (PLANTS_PER_ROW + 2), 150);
+    
+    const TOTAL_TOMATOES = tomatoes.length;
+    const ACTUAL_ROWS = Math.ceil(TOTAL_TOMATOES / PLANTS_PER_ROW);
 
-canvas.style.border = '2px solid #000';
+    canvas.width = (PLANTS_PER_ROW + 1) * GAP;
+    canvas.height = (ACTUAL_ROWS + 1) * GAP;
 
-ctx.fillStyle = 'green'; // Par exemple: 'blue', '#FF5733', 'rgba(255,0,0,0.5)', etc.
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'green';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-const positions = [];
-
-for (let row = ACTUAL_ROWS - 1; row >= 0; row--) {
-    for (let col = 0; col < PLANTS_PER_ROW; col++) {
-        positions.push({ x: GAP * (col + 1), y: GAP * (row + 1) });
+    for (let row = ACTUAL_ROWS - 1; row >= 0; row--) {
+        for (let col = 0; col < PLANTS_PER_ROW; col++) {
+            positions.push({ x: GAP * (col + 1), y: GAP * (row + 1) });
+        }
     }
+
+    tomatoes.forEach((tomato, index) => {
+        if (index < positions.length) {
+            const position = positions[index];
+            ctx.beginPath();
+            ctx.arc(position.x, position.y, 10, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'blue';
+            ctx.fill();
+            ctx.font = "15px Arial";
+            ctx.fillText(tomato.id, position.x - 5, position.y - 15);
+            ctx.closePath();
+        }
+    });
 }
 
-tomatoes.forEach((tomato, index) => {
-    if (index < positions.length) {
-        const position = positions[index];
-        ctx.beginPath();
-        ctx.arc(position.x, position.y, 10, 0, 2 * Math.PI, false);
-        ctx.fillStyle = 'blue';
-        ctx.fill();
-        ctx.font = "15px Arial";
-        ctx.fillText(tomato.id, position.x - 5, position.y - 15); // décalage pour le numéro au-dessus du point
-        ctx.closePath();
-    }
-});
+drawGarden();
+
+window.addEventListener('resize', drawGarden);
 
 canvas.addEventListener('click', (event) => {
     const x = event.offsetX;
@@ -59,6 +67,8 @@ canvas.addEventListener('click', (event) => {
         }
     });
 });
+
+
 
 /*import { tomatoes } from './db.js';
 

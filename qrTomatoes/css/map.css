@@ -3,7 +3,7 @@ body {
     text-align: center;
 }
 
-.container {
+#garden {
     display: flex;
     justify-content: center;
     align-items: center;
