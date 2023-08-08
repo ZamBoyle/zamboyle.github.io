@@ -4,10 +4,6 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const descriptionDiv = document.getElementById("description");
 
-const tomatoImage = new Image();
-tomatoImage.src = './img/tomate.png'; // Remplacez 'path_to_your_image.png' par le chemin réel de votre image.
-
-
 let GAP; 
 let positions = [];
 
@@ -34,7 +30,7 @@ function drawGarden() {
         }
     }
 
-/*     tomatoes.forEach((tomato, index) => {
+    tomatoes.forEach((tomato, index) => {
         if (index < positions.length) {
             const position = positions[index];
             ctx.beginPath();
@@ -45,30 +41,7 @@ function drawGarden() {
             ctx.fillText(tomato.id, position.x - 5, position.y - 15);
             ctx.closePath();
         }
-    }); */
-
-    tomatoes.forEach((tomato, index) => {
-        if (index < positions.length) {
-            const position = positions[index];
-            const imageSize = GAP * 0.8;
-    
-            // Dessine l'image
-            ctx.drawImage(tomatoImage, position.x - imageSize / 2, position.y - imageSize / 2, imageSize, imageSize);
-    
-            // Définit le style du texte
-            ctx.font = "15px Arial";
-            ctx.fillStyle = 'black';  // La couleur du texte
-    
-            // Calcule la largeur du texte pour le centrer correctement
-            const textWidth = ctx.measureText(tomato.id).width;
-            const textHeight = 11;  // estimation basée sur une police de 15px
-    
-            // Dessine le texte centré sur l'image
-            ctx.fillText(tomato.id, position.x - textWidth / 2, position.y + textHeight / 2);
-        }
     });
-    
-    
 }
 
 drawGarden();
@@ -78,20 +51,13 @@ window.addEventListener('resize', drawGarden);
 canvas.addEventListener('click', (event) => {
     const x = event.offsetX;
     const y = event.offsetY;
-    const imageSize = GAP * 0.8;
 
     tomatoes.forEach((tomato, index) => {
         if (index < positions.length) {
             const position = positions[index];
+            const distance = Math.sqrt(Math.pow(x - position.x, 2) + Math.pow(y - position.y, 2));
 
-            // Déterminez les coordonnées du rectangle de l'image
-            const startX = position.x - imageSize / 2;
-            const startY = position.y - imageSize / 2;
-            const endX = startX + imageSize;
-            const endY = startY + imageSize;
-
-            // Vérifiez si le clic a eu lieu à l'intérieur du rectangle
-            if (x > startX && x < endX && y > startY && y < endY) {
+            if (distance < 10) {
                 descriptionDiv.innerHTML = `
                     <h2>${tomato.nom}</h2>
                     <img src="./img/${tomato.urlImage}" alt="${tomato.nom}" width="200">
@@ -101,7 +67,6 @@ canvas.addEventListener('click', (event) => {
         }
     });
 });
-
 
 
 
