@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const pages = [
-        { name: "Acceuil", url: "index.html" },
-        { name: "Jardin", url: "garden.html" },
-        { name: "Liste", url: "liste.html" }
+        { name: "Acceuil", url: "/qrTomatoes/index.html" },
+        { name: "Jardin", url: "/qrTomatoes/pages/garden.html" },
+        { name: "Liste", url: "/qrTomatoes/pages/liste.html" }
     ];
 
     const currentPath = window.location.pathname.split('/').pop();
