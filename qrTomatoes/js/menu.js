@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const pages = [
         { name: "Acceuil", url: "/qrTomatoes/index.html" },
+        { name: "QR Code", url: "/qrTomatoes/pages/qrtomatoes.html" },
         { name: "Jardin", url: "/qrTomatoes/pages/garden.html" },
         { name: "Liste", url: "/qrTomatoes/pages/liste.html" }
     ];
