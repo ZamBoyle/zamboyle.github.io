@@ -10,11 +10,14 @@ tomatoImage.src = '../img/tomate.png';
 let GAP; 
 let positions = [];
 const PLANTS_PER_ROW = 5;
+const MAX_CANVAS_WIDTH = 400; 
 let lastClickedTomatoIndex = -1;  // initialiser à -1 pour indiquer qu'aucune tomate n'a encore été cliquée
 
 function drawGarden() {
     positions = [];
-    GAP = Math.min(canvas.parentElement.offsetWidth / (PLANTS_PER_ROW + 2), 150);
+    //GAP = Math.min(canvas.parentElement.offsetWidth / (PLANTS_PER_ROW + 2), 150);
+    GAP = Math.min(Math.min(canvas.parentElement.offsetWidth, MAX_CANVAS_WIDTH) / (PLANTS_PER_ROW + 2), 150);
+
     
     const TOTAL_TOMATOES = tomatoes.length;
     const ACTUAL_ROWS = Math.ceil(TOTAL_TOMATOES / PLANTS_PER_ROW);
