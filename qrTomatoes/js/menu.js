@@ -19,7 +19,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const aBrand = document.createElement("a");
     aBrand.className = "navbar-brand";
     aBrand.href = "#";
-    aBrand.textContent = "Mes Tomates";
+    //aBrand.textContent = "Tomato App";
+
+    aBrand.innerHTML = '<img src="/qrTomatoes/img/tomate.png" alt="tomato" width="30" height="30" class="d-inline-block">';
+    aBrand.innerHTML += "<span class='me-2'>Tomato App</span>";
+  
 
     const buttonToggler = document.createElement("button");
     buttonToggler.className = "navbar-toggler";
