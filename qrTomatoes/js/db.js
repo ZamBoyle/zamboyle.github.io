@@ -1,5 +1,31 @@
 export const tomatoes = [
     {
+        id:22,
+        nom: "Tomate Paola",
+        description:"",
+        urlImage: "22_Paola.jpg",
+        avis:[],
+        visible: true
+    },
+    ,
+    ,
+    {
+        id:23,
+        nom: "Tomate Premio",
+        description:"",
+        urlImage: "23_Premio.jpg",
+        avis:[],
+        visible: true
+    },
+    {
+        id:25,
+        nom: "Aucune idée :-)",
+        description:"",
+        urlImage: "0_unknown.jpg",
+        avis:[],
+        visible: true
+    },    
+    {
         id: 1,
         nom: "Tomate Maya F1",
         description:
@@ -183,5 +209,23 @@ export const tomatoes = [
         urlImage: "10_Grappe_F1.jpg",
         avis:[],
         visible: true
+    },
+    {
+        id: -1,
+        nom: "",
+        description:
+            "",
+        urlImage: "",
+        avis:[],
+        visible: false
+    },
+    {
+        id:21,
+        nom: "Tomate Indigo Rose",
+        description:"",
+        urlImage: "21_Indigo_Rose.jpg",
+        avis:[],
+        visible: true
     }
+
 ];
