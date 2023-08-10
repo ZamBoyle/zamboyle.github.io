@@ -14,7 +14,7 @@ function loadImage(tomato) {
         images[tomato.id] = image;
         resolve(image);
       };
-      image.src = "img/" + tomato.urlImage;
+      image.src = "../img/" + tomato.urlImage;
     }
   });
 }
