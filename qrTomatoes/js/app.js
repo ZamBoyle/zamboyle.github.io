@@ -120,7 +120,6 @@ function tick() {
       overlay.stroke();
 
       const tomato = db.getTomatoInfo(parseInt(code.data));
-      document.title = tomato.nom;
       /*tomatoes.find(
         (tomato) => tomato.id == parseInt(code.data)
       );*/
@@ -175,7 +174,7 @@ function getTomatoInfo(id) {
   let tomate = db.getTomatoInfo(id); //tomatoes.find((tomate) => tomate.id == id);
   if (tomate) {
     let info = `<h2 class="text-white">${tomate.nom}</h2>`;
-    info += `<img src='img/${tomate.urlImage}' class='border rounded' height='200px;'>`;
+    info += `<img src='../img/${tomate.urlImage}' class='border rounded' height='200px;'>`;
     info += '<div class="flex-grow-1 ms-3">';
     info += `<p class=" text-white font-weight-bold">${tomate.description}</p>`;
     info += "</div>";
