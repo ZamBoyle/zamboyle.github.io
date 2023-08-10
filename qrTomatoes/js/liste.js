@@ -1,8 +1,11 @@
-import { tomatoes } from './db.js';
+import * as db from './db.js';
+import { planted } from './planted.js';
 
 const tomatoesListDiv = document.getElementById('tomatoesList');
 
-tomatoes.forEach(tomato => {
+planted.forEach(x => {
+    const tomato = db.getTomatoInfo(x);
+    if (!tomato) return;
     const tomatoCard = `
         <div class="col">
             <div class="card h-100 shadow">

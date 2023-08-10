@@ -1,5 +1,7 @@
 "use strict";
-import { tomatoes } from "./db.js";
+import { parse } from 'path';
+import * as db from './db.js';
+import { planted } from './planted.js';
 const currentDate = new Date().getTime();
 
 // Utilisez import() pour importer dynamiquement db.js avec un paramètre de cache-busting
@@ -127,9 +129,10 @@ function tick() {
       overlay.strokeStyle = "red";
       overlay.stroke();
 
-      const tomato = tomatoes.find(
+      const tomato = db.getTomatoInfo(parseInt(code.data));
+      /*tomatoes.find(
         (tomato) => tomato.id == parseInt(code.data)
-      );
+      );*/
       if (tomato) {
         // Création d'une fonction asynchrone à l'intérieur de tick
         (async function () {
@@ -178,7 +181,7 @@ function tick() {
 }
 
 function getTomatoInfo(id) {
-  let tomate = tomatoes.find((tomate) => tomate.id == id);
+  let tomate = db.getTomatoInfo(id); //tomatoes.find((tomate) => tomate.id == id);
   if (tomate) {
     let info = `<h2 class="text-white">${tomate.nom}</h2>`;
     info += `<img src='img/${tomate.urlImage}' class='border rounded' height='200px;'>`;
