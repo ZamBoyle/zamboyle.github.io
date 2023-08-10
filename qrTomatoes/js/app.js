@@ -1,6 +1,5 @@
 "use strict";
 import * as db from './db.js';
-import { planted } from './planted.js';
 const currentDate = new Date().getTime();
 
 let images = {};
@@ -121,6 +120,7 @@ function tick() {
       overlay.stroke();
 
       const tomato = db.getTomatoInfo(parseInt(code.data));
+      document.title = tomato.nom;
       /*tomatoes.find(
         (tomato) => tomato.id == parseInt(code.data)
       );*/
