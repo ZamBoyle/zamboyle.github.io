@@ -177,7 +177,7 @@ function getTomatoInfo(id) {
     let info = `<h2 class="text-white">${tomate.nom}</h2>`;
     info += `<img src='img/${tomate.urlImage}' class='border rounded' height='200px;'>`;
     info += '<div class="flex-grow-1 ms-3">';
-    info += `<p class="font-weight-bold">${tomate.description}</p>`;
+    info += `<p class=" text-white font-weight-bold">${tomate.description}</p>`;
     info += "</div>";
     return info;
   } else {
