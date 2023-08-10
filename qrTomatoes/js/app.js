@@ -91,7 +91,7 @@ function tick() {
     overlay.clearRect(0, 0, overlayElement.width, overlayElement.height);
 
     if (code) {
-      resultElement.innerHTML = getTomatoInfo(code.data);
+      resultElement.innerHTML = getTomatoInfo(parseInt(code.data));
 
       // Draw box
       overlay.beginPath();
