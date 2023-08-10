@@ -1,16 +1,7 @@
 "use strict";
-import { parse } from 'path';
 import * as db from './db.js';
 import { planted } from './planted.js';
 const currentDate = new Date().getTime();
-
-// Utilisez import() pour importer dynamiquement db.js avec un paramètre de cache-busting
-//import(`./db.js?${currentDate}`).then((module) => {
-//  const { tomatoes } = module;
-
-tomatoes.forEach((tomato) => {
-  console.log(tomato);
-});
 
 let images = {};
 

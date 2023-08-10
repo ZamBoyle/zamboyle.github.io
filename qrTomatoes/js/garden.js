@@ -1,3 +1,4 @@
+"use strict";
 import * as db from './db.js';
 import { planted } from './planted.js';
 
