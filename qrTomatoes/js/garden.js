@@ -107,8 +107,8 @@ if (currentPlantedDetails.showText) {
         if (x > startX && x < endX && y > startY && y < endY) {
           descriptionDiv.innerHTML = `
                     <h2>${tomato.nom}</h2>
-                    <img class="border rounded-2" src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200">
-                    <p>${tomato.description}</p>
+                    <div class="text-center"><img class="border rounded-2" src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200"></div>
+                    ${db.descriptionToParagraphs(tomato.description)}
                 `;
           lastClickedTomatoIndex = index;
           drawGarden();

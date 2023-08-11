@@ -40,9 +40,9 @@ export const tomatoDB = [
         id: 3,
         nom: "Tomate Ananas",
         description:
-            "<p>La tomate ananas est une variété tardive produisant des fruits de 250 à 400 grammes en moyenne. Photo par Jean Weber.</p>"+
-            "<p>Avec sa couleur jaune et son bon goût sucré, la tomate ananas est une variété de tomates anciennes dont la chair très dense ressemble à une tranche d'ananas. Originaire des États-Unis, elle est très parfumée et contient peu de graines.</p>"+
-            "<p>On aime la tomate ananas en salade ou en carpaccio, avec juste un filet d’huile d’olive extra vierge, du sel et du poivre.</p>",
+            `La tomate ananas est une variété tardive produisant des fruits de 250 à 400 grammes en moyenne. Photo par Jean Weber.
+            Avec sa couleur jaune et son bon goût sucré, la tomate ananas est une variété de tomates anciennes dont la chair très dense ressemble à une tranche d'ananas. Originaire des États-Unis, elle est très parfumée et contient peu de graines.
+            On aime la tomate ananas en salade ou en carpaccio, avec juste un filet d’huile d’olive extra vierge, du sel et du poivre.`,
         urlImage: "3_Ananas.jpg",
         avis:[]
     },            
@@ -50,8 +50,8 @@ export const tomatoDB = [
         id: 4,
         nom: "Tomate Noire de Crimée",
         description:
-            "<p>La tomate Noire de Crimée est une variété vigoureuse offrant une abondance de fruits ronds, à la chair dense d'un rouge-brun qui fonce avec le soleil. Elle offre un goût très doux exempt d’acidité.</p>"+
-            "<p>La variété est très peu sensible à la sécheresse.</p>",
+            `La tomate Noire de Crimée est une variété vigoureuse offrant une abondance de fruits ronds, à la chair dense d'un rouge-brun qui fonce avec le soleil. Elle offre un goût très doux exempt d’acidité.
+            La variété est très peu sensible à la sécheresse.`,
         urlImage: "4_Noire_Crimée.jpg",
         avis:[]
     },                        
@@ -67,7 +67,9 @@ export const tomatoDB = [
         id: 6,
         nom: "Tomate Black Cherry",
         description:
-            "La tomate Black cherry ou ´Cerise Noire´ est une variété productive et rustique, de mi-saison, peu sensible au mildiou. Les petits fruits pourpres à noirs, de 15 à 30 g, sont d´une saveur douce et sucrée. La tomate Black cherry cerise noire est ferme, résiste bien à l´éclatement. Idéale en apéritif en mélange avec d´autres variétés de tomates cerises ! Salade et autres.",
+            `La tomate Black cherry ou ´Cerise Noire´ est une variété productive et rustique, de mi-saison, peu sensible au mildiou. Les petits fruits pourpres à noirs, de 15 à 30 g, sont d´une saveur douce et sucrée.
+            La tomate Black cherry cerise noire est ferme, résiste bien à l´éclatement.
+            Idéale en apéritif en mélange avec d´autres variétés de tomates cerises ! Salade et autres.`,
         urlImage: "6_Black_Cherry.jpg",
         avis:[]
     },
@@ -75,8 +77,8 @@ export const tomatoDB = [
         id: 7,
         nom: "Tomate Gourmandia",
         description:
-            `La Gourmandia est une variété hybride appartenant à la catégorie Cœur de Bœuf et a la forme caractéristique de ce type de tomates.<br>
-            Ses fruits sont riches en goût et dégagent un arôme unique.<br>
+            `La Gourmandia est une variété hybride appartenant à la catégorie Cœur de Bœuf et a la forme caractéristique de ce type de tomates.
+            Ses fruits sont riches en goût et dégagent un arôme unique.
             Ils mûrissent de l’intérieur vers l’extérieur et le collet peut rester vert longtemps. La couleur verte disparaît quand le fruit est mûr.`,
         urlImage: "7_Gourmandia.jpg",
         avis:[]
@@ -85,7 +87,11 @@ export const tomatoDB = [
         id: 8,
         nom: "Tomate Coeur de Boeuf",
         description:
-            "",
+            `La tomate Cœur de Bœuf est originaire d'Italie. Sa chair plutôt sucrée contient peu de pépins.Elle est légèrement pointue, en forme de cœur et sa peau est toute lisse.
+            Mais sous cette appellation devenue générique, on retrouve souvent les mêmes caractéristiques que les tomates grappes insipides que l'on trouve toute l’année. De la tomate Coeur de Boeuf, oui, mais prenez garde à ce que vous achetez !
+            Le saviez-vous ?
+            La tomate cœur de Bœuf est une variété de tomate ancienne italienne appelée "Cuor di Bue". Chaque région d'Italie possède une variante à elle. Il existe d'ailleurs plusieurs couleurs chez la tomate Cœur de Bœuf : jaune, orange et rose !
+            `,
         urlImage: "8_Coeur_De_Boeuf.jpg",
         avis:[]
     },
@@ -93,7 +99,10 @@ export const tomatoDB = [
         id: 9,
         nom: "Tomate Marmande",
         description:
-            "",
+            `La tomate marmande est sans doute la tomate type coeur de boeuf la plus connue de toutes !
+            Cette variété ancienne précoce est vigoureuse, productive et délicieuse. Les plants produisent des fruits de 250g en moyenne.
+            Sa teneur en sucre élevé permet de réaliser de très bonnes salades accompagnées de fruits jaunes, ou bien d'excellentes tomates farcies.
+            La tomate marmande est une tomate facile qui s'adapte aux régions et à la saison.`,
         urlImage: "9_Marmande.jpg",
         avis:[]
     },
@@ -131,11 +140,24 @@ export const tomatoDB = [
     },
     {
         id: 14,
-        nom: "Tomate Grappe F1",
+        nom: "Tomate Costoluto Genovese",
         description:
-            "",
-        urlImage: "10_Grappe_F1.jpg",
-        avis:[]
+            `La Tomate Costoluto Genovese est une tomate ancienne originaire d'Italie dont les traces remontent au XIXème siècle. Les fruits rouge foncé sont fortement côtelés, aplatis au sommet et présentent une grande variabilité de forme. Plutôt moyens en taille, ils pèsent généralement entre 150 et 300 g. Costoluto Genovese est de type chair de bœuf - Costoluto signifie d'ailleurs steack en italien – avec peu de graines ni de jus mais très charnus.<br>
+            La saveur très équilibrée entre acidité et douceur tend à se perdre lors d'étés trop pluvieux. C'est en effet une variété adaptée aux climats secs et ensoleillés même si elle continue de produire dès qu'il se fait plus frais à l'automne.<br>
+            Cette Costoluto Genovese s'emploie parfaitement tranchées sur le grill ou farcies ou encore pour les coulis et les jus. Elle reste d'ailleurs très populaire auprès des grandes toques italiennes.<br>
+            Cette variété à croissance indéterminée s'élève à deux mètres rapidement. Prévoyez un tuteurage ou un palissage dès le repiquage en pleine terre. Vous effectuerez vos semis de février à avril pour une dégustation de juillet à septembre.`,
+        urlImage: "14_Costoluto_Genovese.jpg",
+        avis:[
+            {
+                Auteur:"Maman",
+                avis:"J'adore !",
+                date:"2023-08-11"
+            },
+            {
+                Auteur:"Papa",
+                avis:"Moi aussi !"
+            }            
+        ]
     },
     {
         id: 15,
@@ -205,4 +227,10 @@ export const tomatoDB = [
 
 export function getTomatoInfo(id) {
     return tomatoDB.find(tomato => tomato.id === id);
+}
+
+export function descriptionToParagraphs(chaine) {
+    const lignes = chaine.split('\n');
+    const lignesAvecBalises = lignes.map(ligne => `<p>${ligne.trim()}</p>`);
+    return lignesAvecBalises.join('\n');
 }
