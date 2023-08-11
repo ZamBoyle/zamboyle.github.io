@@ -20,9 +20,9 @@ export const planted = [
         }
     },
     {
-        year:2024,
-        plantsPerRow: 105,
-        plants: letters.stringToPlants(" H E L L O  W O R L D"), //letters.stringToPlants('HELLO WORLD'),
+        year:0,
+        plantsPerRow: "H E L L O W O R L D!".length*5,
+        plants: letters.stringToPlants("H E L L O W O R L D!"), 
         semens:[
             {
                 id: 1,
@@ -32,11 +32,6 @@ export const planted = [
         ]
     }    
 ];
-
-//21*5
-//" H E L L O  W O R L D".length
-//21*5 =
-
 
 function getPlantedDetailsByYear(year) {
     const plantedDetails = planted.find(p => p.year === year);
@@ -50,7 +45,8 @@ function getPlantedDetailsByYear(year) {
 
 export function getCurrentPlantedDetails() {
     const currentYear = new Date().getFullYear();
-    return getPlantedDetailsByYear(currentYear+1);
+    //return getPlantedDetailsByYear(currentYear+1);
+    return getPlantedDetailsByYear(0);
 }
 
 
