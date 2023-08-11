@@ -10,7 +10,6 @@
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
 
-    <!-- Bootstrap CSS v5.2.1 -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/site.css" rel="stylesheet" />
 
@@ -26,45 +25,21 @@
             <canvas id="canvas"  style="display: none;"></canvas>
             <canvas id="overlay" class="position-absolute top-0"></canvas>
         </div>
-<!--         <div id="camera-container" style="height: 400px;" class="d-flex align-items-center justify-content-center position-relative overflow-hidden">
-            <video id="camera" autoplay class="position-absolute top-0 left-0 right-0 bottom-0 m-auto"   ></video>
-            <canvas id="canvas" style="display: none;"></canvas>
-            <canvas id="overlay" class="position-absolute top-0"></canvas>
-        </div> -->
-        
         <hr />
-        <!-- <div class="row mb-4 mx-2"> -->
         <div class="row">
             <div id="result" class="col-12">
                 <h2 class="text-white">Tomate non trouvée...</h2>
                 <img src='../img/0_Unknown.jpg' class='border rounded float-start"' height='100px;'>
             </div>
         </div>
-        <!-- </div> -->
     </main>
     <footer>
-        <!-- place footer here -->
+        
     </footer>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/menu.js" type="module"></script>    
     <script src="../js/jsQR.js"></script>
-    <script src="../js/app.js" type="module"></script>
-    <!--     <script type="text/javascript">  
-        //get the date and time
-        var currentDate = (new Date()).getTime();  
-        
-        //create new script element
-        var newScriptElement = document.createElement("script");  
-        newScriptElement.type = "text/javascript";  
-        
-        // add current date to URL as a query parameter
-        newScriptElement.src = "app.js?" + currentDate;  
-        newScriptElement.type="module";
-        
-        // append new script element to body.
-        document.body.appendChild(newScriptElement);  
-     </script> -->
-
+    <script src="../js/qrtomatoes.js" type="module"></script>
 </body>
 
 </html>

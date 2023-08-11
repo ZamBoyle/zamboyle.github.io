@@ -55,8 +55,33 @@ navigator.mediaDevices
       return navigator.mediaDevices.getUserMedia({ video: true });
     } else {
       console.log("Une erreur s'est produite : " + error);
-      document.getElementsByTagName("body")[0].innerHTML =
-        "Une erreur s'est produite : " + error;
+      //teste toutes les erreurs possible avec error.name
+      switch (error.name) {
+        case "NotFoundError":
+          body.innerHTML = "Aucune caméra n'a été trouvée";
+          break;
+        case "NotAllowedError":
+          body.innerHTML = "Vous n'avez pas donné la permission d'accéder à la caméra";
+          break;
+        case "NotReadableError":
+          body.innerHTML = "Impossible d'accéder à la caméra";
+          break;
+        case "SecurityError":
+          body.innerHTML = "Une erreur de sécurité s'est produite";
+          break;
+        case "TypeError":
+          body.innerHTML = "Une erreur s'est produite : " + error;
+          break;
+        case "AbortError":
+          body.innerHTML = "Une erreur s'est produite : " + error;
+          break;
+        case "UnknownError":
+          body.innerHTML = "Une erreur s'est produite : " + error;
+          break;
+        default:
+          body.innerHTML = "Une erreur s'est produite : " + error;
+          break;
+      }
     }
   });
 

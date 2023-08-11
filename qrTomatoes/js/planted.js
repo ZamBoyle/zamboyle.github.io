@@ -1,8 +1,54 @@
+import * as db from './db.js';
 export const planted = [
-    22, null, null, 23, 25,
-    1, 2, 3, 4, 5,
-    6, 7, 8, 9, 10,
-    11, 12, 13, 14,
-    15, 16, 17, 18,
-    19, 20, null, 21
+    {
+        year:2023,
+        plantsPerRow: 5,
+        plants:[
+            22, null, null, 23, 25,
+            1, 2, 3, 4, 5,
+            6, 7, 8, 9, 10,
+            11, 12, 13, 14,
+            15, 16, 17, 18,
+            19, 20, null, 21
+        ],
+        semens:{
+            id: 1,
+            semensPerRow: 5,
+            plants: []
+        }
+    },
+    {
+        year:2024,
+        plantsPerRow: 5,
+        plants:[
+            1, null, null, null, 5,
+            null, 7, null, 9, null,
+            null, null, 13, null, null,
+            null, 17, null, 19, null,
+            16, null, null, null, 25,
+            null, null, null, null, null
+        ],
+        semens:[
+            {
+                id: 1,
+                semensPerRow: 5,
+                plants: []
+            }
+        ]
+    }    
 ];
+
+function getPlantedDetailsByYear(year) {
+    const plantedDetails = planted.find(p => p.year === year);
+    
+    if (!plantedDetails) {
+        console.log(`Aucun détail trouvé pour l'année ${year}`);
+        return;
+    }
+    return plantedDetails;
+}
+
+export function getCurrentPlantedDetails() {
+    const currentYear = new Date().getFullYear();
+    return getPlantedDetailsByYear(currentYear);
+}
