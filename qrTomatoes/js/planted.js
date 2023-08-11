@@ -1,4 +1,6 @@
 import * as db from './db.js';
+import * as letters from './letters.js';
+
 export const planted = [
     {
         year:2023,
@@ -19,15 +21,8 @@ export const planted = [
     },
     {
         year:2024,
-        plantsPerRow: 5,
-        plants:[
-            1, null, null, null, 5,
-            null, 7, null, 9, null,
-            null, null, 13, null, null,
-            null, 17, null, 19, null,
-            16, null, null, null, 25,
-            null, null, null, null, null
-        ],
+        plantsPerRow: 105,
+        plants: letters.stringToPlants(" H E L L O  W O R L D"), //letters.stringToPlants('HELLO WORLD'),
         semens:[
             {
                 id: 1,
@@ -37,6 +32,11 @@ export const planted = [
         ]
     }    
 ];
+
+//21*5
+//" H E L L O  W O R L D".length
+//21*5 =
+
 
 function getPlantedDetailsByYear(year) {
     const plantedDetails = planted.find(p => p.year === year);
@@ -50,5 +50,7 @@ function getPlantedDetailsByYear(year) {
 
 export function getCurrentPlantedDetails() {
     const currentYear = new Date().getFullYear();
-    return getPlantedDetailsByYear(currentYear);
+    return getPlantedDetailsByYear(currentYear+1);
 }
+
+

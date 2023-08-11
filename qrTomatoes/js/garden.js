@@ -15,7 +15,7 @@ const currentPlantedDetails = planted.getCurrentPlantedDetails();
 const currentPlants = currentPlantedDetails.plants;
 
 const PLANTS_PER_ROW = currentPlantedDetails.plantsPerRow;
-const MAX_CANVAS_WIDTH = 400; 
+const MAX_CANVAS_WIDTH = 800; 
 
 
 let lastClickedTomatoIndex = -1;  // initialiser à -1 pour indiquer qu'aucune tomate n'a encore été cliquée
