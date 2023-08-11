@@ -47,8 +47,8 @@ function getPlantedDetailsByYear(year) {
 
 export function getCurrentPlantedDetails() {
     const currentYear = new Date().getFullYear();
-    //return getPlantedDetailsByYear(currentYear);
-    return getPlantedDetailsByYear(0);
+    return getPlantedDetailsByYear(currentYear);
+    //return getPlantedDetailsByYear(0);
 }
 
 

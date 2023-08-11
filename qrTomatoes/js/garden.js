@@ -15,7 +15,7 @@ const currentPlantedDetails = planted.getCurrentPlantedDetails();
 const currentPlants = currentPlantedDetails.plants;
 
 const PLANTS_PER_ROW = currentPlantedDetails.plantsPerRow;
-const MAX_CANVAS_WIDTH = currentPlantedDetails.showText? 400:1000;
+const MAX_CANVAS_WIDTH = currentPlantedDetails.showText ? 400 : 1000;
 
 let lastClickedTomatoIndex = -1; // initialiser à -1 pour indiquer qu'aucune tomate n'a encore été cliquée
 
@@ -87,34 +87,36 @@ function drawGarden() {
 drawGarden();
 window.addEventListener("resize", drawGarden);
 
-canvas.addEventListener("click", (event) => {
-  const x = event.offsetX;
-  const y = event.offsetY;
-  const imageSize = GAP * 0.8;
+if (!currentPlantedDetails.showText) {
+  canvas.addEventListener("click", (event) => {
+    const x = event.offsetX;
+    const y = event.offsetY;
+    const imageSize = GAP * 0.8;
 
-  currentPlants.forEach((tomatoId, index) => {
-    const tomato = db.getTomatoInfo(tomatoId);
-    if (!tomato) return;
+    currentPlants.forEach((tomatoId, index) => {
+      const tomato = db.getTomatoInfo(tomatoId);
+      if (!tomato) return;
 
-    if (index < positions.length) {
-      const position = positions[index];
-      const startX = position.x - imageSize / 2;
-      const startY = position.y - imageSize / 2;
-      const endX = startX + imageSize;
-      const endY = startY + imageSize;
+      if (index < positions.length) {
+        const position = positions[index];
+        const startX = position.x - imageSize / 2;
+        const startY = position.y - imageSize / 2;
+        const endX = startX + imageSize;
+        const endY = startY + imageSize;
 
-      if (x > startX && x < endX && y > startY && y < endY) {
-        descriptionDiv.innerHTML = `
+        if (x > startX && x < endX && y > startY && y < endY) {
+          descriptionDiv.innerHTML = `
                     <h2>${tomato.nom}</h2>
                     <img class="border rounded-2" src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200">
                     <p>${tomato.description}</p>
                 `;
-        lastClickedTomatoIndex = index;
-        drawGarden();
+          lastClickedTomatoIndex = index;
+          drawGarden();
+        }
       }
-    }
+    });
   });
-});
+}
 
 function roundRect(ctx, x, y, width, height, radius) {
   ctx.strokeStyle = "blue";
