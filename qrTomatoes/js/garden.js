@@ -87,7 +87,7 @@ function drawGarden() {
 drawGarden();
 window.addEventListener("resize", drawGarden);
 
-if (!currentPlantedDetails.showText) {
+if (currentPlantedDetails.showText) {
   canvas.addEventListener("click", (event) => {
     const x = event.offsetX;
     const y = event.offsetY;
