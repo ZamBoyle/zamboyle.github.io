@@ -1,69 +1,39 @@
-
-
-export const A = [
-    1, null, null, null, 1,
-    1, null, null, null, 1,    
-    1, 1, 1, 1, 1,
-    1, null, null, null, 1,
-    1, 1, 1, 1, 1,
-];
-
-export const H = [
-    1, null, null, null, 1,
-    1, null, null, null, 1,
-    1, 1, 1, 1, 1,
-    1, null, null, null, 1,
-    1, null, null, null, 1,
-];
-
-export const E = [
-    1, 1, 1, 1, 1,
-    1, null, null, null, null,
-    1, 1, 1, 1, 1,
-    1, null, null, null, null,
-    1, 1, 1, 1, 1,
-];
-
-export const F = [
-    1, null, null, null, null,
-    1, null, null, null, null,    
-    1, 1, 1, 1, 1,
-    1, null, null, null, null,
-    1, 1, 1, 1, 1,
-];
-
-export const L = [
-    1, 1, 1, 1, 1,
-    1, null, null, null, null,
-    1, null, null, null, null,
-    1, null, null, null, null,
-    1, null, null, null, null
-];
-
-export const O = [
-    1, 1, 1, 1, 1,
-    1, null, null, null, 1,
-    1, null, null, null, 1,
-    1, null, null, null, 1,
-    1, 1, 1, 1, 1,
-];
-
-export const SPACE = [
-    null, null, null, null, null,
-    null, null, null, null, null,
-    null, null, null, null, null,
-    null, null, null, null, null,
-    null, null, null, null, null
-];
-
 const letters = {
-    H: [
-      1, null, null, null, 1,
-      1, null, null, null, 1,
-      1, 1, 1, 1, 1,
-      1, null, null, null, 1,
-      1, null, null, null, 1
-    ],
+  A: [
+    1, null, null, null, 1,
+    1, null, null, null, 1,
+    1, 1, 1, 1, 1,
+    1, null, null, null, 1,
+    1, 1, 1, 1, 1
+  ], 
+  B: [
+    1, 1, 1, 1, 1,
+    1, null, null, null, 1,
+    1, 1, 1, 1, 1,
+    1, null, null, null, 1,
+    1, 1, 1, 1, 1
+  ],
+  C: [
+    1, 1, 1, 1, 1,
+    1, null, null, null, null,
+    1, null, null, null, null,
+    1, null, null, null, null,
+    1, 1, 1, 1, 1
+  ],
+  H: [
+    1, null, null, null, 1,
+    1, null, null, null, 1,
+    1, 1, 1, 1, 1,
+    1, null, null, null, 1,
+    1, null, null, null, 1
+  ],  
+  I:[
+    null, null, 1, null, null,
+    null, null, 1, null, null,
+    null, null, 1, null, null,
+    null, null, null, null, null,
+    null, null, 1, null, null
+  ],
     E: [
       1, 1, 1, 1, 1,
       1, null, null, null, null,
@@ -71,6 +41,13 @@ const letters = {
       1, null, null, null, null,
       1, 1, 1, 1, 1,
     ],
+    N: [
+      1,  null, null, null, 1,
+      1,  null, null, 1, 1,
+      1,  null, 1, null, 1,
+      1, 1, null, null, 1,
+      1,null, null, null, 1,
+    ],    
     L: [
         1, 1, 1, 1, 1,
         1, null, null, null, null,
@@ -99,6 +76,27 @@ const letters = {
         1, null, null, null, 1,
         1, 1, 1, 1, null,
       ],          
+      V: [
+        1, null, null, null, 1,
+        1, null, null, null, 1,
+        null, 1, null, 1, null,
+        null, 1, null, 1, null,
+        null, null, 1, null, null,
+      ],
+      U: [
+        null, 1, 1, 1, null,
+        1, null, null, null, 1,
+        1, null, null, null, 1,
+        1, null, null, null, 1,
+        1, null, null, null, 1,
+      ],      
+      V: [
+        null, null, 1, null, null,
+        null, 1, null, 1, null,
+        null, 1, null, 1, null,
+        1, null, null, null, 1,
+        1, null, null, null, 1,
+      ],      
     W: [
         1, null, null, null, 1,
         1, 1, null, 1, 1,
@@ -119,7 +117,14 @@ const letters = {
         null, null, null, null, null,
         null, null, null, null, null,
         null, null, null, null, null
-    ]
+    ], 
+    '.': [
+        null, null, 1, null, null,
+        null, null, null, null, null,
+        null, null, null, null, null,
+        null, null, null, null, null,
+        null, null, null, null, null
+    ]    
   };
   
 

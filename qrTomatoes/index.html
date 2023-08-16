@@ -12,6 +12,7 @@
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/garden.css">
     <link href="css/site.css" rel="stylesheet" />
 
 </head>
@@ -23,7 +24,12 @@
     <!--     <main class="container d-flex flex-column"> -->
     <div id="menuContainer"></div>
     <main class="container  mt-3">
-        <h1>Bienvenue !</h1>
+        <h1>
+            <div class="col-12 garden">
+                <canvas class="border rounded-2" text="H e l l o W o r l d !"></canvas><br/>
+            </div>          
+            <!-- <canvas class="border rounded-2" text="B u r             "></canvas> -->
+        </h1>
         <a href="pages/garden.html" class="btn btn-primary">My Garden</a><br>
         <a href="pages/liste.html" class="btn btn-primary mt-1">Liste des Tomates</a><br>
         <a href="pages/qrtomatoes.html" class="btn btn-primary mt-1">QR Tomatoes</a>
@@ -33,6 +39,7 @@
     </footer>
     <script src="js/menu.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/garden.js" type="module"></script>
 </body>
 
 </html>

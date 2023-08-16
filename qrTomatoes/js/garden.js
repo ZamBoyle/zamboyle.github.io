@@ -2,39 +2,68 @@
 import * as db from "./db.js";
 import * as planted from "./planted.js";
 
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-const descriptionDiv = document.getElementById("description");
+function init(ctx, descriptionDiv, currentPlantedDetails){
 
-const tomatoImage = new Image();
-tomatoImage.src = "../img/tomate.png";
+  if (currentPlantedDetails.showText) {
+    ctx.canvas.addEventListener("click", (event) => {
+      const x = event.offsetX;
+      const y = event.offsetY;
+      const imageSize = GAP * 0.8;
+  
+      const currentPlants = currentPlantedDetails.plants;
+      currentPlants.forEach((tomatoId, index) => {
+        const tomato = db.getTomatoInfo(tomatoId);
+        if (!tomato) return;
+  
+        if (index < positions.length) {
+          const position = positions[index];
+          const startX = position.x - imageSize / 2;
+          const startY = position.y - imageSize / 2;
+          const endX = startX + imageSize;
+          const endY = startY + imageSize;
+  
+          if (x > startX && x < endX && y > startY && y < endY) {
+            descriptionDiv.innerHTML = `
+                      <h2>${tomato.nom}</h2>
+                      <div class="text-center"><img class="border rounded-2" src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200"></div>
+                      ${db.descriptionToParagraphs(tomato.description)}
+                  `;
+            lastClickedTomatoIndex = index;
+            drawGarden();
+          }
+        }
+      });
+    });
+  }
+  window.addEventListener("resize", () => drawGarden(ctx, currentPlantedDetails));
+  window.addEventListener("load", function () {
+  drawGarden(ctx, currentPlantedDetails);
+});
+}
 
-let GAP;
-let positions = [];
-const currentPlantedDetails = planted.getCurrentPlantedDetails();
-const currentPlants = currentPlantedDetails.plants;
-
-const PLANTS_PER_ROW = currentPlantedDetails.plantsPerRow;
-const MAX_CANVAS_WIDTH = currentPlantedDetails.showText ? 400 : 1000;
-
-let lastClickedTomatoIndex = -1; // initialiser à -1 pour indiquer qu'aucune tomate n'a encore été cliquée
-
-function drawGarden() {
+function drawGarden(ctx, currentPlantedDetails) {
+  const PLANTS_PER_ROW = currentPlantedDetails.plantsPerRow;
+  const MAX_CANVAS_WIDTH = currentPlantedDetails.showText ? 400 : 1000;
   positions = [];
+  
   GAP = Math.min(
-    Math.min(canvas.parentElement.offsetWidth, MAX_CANVAS_WIDTH) /
+    Math.min(ctx.canvas.parentElement.offsetWidth, MAX_CANVAS_WIDTH) /
       (PLANTS_PER_ROW + 2),
     150
   );
+  if(!currentPlantedDetails.showText)
+      GAP = GAP*.5;
+
+  const currentPlants = currentPlantedDetails.plants;
 
   const TOTAL_TOMATOES = currentPlants.length; // Utilisez le tableau planted pour le nombre total de tomates
   const ACTUAL_ROWS = Math.ceil(TOTAL_TOMATOES / PLANTS_PER_ROW);
 
-  canvas.width = (PLANTS_PER_ROW + 1) * GAP;
-  canvas.height = (ACTUAL_ROWS + 1) * GAP;
+  ctx.canvas.width = (PLANTS_PER_ROW + 1) * GAP;
+  ctx.canvas.height = (ACTUAL_ROWS + 1) * GAP;
 
   ctx.fillStyle = "green";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
   for (let row = ACTUAL_ROWS - 1; row >= 0; row--) {
     for (let col = 0; col < PLANTS_PER_ROW; col++) {
@@ -42,6 +71,8 @@ function drawGarden() {
     }
   }
 
+  const tomatoImage = new Image();
+  tomatoImage.src = "/qrTomatoes/img/tomate.png";
   currentPlants.forEach((tomatoId, index) => {
     const tomato = db.getTomatoInfo(tomatoId);
     if (!tomato) return; // Si on ne trouve pas de tomate correspondant à l'ID, on passe à la suivante
@@ -84,40 +115,6 @@ function drawGarden() {
   });
 }
 
-drawGarden();
-window.addEventListener("resize", drawGarden);
-
-if (currentPlantedDetails.showText) {
-  canvas.addEventListener("click", (event) => {
-    const x = event.offsetX;
-    const y = event.offsetY;
-    const imageSize = GAP * 0.8;
-
-    currentPlants.forEach((tomatoId, index) => {
-      const tomato = db.getTomatoInfo(tomatoId);
-      if (!tomato) return;
-
-      if (index < positions.length) {
-        const position = positions[index];
-        const startX = position.x - imageSize / 2;
-        const startY = position.y - imageSize / 2;
-        const endX = startX + imageSize;
-        const endY = startY + imageSize;
-
-        if (x > startX && x < endX && y > startY && y < endY) {
-          descriptionDiv.innerHTML = `
-                    <h2>${tomato.nom}</h2>
-                    <div class="text-center"><img class="border rounded-2" src="../img/${tomato.urlImage}" alt="${tomato.nom}" width="200"></div>
-                    ${db.descriptionToParagraphs(tomato.description)}
-                `;
-          lastClickedTomatoIndex = index;
-          drawGarden();
-        }
-      }
-    });
-  });
-}
-
 function roundRect(ctx, x, y, width, height, radius) {
   ctx.strokeStyle = "blue";
   ctx.lineWidth = 3;
@@ -131,6 +128,19 @@ function roundRect(ctx, x, y, width, height, radius) {
   return ctx;
 }
 
-window.addEventListener("load", function () {
-  drawGarden();
+let GAP;
+let positions;
+let lastClickedTomatoIndex = -1;
+Array.from(document.getElementsByTagName('canvas')).forEach(function(canvas) {
+  let ctx = canvas.getContext("2d");
+  let descriptionDiv = document.getElementById("description");
+
+  let currentPlantedDetails = null;
+  if(ctx.canvas.hasAttribute("text")){
+    currentPlantedDetails = planted.getPlantedDetailsFromText(canvas.getAttribute("text").toUpperCase());
+  }
+  else{
+    currentPlantedDetails = planted.getCurrentPlantedDetails();
+  }
+  init(ctx, descriptionDiv, currentPlantedDetails);
 });

@@ -22,9 +22,9 @@ export const planted = [
     },
     {
         year:0,
-        plantsPerRow: "H E L L O W O R L D!".length*5,
+        plantsPerRow: "H E L L O".length*5,
         showText: false,
-        plants: letters.stringToPlants("H E L L O W O R L D!"), 
+        plants: letters.stringToPlants("H E L L O"), 
         semens:[
             {
                 id: 1,
@@ -51,4 +51,25 @@ export function getCurrentPlantedDetails() {
     //return getPlantedDetailsByYear(0);
 }
 
+export function getPlantedDetailsFromText(text)
+{
+    const plants = letters.stringToPlants(text);
+    //const plantsPerRow = (text.length-compterEspaces(text))*5+compterEspaces(text)*2;
+    return {
+        year:0,
+        plantsPerRow: text.length*5,
+        showText: false,
+        plants: plants,
+        semens:[
+            {
+                id: 1,
+                semensPerRow: 5,
+                plants: []
+            }
+        ]
+    };
+}
 
+function compterEspaces(chaine) {
+    return chaine.split(' ').length - 1;
+}
