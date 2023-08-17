@@ -2,6 +2,28 @@
 import * as db from "./db.js";
 import * as planted from "./planted.js";
 
+let GAP;
+let positions;
+let lastClickedTomatoIndex = -1;
+
+setCanvas();
+
+function setCanvas(){
+Array.from(document.getElementsByTagName('canvas')).forEach(function(canvas) {
+  let ctx = canvas.getContext("2d");
+  let descriptionDiv = document.getElementById("description");
+
+  let currentPlantedDetails = null;
+  if(ctx.canvas.hasAttribute("text")){
+    currentPlantedDetails = planted.getPlantedDetailsFromText(canvas.getAttribute("text").toUpperCase());
+  }
+  else{
+    currentPlantedDetails = planted.getCurrentPlantedDetails();
+  }
+  init(ctx, descriptionDiv, currentPlantedDetails);
+});
+}
+
 function init(ctx, descriptionDiv, currentPlantedDetails){
 
   if (currentPlantedDetails.showText) {
@@ -29,7 +51,7 @@ function init(ctx, descriptionDiv, currentPlantedDetails){
                       ${db.descriptionToParagraphs(tomato.description)}
                   `;
             lastClickedTomatoIndex = index;
-            drawGarden();
+            drawGarden(ctx, currentPlantedDetails);
           }
         }
       });
@@ -127,20 +149,3 @@ function roundRect(ctx, x, y, width, height, radius) {
   ctx.closePath();
   return ctx;
 }
-
-let GAP;
-let positions;
-let lastClickedTomatoIndex = -1;
-Array.from(document.getElementsByTagName('canvas')).forEach(function(canvas) {
-  let ctx = canvas.getContext("2d");
-  let descriptionDiv = document.getElementById("description");
-
-  let currentPlantedDetails = null;
-  if(ctx.canvas.hasAttribute("text")){
-    currentPlantedDetails = planted.getPlantedDetailsFromText(canvas.getAttribute("text").toUpperCase());
-  }
-  else{
-    currentPlantedDetails = planted.getCurrentPlantedDetails();
-  }
-  init(ctx, descriptionDiv, currentPlantedDetails);
-});
