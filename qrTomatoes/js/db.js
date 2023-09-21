@@ -224,10 +224,18 @@ export const tomatoDB = [
     }
 ];
 
-
 export function getTomatoInfo(id) {
     return tomatoDB.find(tomato => tomato.id === id);
 }
+
+export function getTomatoesDescriptionContains(chaine) {
+    return tomatoDB.filter(tomato => tomato.description.toLowerCase().includes(chaine.toLowerCase()));
+}
+
+export function getTomatoesByAvisFromAuteur(auteur) {
+    return tomatoDB.filter(tomato => tomato.avis.find(avis => avis.Auteur === auteur));
+}
+
 
 export function descriptionToParagraphs(chaine) {
     const lignes = chaine.split('\n');

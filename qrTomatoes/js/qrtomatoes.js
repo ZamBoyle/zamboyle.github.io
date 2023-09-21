@@ -202,6 +202,11 @@ function getTomatoInfo(id) {
     info += `<img src='../img/${tomate.urlImage}' class='border rounded' height='200px;'>`;
     info += '<div class="flex-grow-1 ms-3">';
     info += `<p class=" text-white font-weight-bold">${tomate.description}</p>`;
+    info += "<h3 class='text-white'>Avis</h3>";
+    info += "<ul>";
+    tomate.avis.forEach((avis) => {
+      info += `<li class="text-white">${avis.Auteur}(${avis.date}) :${avis.avis}</li>`;
+    });
     info += "</div>";
     return info;
   } else {
