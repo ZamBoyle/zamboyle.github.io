@@ -8,7 +8,10 @@ window.onload = function() {
     // Obtenez le code source de la page
     var html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
 
-    html = html.replace(/>/g, '>\n');
+    //html = html.replace(/>/g, '>\n');
+
+    // Remove the base tag from the html string
+    html = html.replace(/<base[^>]*>/gi, '');
 
     
     // Retirez toutes les balises <script src="..."></script> du code source
