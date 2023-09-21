@@ -27,6 +27,6 @@ window.onload = function() {
       .replace(/'/g, '&#39;');
     
     // Insérez le code source échappé dans le div
-    container.innerHTML = `<pre style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
+    container.innerHTML = `<h2>Code source</h2><pre style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
     document.body.appendChild(container);
   }
