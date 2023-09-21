@@ -7,6 +7,9 @@ window.onload = function() {
 
     // Obtenez le code source de la page
     var html = document.documentElement.outerHTML;
+
+    html = html.replace(/>/g, '>\n');
+
     
     // Retirez toutes les balises <script src="..."></script> du code source
     var cleanedHtml = html.replace(/<script[\s\S]*?<\/script>/gi, '');
