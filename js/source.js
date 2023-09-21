@@ -10,7 +10,7 @@ window.onload = function() {
     
     // Retirez toutes les balises <script src="..."></script> du code source
     var cleanedHtml = html.replace(/<script[\s\S]*?<\/script>/gi, '');
-
+    html = html.replace(/<div id="source-code-container">[\s\S]*?<\/div>/, '');
     
     // Échappez les caractères spéciaux pour qu'ils soient affichés correctement
     var escapedHtml = cleanedHtml
