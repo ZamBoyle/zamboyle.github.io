@@ -2,7 +2,6 @@ window.onload = function() {
     // Créez un div pour contenir le code source
     var h2 = document.createElement('h2');
     h2.innerHTML = 'Code source de la page';
-    document.body.appendChild(h2);
 
     var container = document.createElement('div');
     container.id = 'source-code-container';
@@ -30,5 +29,6 @@ window.onload = function() {
     
     // Insérez le code source échappé dans le div
     container.innerHTML = `<pre style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
+    document.body.appendChild(h2);
     document.body.appendChild(container);
   }
