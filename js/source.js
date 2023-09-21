@@ -12,8 +12,8 @@ window.onload = function() {
 
     // Remove the base tag from the html string
     html = html.replace(/<base[^>]*>/gi, '');
-
-    
+    html = html.replace(/<\/body>\n<\/html>/, '</body>\n\n</html>');
+        
     // Retirez toutes les balises <script src="..."></script> du code source
     // Dans le but de ne pas perturber les étudiants.
     var cleanedHtml = html.replace(/<script[\s\S]*?<\/script>/gi, '');
