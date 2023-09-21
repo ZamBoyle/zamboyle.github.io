@@ -6,7 +6,7 @@ window.onload = function() {
 //    document.body.appendChild(container);
 
     // Obtenez le code source de la page
-    var html = document.documentElement.outerHTML;
+    var html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
 
     html = html.replace(/>/g, '>\n');
 
