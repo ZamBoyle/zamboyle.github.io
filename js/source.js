@@ -32,18 +32,19 @@ window.onload = function () {
   container.innerHTML = `<pre style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
   document.body.appendChild(h2);
   document.body.appendChild(container);
-
-  function toggleCss() {
-    if (window.location.search.includes("css=off")) {
-      // Créez une nouvelle balise <style>
-      let style = document.createElement("style");
-      style.innerHTML = ".no-css, .no-css * { all: initial !important; }";
-
-      // Ajoutez la classe no-css à l'élément <body>
-      document.body.classList.add("no-css");
-
-      // Ajoutez la balise <style> au <head> du document
-      document.head.appendChild(style);
-    }
-  }
 };
+
+
+function toggleCss() {
+  if (window.location.search.includes("css=off")) {
+    // Créez une nouvelle balise <style>
+    let style = document.createElement("style");
+    style.innerHTML = ".no-css, .no-css * { all: initial !important; }";
+
+    // Ajoutez la classe no-css à l'élément <body>
+    document.body.classList.add("no-css");
+
+    // Ajoutez la balise <style> au <head> du document
+    document.head.appendChild(style);
+  }
+}
