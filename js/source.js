@@ -1,4 +1,15 @@
 window.onload = function() {
+  if (window.location.search.includes('css=0')) {
+    // Sélectionnez toutes les balises <link> de la page
+    let links = document.getElementsByTagName('link');
+    
+    // Parcourez la liste des balises <link> et désactivez-les une par une
+    for (let link of links) {
+        if (link.rel === 'stylesheet') {
+            link.disabled = true;
+        }
+    }
+}
     // Créez un div pour contenir le code source
     var h2 = document.createElement('h2');
     h2.innerHTML = 'Code source de la page';
@@ -31,4 +42,7 @@ window.onload = function() {
     container.innerHTML = `<pre style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
     document.body.appendChild(h2);
     document.body.appendChild(container);
+
+
+
   }
