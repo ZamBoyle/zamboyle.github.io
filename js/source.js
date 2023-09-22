@@ -36,7 +36,7 @@ window.onload = function () {
 
 
 function toggleCss() {
-  if (window.location.search.includes("css=off")) {
+  if (window.location.search.includes("css=0")) {
     // Créez une nouvelle balise <style>
     let style = document.createElement("style");
     style.innerHTML = ".no-css, .no-css * { all: initial !important; }";
