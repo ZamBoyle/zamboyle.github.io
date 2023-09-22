@@ -3,7 +3,7 @@ window.onload = function () {
   // Créez un div pour contenir le code source
   var h2 = document.createElement("h2");
   h2.innerHTML = "Code source de la page ";
-  h2.innerHTML += `<div onclick="CopyToClipboard('codeId')">Copier code</div>`;
+  h2.innerHTML += `<button onclick="CopyToClipboard('codeId')">Copier code</button>`;
 
   var container = document.createElement("div");
   container.id = "source-code-container";
