@@ -2,7 +2,8 @@ window.onload = function () {
   toggleCss();
   // Créez un div pour contenir le code source
   var h2 = document.createElement("h2");
-  h2.innerHTML = "Code source de la page";
+  h2.innerHTML = "Code source de la page ";
+  h2.innerHTML += `<div onclick="CopyToClipboard('codeId')">Copier code</div>`;
 
   var container = document.createElement("div");
   container.id = "source-code-container";
@@ -29,11 +30,19 @@ window.onload = function () {
     .replace(/'/g, "&#39;");
 
   // Insérez le code source échappé dans le div
-  container.innerHTML = `<pre style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
+  container.innerHTML = `<pre id="codeId" style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
   document.body.appendChild(h2);
   document.body.appendChild(container);
 };
 
+function CopyToClipboard(id) {
+  var r = document.createRange();
+  r.selectNode(document.getElementById(id));
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(r);
+  document.execCommand('copy');
+  window.getSelection().removeAllRanges();
+}
 
 function toggleCss() {
   if (window.location.search.includes("css=off")) {
