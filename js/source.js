@@ -12,7 +12,7 @@ window.onload = function () {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;`;
-  h2.innerHTML += `<button type="button" onclick="CopyToClipboard('codeId')" style="${cssButton}">Copier code</button>`;
+  h2.innerHTML += `<button id="btnCopy" type="button" onclick="CopyToClipboard('codeId')" style="${cssButton}">Copier code</button>`;
 
   var container = document.createElement("div");
   container.id = "source-code-container";
@@ -51,6 +51,7 @@ function CopyToClipboard(id) {
   window.getSelection().addRange(r);
   document.execCommand('copy');
   window.getSelection().removeAllRanges();
+  document.getElementById("btnCopy").innerHTML = "Code Copié !";
 }
 
 function toggleCss() {
