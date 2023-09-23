@@ -69,23 +69,32 @@ function toggleCss() {
     // Ajoutez la balise <style> au <head> du document
     document.head.appendChild(style);
   }
+}
 
-  // Fonction pour charger PrismJS
-  function loadPrism(callback) {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js";
-    script.onload = callback; // Appeler la fonction callback une fois PrismJS chargé
-    document.head.appendChild(script);
-  }
+// Fonction pour charger un fichier CSS
+function loadCSS(href, callback) {
+  var link = document.createElement("link");
+  link.type = "text/css";
+  link.rel = "stylesheet";
+  link.href = href;
+  link.onload = callback; // Appeler la fonction callback une fois le CSS chargé
+  document.head.appendChild(link);
+}
 
-  // Fonction pour appliquer PrismJS à votre code
-  function applyPrism() {
-    // Sélectionnez l'élément contenant votre code
-    var codeElement = document.querySelector("pre code");
+// Fonction pour charger un fichier JS
+function loadJS(src, callback) {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = src;
+  script.onload = callback; // Appeler la fonction callback une fois le JS chargé
+  document.head.appendChild(script);
+}
 
-    // Appliquez PrismJS à l'élément de code
-    Prism.highlightElement(codeElement);
-  }
+// Fonction pour appliquer PrismJS à votre code
+function applyPrism() {
+  // Sélectionnez l'élément contenant votre code
+  var codeElement = document.querySelector("pre code");
+
+  // Appliquez PrismJS à l'élément de code
+  Prism.highlightElement(codeElement);
 }
