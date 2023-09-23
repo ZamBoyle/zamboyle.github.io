@@ -1,9 +1,12 @@
 window.onload = function () {
+  // Charger PrismJS et appliquer la coloration syntaxique une fois chargé
+  loadPrism(applyPrism);
+
   toggleCss();
   // Créez un div pour contenir le code source
   var h2 = document.createElement("h2");
   h2.innerHTML = "Code source de la page ";
-  var cssButton=`
+  var cssButton = `
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -39,7 +42,7 @@ window.onload = function () {
     .replace(/'/g, "&#39;");
 
   // Insérez le code source échappé dans le div
-  container.innerHTML = `<pre id="codeId" style="word-break: break-all;white-space: pre-wrap;">${escapedHtml}</pre>`;
+  container.innerHTML = `<pre id="codeId" style="word-break: break-all;white-space: pre-wrap;"><code class="language-html">${escapedHtml}</code></pre>`;
   document.body.appendChild(h2);
   document.body.appendChild(container);
 };
@@ -49,7 +52,7 @@ function CopyToClipboard(id) {
   r.selectNode(document.getElementById(id));
   window.getSelection().removeAllRanges();
   window.getSelection().addRange(r);
-  document.execCommand('copy');
+  document.execCommand("copy");
   window.getSelection().removeAllRanges();
   document.getElementById("btnCopy").innerHTML = "Code Copié !";
 }
@@ -65,5 +68,24 @@ function toggleCss() {
 
     // Ajoutez la balise <style> au <head> du document
     document.head.appendChild(style);
+  }
+
+  // Fonction pour charger PrismJS
+  function loadPrism(callback) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js";
+    script.onload = callback; // Appeler la fonction callback une fois PrismJS chargé
+    document.head.appendChild(script);
+  }
+
+  // Fonction pour appliquer PrismJS à votre code
+  function applyPrism() {
+    // Sélectionnez l'élément contenant votre code
+    var codeElement = document.querySelector("pre code");
+
+    // Appliquez PrismJS à l'élément de code
+    Prism.highlightElement(codeElement);
   }
 }
