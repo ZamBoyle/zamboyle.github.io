@@ -1,15 +1,4 @@
 window.onload = function () {
-  // Charger PrismJS et appliquer la coloration syntaxique une fois chargé
-  loadCSS(
-    "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css",
-    function () {
-      loadJS(
-        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js",
-        applyPrism
-      );
-    }
-  );
-
   toggleCss();
   // Créez un div pour contenir le code source
   var h2 = document.createElement("h2");
@@ -53,6 +42,17 @@ window.onload = function () {
   container.innerHTML = `<pre id="codeId" style="word-break: break-all;white-space: pre-wrap;"><code class="language-html">${escapedHtml}</code></pre>`;
   document.body.appendChild(h2);
   document.body.appendChild(container);
+
+    // Charger PrismJS et appliquer la coloration syntaxique une fois chargé
+    loadCSS(
+      "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css",
+      function () {
+        loadJS(
+          "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js",
+          applyPrism
+        );
+      }
+    );
 };
 
 function CopyToClipboard(id) {
