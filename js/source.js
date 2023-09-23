@@ -1,6 +1,14 @@
 window.onload = function () {
   // Charger PrismJS et appliquer la coloration syntaxique une fois chargé
-  loadPrism(applyPrism);
+  loadCSS(
+    "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css",
+    function () {
+      loadJS(
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js",
+        applyPrism
+      );
+    }
+  );
 
   toggleCss();
   // Créez un div pour contenir le code source
