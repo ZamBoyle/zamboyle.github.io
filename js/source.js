@@ -1,10 +1,10 @@
 window.onload = function () {
   // Charger PrismJS et appliquer la coloration syntaxique une fois chargé
   loadCSS(
-    "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css",
     function () {
       loadJS(
-        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js",
         applyPrism
       );
     }
