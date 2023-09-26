@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Intermediate</title>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(window.location.search);
+    var urlParam = params.get('url');
+    
+    if (urlParam) {
+        var iframeSrc = 'http://htmlpreview.github.io/?' + urlParam;
+        
+        // Pour ajouter d'autres paramètres à l'URL de l'iframe
+        params.delete('url'); // On enlève le paramètre url pour ne pas le dupliquer
+        if([...params].length) {
+            iframeSrc += '&' + params.toString(); // On ajoute les autres paramètres à l'URL de l'iframe
+        }
+
+        var iframe = document.createElement('iframe');
+        iframe.src = iframeSrc;
+        iframe.width = '100%';
+        iframe.height = '100%';
+        document.body.appendChild(iframe);
+    } else {
+        console.error('Missing url parameter');
+    }
+});
+</script>
+</head>
+<body style="margin:0; padding:0; overflow:hidden;">
+</body>
+</html>
