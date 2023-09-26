@@ -6,15 +6,21 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var params = new URLSearchParams(window.location.search);
-    var urlParam = params.get('url');
+    var repo = params.get('repo');
+    var page = params.get('page');
     
-    if (urlParam) {
+    if (repo && page) {
+        var baseGithubUrl = 'https://github.com/';
+        var blob = 'blob/master/';
+        var urlParam = baseGithubUrl + repo + '/' + blob + page;
+        
+        params.delete('repo'); // On enlève le paramètre repo
+        params.delete('page'); // On enlève le paramètre page
+
         var iframeSrc = 'http://htmlpreview.github.io/?' + urlParam;
         
-        // Pour ajouter d'autres paramètres à l'URL de l'iframe
-        params.delete('url'); // On enlève le paramètre url pour ne pas le dupliquer
         if([...params].length) {
-            iframeSrc += '&' + params.toString(); // On ajoute les autres paramètres à l'URL de l'iframe
+            iframeSrc += '?' + params.toString();
         }
 
         var iframe = document.createElement('iframe');
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         iframe.height = '100%';
         document.body.appendChild(iframe);
     } else {
-        console.error('Missing url parameter');
+        console.error('Missing repo or page parameter');
     }
 });
 </script>
