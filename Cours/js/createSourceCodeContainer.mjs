@@ -3,7 +3,7 @@ import { needCss } from './toggle-css.mjs';
 
 export function createSourceCodeContainer() {
     var hr = document.createElement("hr");
-    hr.style = "height:5px;background-color:black;margin-top: 30px";
+    hr.style = "height:5px;background-color:black;margin-top: 50px";
     var h2 = document.createElement("h2");
     //h2.style = "margin-top: 0px";
     h2.innerHTML = "Code source de la page ";
