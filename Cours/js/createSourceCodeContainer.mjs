@@ -3,8 +3,9 @@ import { needCss } from './toggle-css.mjs';
 
 export function createSourceCodeContainer() {
     var hr = document.createElement("hr");
-    hr.style = "height:5px;background-color:black;margin-bottom: 0px;";
+    hr.style = "height:5px;background-color:black;margin-bottom: 0px";
     var h2 = document.createElement("h2");
+    h2.style = "margin-top: 0px";
     h2.innerHTML = "Code source de la page ";
     var cssButton = `
     background-color: #4CAF50;
