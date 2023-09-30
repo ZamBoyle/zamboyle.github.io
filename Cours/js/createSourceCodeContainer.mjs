@@ -2,6 +2,7 @@ import { CopyToClipboard } from './clipboard.mjs';
 import { needCss } from './toggle-css.mjs';
 
 export function createSourceCodeContainer() {
+    var hr = document.createElement("hr");
     var h2 = document.createElement("h2");
     h2.innerHTML = "Code source de la page ";
     var cssButton = `
@@ -31,7 +32,8 @@ export function createSourceCodeContainer() {
     html = jsIsHidden ? html.replace(/<script[\s\S]*?<\/script>/gi, "") : html;
     html = escapedHtml(html);
     
-    container.innerHTML = `<hr><pre id="codeId" style="word-break: break-all;white-space: pre-wrap;"><code class="language-html">${html}</code></pre>`;
+    container.innerHTML = `<pre id="codeId" style="word-break: break-all;white-space: pre-wrap;"><code class="language-html">${html}</code></pre>`;
+    document.body.appendChild(hr);
     document.body.appendChild(h2);
     document.body.appendChild(buttonCopy);
     if(buttonCss){
