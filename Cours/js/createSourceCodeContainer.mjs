@@ -4,7 +4,6 @@ import { needCss } from './toggle-css.mjs';
 export function createSourceCodeContainer() {
     var h2 = document.createElement("h2");
     h2.innerHTML = "Code source de la page ";
-    //h2.innerHTML += `<button id="btnCopy" type="button" onclick="CopyToClipboard('codeId')" style="${cssButton}">Copier code</button>`;
     var cssButton = `
     background-color: #4CAF50;
     border: none;
@@ -16,8 +15,10 @@ export function createSourceCodeContainer() {
     font-size: 16px;
     margin-bottom: 10px;
     `; 
+    var jsIsHidden = window.location.search.includes("js=off");
+    var cssIsDisabled = window.location.search.includes("css=off");
     var buttonCopy = createButtonCopy(cssButton);
-    var buttonCss = createButtonCss(cssButton, window.location.search.includes("css=off"));
+    var buttonCss = createButtonCss(cssButton, cssIsDisabled);
         
     var container = document.createElement("div");
     container.id = "source-code-container";
@@ -26,14 +27,8 @@ export function createSourceCodeContainer() {
     var html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
     html = html.replace(/<base[^>]*>/gi, "");
     html = html.replace(/<\/body>\n<\/html>/, "</body>\n\n</html>");
-    var cleanedHtml = html.replace(/<script[\s\S]*?<\/script>/gi, "");
-    
-    var escapedHtml = cleanedHtml
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
+    html = jsIsHidden ? html.replace(/<script[\s\S]*?<\/script>/gi, "") : html;
+    html = escapedHtml(html);
     
     container.innerHTML = `<pre id="codeId" style="word-break: break-all;white-space: pre-wrap;"><code class="language-html">${escapedHtml}</code></pre>`;
     document.body.appendChild(h2);
@@ -44,13 +39,21 @@ export function createSourceCodeContainer() {
     document.body.appendChild(container);
   }
 
+function escapedHtml(html){
+  return html
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;")
+  .replace(/'/g, "&#39;");
+}
+
 function createButtonCopy(cssButton) {
   var button = document.createElement("button");
   button.id = "btnCopy";
   button.type = "button";
   button.style = cssButton;
   button.innerHTML = "Copier code";
-  //document.getElementById("btnCopy");
   button.addEventListener("click", function () {
     CopyToClipboard("codeId");
     button.innerHTML = "Code Copié !";
@@ -58,25 +61,22 @@ function createButtonCopy(cssButton) {
   return button;
 }
 
-function createButtonCss(cssButton, isVisible){
+function createButtonCss(cssButton, isDisabled){
   var button = document.createElement("button");
-  //button.
-  if(isVisible){
-    button.id = "btnCss";
-    button.type = "button";
-    button.style = cssButton;
-    button.style.marginLeft = "10px";
-    button.innerHTML = "Activer CSS";
-    button.addEventListener("click", function () {
-      if(button.innerHTML == "Désactiver CSS"){
-        button.innerHTML = "Activer CSS";
-        needCss(true);
-      }
-      else{
-        button.innerHTML = "Désactiver CSS";
-        needCss(false);
-      }
-    });
-  }
+  button.id = "btnCss";
+  button.type = "button";
+  button.style = cssButton;
+  button.style.marginLeft = "10px";
+  button.innerHTML = isDisabled ? "Activer CSS": "Désactiver CSS";
+  button.addEventListener("click", function () {
+    if(button.innerHTML == "Désactiver CSS"){
+      button.innerHTML = "Activer CSS";
+      needCss(true);
+    }
+    else{
+      button.innerHTML = "Désactiver CSS";
+      needCss(false);
+    }
+  });  
   return button;
 }
