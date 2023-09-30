@@ -19,7 +19,7 @@ export function createSourceCodeContainer() {
     border-radius: 10px;
     margin-bottom: 10px;
     `; 
-    var jsIsHidden = window.location.search.includes("hideJs=off");
+    var jsIsHidden = window.location.search.includes("hideJs=on");
     var cssIsDisabled = window.location.search.includes("css=off");
     var buttonCopy = createButtonCopy(cssButton);
     var buttonCss = createButtonCss(cssButton, cssIsDisabled);
