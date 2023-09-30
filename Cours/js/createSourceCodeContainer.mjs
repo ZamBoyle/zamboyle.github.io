@@ -13,6 +13,7 @@ export function createSourceCodeContainer() {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border-radius: 10px;
     margin-bottom: 10px;
     `; 
     var jsIsHidden = window.location.search.includes("js=off");
