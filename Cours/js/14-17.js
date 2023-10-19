@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function addInputListeners() {
-    document.querySelectorAll('"input"').forEach((input) => {
+    document.querySelectorAll('input').forEach((input) => {
       input.addEventListener("input", function () {
         document.getElementById("btnSubmit").removeAttribute("hidden");
         document.getElementById("form").setAttribute("updated", "true");
