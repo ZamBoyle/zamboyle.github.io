@@ -1,0 +1,17 @@
+.cours:hover {
+    background-color: lightgray;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    /*background-color: #000;*/
+    color: #fff;
+    padding: 1rem;
+    z-index: 100;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }

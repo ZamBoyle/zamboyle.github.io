@@ -10,27 +10,25 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.0.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v6.4.2/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
         type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
-        .cours:hover {
-            background-color: lightgray;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/mysite.css">
 </head>
 
 <body id="page-top">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">
-                <img class="img-fluid" src="assets/img/Logo_Eqla.png" width="15%" alt="Logo Eqla">
-            </a>
+            <a href="#content" class="skip-link">Aller au contenu principal</a>
+            <a class="navbar-brand" href="#">BlindCode</a>
+<!--             <a class="navbar-brand" href="#page-top">
+                <img  src="assets/img/Logo_Eqla.png" width="15%" alt="Logo Eqla">
+            </a> -->
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -38,147 +36,154 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+                <!-- <ul class="navbar-nav ms-0"> -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+                    <li class="nav-item"><a class="nav-link rounded" target="_blank" noreferrer
+                            href="files/Horaire BlindCode Bruxelles 2023-2024.pdf">Horaire des cours</a></li>
+                    <li class="nav-item"><a class="nav-link rounded" target="_blank" noreferrer
+                        href="https://us02web.zoom.us/j/3200781422">Zoom</a></li>   
+                    <li class="nav-item"><a class="nav-link rounded" target="_blank" noreferrer
+                        href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/BlindCode%20BXL%20-%202023/Depots.md#--------d%C3%A9p%C3%B4ts-des-stagiaires-et-des-formateurs">Dépôts GitHub</a></li>                                                   
+                </ul>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#cours">Cours</a></li>
+<!--                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
+                            href="#cours">Cours</a></li> -->
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
                             href="#blindcode">Blindcode</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
-    <!--
-    <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">Cours BlindCode</h1>
-
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-
-            <p class="masthead-subheading font-weight-light mb-0">Vous trouverez ici différents cours donnés dans le
-                cadre de la formation BlindCode</p>
-        </div>
-    </header>
--->
     <!-- Portfolio Section-->
-    <section class="page-section portfolio masthead" >
-        <div class="container">
-
-            <!-- Portfolio Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-3">BlindCode Mons</h2>
-            <div class="border border-2 rounded pt-3 px-3">
-                    <li><a href="https://drive.google.com/drive/folders/1YmCBY2l5iPJis8U9lBx6VU8PgRh66NV0">
-                            Horaire de Mons
-                        </a>
-                    </li>
-                    <li><a href="https://us06web.zoom.us/j/5268575135">
-                        Lien Zoom
-                    </a>
-                </li>                    
-                </ul>
-                <br/>
-            </div>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
+    <!-- <section class="page-section portfolio masthead" > -->
+    <div class="container" id="content">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-3 mt-4">Liste des cours</h2>
+<!--         <div class="border border-2 rounded pt-3 px-3">
+            <li><a href="files/Horaire BlindCode Bruxelles 2023-2024.pdf">
+                    Horaire des cours
+                </a>
+            </li>
+            <li><a href="https://us02web.zoom.us/j/3200781422">
+                    Lien Zoom
+                </a>
+            <li><a
+                    href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/BlindCode%20BXL%20-%202023/Depots.md#--------d%C3%A9p%C3%B4ts-des-stagiaires-et-des-formateurs">
+                    Liste des dépôts GitHub
+                </a>
+            </li>
+            </ul>
+            <br />
+        </div> -->
+        
+        <!-- Icon Divider-->
+        <!--             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
-            </div>
+            </div> -->
 
-            <h2  id="cours" class="page-section-heading text-center text-uppercase text-secondary mb-0">Cours</h2>
-            <!-- Icon Divider-->
-            <div class="divider-custom">
+        <!-- <h2  id="cours" class="page-section-heading text-center text-uppercase text-secondary mb-0">Cours</h2> -->
+        <!-- Icon Divider-->
+        <!--             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
-            </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row justify-content-center">
-                <!-- Portfolio Item 1-->
-                <div class="col-md-6 col-lg-4 mb-5 border border-2 rounded mx-auto cours">
+            </div> -->
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center mt-4">
 
-                    <h2>Formation Git <i class="fas fa-brands fa-git-alt fa-1x"></i></h2>
+            <!-- Portfolio Item 1-->
+            <div class="col-md-6 col-lg-4 mb-5 border border-2 rounded cours">
 
-                    <h3>Théorie <i class="fa-solid fa-graduation-cap"></i></h3>
-                    <ul>
-                        <!--<li><a href="Cours/2022/Git/1. Git.html">Page web - Formation Git</a></li>
+                <h2>Formation Git <i class="fas fa-brands fa-git-alt fa-1x"></i></h2>
+
+                <h3>Théorie <i class="fa-solid fa-graduation-cap"></i></h3>
+                <ul>
+                    <!--<li><a href="Cours/2022/Git/1. Git.html">Page web - Formation Git</a></li>
                         <li><a href="Cours/2022/Git/1. Git.pdf">PDF - Formation Git</a></li>-->
-                        <li><a href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Theo/1.%20Git.md">GitHub -
-                                Formation
-                                Git</a></li>
-                    </ul>
+                    <li><a href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Theo/1.%20Git.md">Théorie
+                            Git/GitHub</a></li>
+                </ul>
 
-                    <h3>Quiz <i class="fa-solid fa-circle-question"></i></h3>
-                    <ul>
-                        <!--<li><a href="Cours/2022/Git/2. Quiz.html">Page Web - Quiz Git</a></li>
+                <h3>Quiz <i class="fa-solid fa-circle-question"></i></h3>
+                <ul>
+                    <!--<li><a href="Cours/2022/Git/2. Quiz.html">Page Web - Quiz Git</a></li>
                         <li><a href="Cours/2022/Git/2. Quiz.pdf">PDF - Quiz Git</a></li>-->
-                        <li><a href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Git/2. Quiz.md">GitHub - Quiz</a>
-                        </li>
-                    </ul>
-                    <h3>Exercices - Terminal <img src="assets/img/rectangle-terminal.svg" width="30px">
-                    </h3>
-                    <ul>
-                        <!--<li><a href="Cours/2022/Git/Exercices_Terminal.html">Page web - Exercices Terminal</a></li>
+                    <li><a href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Git/2. Quiz.md">Quiz Git</a>
+                    </li>
+                </ul>
+                <h3>Exercices Ligne de Commandes <img src="assets/img/rectangle-terminal.svg" width="30px">
+                </h3>
+                <ul>
+                    <!--<li><a href="Cours/2022/Git/Exercices_Terminal.html">Page web - Exercices Terminal</a></li>
                         <li><a class="font-italic" href="Cours/2022/Git/Exercices_Terminal.pdf">PDF - Exercices
                                 Terminal</a></li>-->
-                        <li><a class="font-italic"
-                                href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/Blindcode%20BXL%20-%202022/Exercices_Terminal.md">GitHub
-                                - Exercices Terminal</a></li>
-                    </ul>
-                    <h3>Exercices - Git <i class="fas fa-brands fa-git-alt"></i></h3>
-                    <ul>
-                        <!--<li><a href="Cours/2022/Git/Exercices_Git.html">Page Web - Exercices Git</a></li>
+                    <li><a class="font-italic"
+                            href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/Blindcode%20BXL%20-%202022/Exercices_Terminal.md">GitHub
+                            - Exercices Ligne de Commandes</a></li>
+                </ul>
+                <h3>Exercices - Git <i class="fas fa-brands fa-git-alt"></i></h3>
+                <ul>
+                    <!--<li><a href="Cours/2022/Git/Exercices_Git.html">Page Web - Exercices Git</a></li>
                         <li><a href="Cours/2022/Git/Exercices_Git.pdf">PDF - Exercices Git</a></li>-->
-                        <li><a
-                                href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/Blindcode%20BXL%20-%202022/Exercices_Git.md">GitHub
-                                - Exercices Git</a></li>
-                    </ul>
-                    <h3>Exercices - GitHub <i class="fas fa-brands fa-github-alt fa-1x"></i></h3>
-                    <ul>
-                        <!-- <li><a href="Cours/2022/Git/Exercices_GitHub.html">Page Web - Exercices GitHub</a></li>
-                        <li><a href="Cours/2022/Git/Exercices_GitHub.pdf">PDF - Exercices GitHub</a></li>-->
-                        <li><a
-                                href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/Blindcode%20BXL%20-%202022/Exercices_GitHub.md">GitHub
-                                - Exercices GitHub</a></li>
-                        <!--
-                        <li><a href="https://raw.githubusercontent.com/ZamBoyle/Eqla_Git/master/Exercices/Blindcode%20BXL%20-%202022/genius.html" download>Fichier genius.html</a></li>
-                        <li><a href="https://raw.githubusercontent.com/ZamBoyle/Eqla_Git/master/Exercices/Blindcode%20BXL%20-%202022/genius.js" download>Fichier genius.js</a></li>
-                        <li><a href="https://raw.githubusercontent.com/ZamBoyle/Eqla_Git/master/Exercices/Blindcode%20BXL%20-%202022/display.js" download>Fichier display.js</a></li>
-                        <li><a href="https://raw.githubusercontent.com/ZamBoyle/Eqla_Git/master/Exercices/Blindcode%20BXL%20-%202022/inutile.txt" download>Fichier inutile.txt</a></li>
-                        -->
-                    </ul>
+                    <li><a
+                            href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/BlindCode%20BXL%20-%202023/README.md#--------exercices-git">Exercices
+                            Git</a></li>
+                </ul>
+                <h3>Exercices - GitHub <i class="fas fa-brands fa-github-alt fa-1x"></i></h3>
+                <ul>
+                    <li><a
+                            href="https://github.com/ZamBoyle/Eqla_Git/blob/master/Exercices/Blindcode%20BXL%20-%202022/Exercices_GitHub.md">Exercices
+                            GitHub</a></li>
+                </ul>
 
-                </div>
-                <!-- Portfolio Item 2-->
-                <div class="col-md-6 col-lg-4 mb-5   border border-2 rounded cours mx-auto">
-                    <h2>Culture numérique <i class="fa-solid fa-book"></i></h2>
-                    <h3>Théorie <i class="fa-solid fa-graduation-cap"></i></h3>
-                    <div>
-                        <ul>
-                            <li>
-                                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/1.%20Informatique.md">
-                                    Histoire de l'informatique
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/2.%20Boole.md">
-                                    Algèbre de Boole
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/3.%20Binaire.md">
-                                    Le Binaire
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/4.%20Hexadecimal.md">
-                                    L'hexadecimal
-                                </a>
-                            </li>
+            </div>
+            <!-- Portfolio Item 5-->
+            <div class="col-md-6 col-lg-4 mb-5   border border-2 rounded cours mx-auto">
+                <h2>Bootstrap <i class="fa-brands fa-bootstrap"></i></h2>
+                <ul>
+                    <li><a href="https://github.com/ZamBoyle/Eqla_Bootstrap5/tree/master#bootstrap-5">Page d'accueil du dépôt</a></li>
+                </ul>
+                <h3>Théorie <i class="fa-solid fa-graduation-cap"></i></h3>
+                <ul>
+                    <li><a
+                            href="https://github.com/ZamBoyle/Eqla_Bootstrap5/blob/master/Theorie/README.md">Bootstrap</a>
+                    </li>
+                </ul>
+                <h3>Exercices <i class="fa-brands fa-bootstrap"></i></h3>
+                <ul>
+                    <li><a href="https://github.com/ZamBoyle/Eqla_Bootstrap5/blob/master/Exercices/README.md">Exercices
+                            Bootstrap</a></li>
+                </ul>
+            </div>
+            <!-- Portfolio Item 2-->
+            <div class="col-md-6 col-lg-4 mb-5   border border-2 rounded cours mx-auto">
+                <h2>Culture numérique <i class="fa-solid fa-book"></i></h2>
+                <h3>Théorie <i class="fa-solid fa-graduation-cap"></i></h3>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/1.%20Informatique.md">
+                                Histoire de l'informatique
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/2.%20Boole.md">
+                                Algèbre de Boole
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/3.%20Binaire.md">
+                                Le Binaire
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/4.%20Hexadecimal.md">
+                                L'hexadecimal
+                            </a>
+                        </li>
+                        <!--
                             <li>
                                 <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/6.%20Web.md">
                                     Le Web
@@ -189,37 +194,41 @@
                                     Internet
                                 </a>
                             </li>
-                        </ul>
-                    </div>
-                    <h3>Exercices <i class="fa-solid fa-book"></i></h3>
-                    <ul>
-                        <li>
-                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/1.%20Binaire.md">
-                                Le binaire.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/2.%20Boole.md">
-                                L'algèbre de Boole
-                            </a>
-                        </li>
+                            -->
                     </ul>
-                    <h3>Corrections <i class="fa-solid fa-book"></i></h3>
-                    <ul>
-                        <li>
-                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/Corrections/1.%20Binaire.md">
-                                Le binaire.
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/Corrections/2.%20Boole.md">
-                                L'algèbre de Boole
-                            </a>
-                        </li>
-                    </ul>
-
                 </div>
-                <!-- Portfolio Item 3-->
+                <h3>Exercices <i class="fa-solid fa-book"></i></h3>
+                <ul>
+                    <li>
+                        <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/1.%20Binaire.md">
+                            Le binaire.
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/2.%20Boole.md">
+                            L'algèbre de Boole
+                        </a>
+                    </li>
+                </ul>
+                <h3>Corrections <i class="fa-solid fa-book"></i></h3>
+                <ul>
+                    <li>
+                        <a
+                            href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/Corrections/1.%20Binaire.md">
+                            Le binaire.
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/Corrections/2.%20Boole.md">
+                            L'algèbre de Boole
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Portfolio Item 3-->
+            <!--
                 <div class="col-md-6 col-lg-4 mb-5 border border-2 rounded mx-auto cours">
                     <h2>Veille technologique <i class="fa-solid fa-rss"></i></h2>
 
@@ -230,37 +239,27 @@
                     </ul>
 
                 </div>
-                <!-- Portfolio Item 4-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 border border-2 rounded mx-auto cours">
-                    <h2>Base de données <i class="fa-solid fa-database"></i></h2>
+                -->
+            <!-- Portfolio Item 4-->
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 border border-2 rounded mx-auto cours">
+                <h2>Base de données <i class="fa-solid fa-database"></i></h2>
 
-                    <ul>
-                        <li><a href="https://github.com/ZamBoyle/Eqla-SGBD">GitHub -
-                                Introduction aux bases de données</a></li>
-                    </ul>
+                <ul>
+                    <li><a href="https://github.com/ZamBoyle/Eqla-SGBD">GitHub -
+                            Introduction aux bases de données</a></li>
+                </ul>
 
-                </div>
-                <!-- Portfolio Item 5-->
-                <div class="col-md-6 col-lg-4 mb-5 mb-md-0 border border-2 rounded mx-auto cours">
-                    <h2>Bootstrap <i class="fa-brands fa-bootstrap"></i></h2>
-                    <h3>Théorie <i class="fa-solid fa-graduation-cap"></i></h3>
-                    <ul>
-                        <li><a href="https://github.com/ZamBoyle/Eqla_Bootstrap5/blob/master/Theorie/README.md">Bootstrap</a></li>
-                    </ul>
-                    <h3>Exercices <i class="fa-brands fa-bootstrap"></i></h3>
-                    <ul>
-                        <li><a href="https://github.com/ZamBoyle/Eqla_Bootstrap5/blob/master/Exercices/README.md">Exercices Bootstrap</a></li>
-                    </ul>
-                </div>
-                <!-- Portfolio Item 6-->
-                <div class="col-md-6 col-lg-4 border border-2 rounded mx-auto cours">
-                    <h2>Laravel <i class="fa-brands fa-laravel"></i></h2>
-                    <ul>
-                        <li><a href="https://github.com/ZamBoyle/Eqla_Laravel">GitHub - Laravel</a></li>
-                    </ul>
-                </div>
+            </div>
+
+            <!-- Portfolio Item 6-->
+            <div class="col-md-6 col-lg-4 border border-2 rounded mx-auto cours">
+                <h2>Laravel <i class="fa-brands fa-laravel"></i></h2>
+                <ul>
+                    <li><a href="https://github.com/ZamBoyle/Eqla_Laravel">GitHub - Laravel</a></li>
+                </ul>
             </div>
         </div>
+    </div>
     </section>
     <!-- About Section-->
     <section class="page-section bg-primary text-white mb-0" id="blindcode">
