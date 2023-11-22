@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     var menuHtml = `
-        <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">BlindCode</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
