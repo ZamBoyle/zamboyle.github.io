@@ -11,17 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link ${isActive('/index.html') ? 'active' : ''}" aria-current="page" href="/index.html">Accueil</a>
+                            <a class="nav-link ${isActive('/index.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/index.html') ?'/index.html':'#'}">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${isActive('/pages/horaire.html') ? 'active' : ''}" href="/pages/horaire.html">Horaire des cours</a>
+                            <a class="nav-link ${isActive('/pages/horaire.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/horaire.html') ?'/pages/horaire.html':'#'}">Horaire des cours</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ${isActive('/pages/zoom.html') ? 'active' : ''}" href="/pages/zoom.html">Zoom</a>
+                            <a class="nav-link ${isActive('/pages/zoom.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/zoom.html') ?'/pages/zoom.html':'#'}">Zoom</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded ${isActive('/pages/depots') ? 'active' : ''}" target="_blank" noreferrer
-                                href="/pages/depots.html">Liste des dépôts Github</a>
+                            <a class="nav-link rounded ${isActive('/pages/depots.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/depots.html') ?'/pages/depots.html':'#'}">Liste des dépôts Github</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link rounded " target="_blank" noreferrer
