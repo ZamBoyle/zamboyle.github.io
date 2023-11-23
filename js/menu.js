@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link ${isActive('/index.html', '/') ? 'active" aria-current="page"' : '"'} href="${!isActive('/index.html') ?'/index.html':'#'}">Accueil</a>
+                            <a class="nav-link ${isActive('/index.html', '/') ? 'active" aria-current="page"' : '"'} href="${!isActive('/index.html','/') ?'/index.html':'#'}">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ${isActive('/pages/horaire.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/horaire.html') ?'/pages/horaire.html':'#'}">Horaire des cours</a>
