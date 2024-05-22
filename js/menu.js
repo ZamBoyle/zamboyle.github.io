@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <a class="nav-link rounded ${isActive('/pages/chatbots.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/chatbots.html') ? '/pages/chatbots.html' : '#'}">Liste de chatbots</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded ${isActive('/pages/chanson.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/chanson.html') ? '/pages/chanson.html' : '#'}">Notre Chanson</a>
-                        </li>                        
-                        <li class="nav-item">
                         <a class="nav-link rounded " target="_blank" noreferrer
                          href="https://kraktu.github.io/Blindcode/output/html/tutoriels/accueil-tutoriels.html">Cours de Philip</a>
-                        </li>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link rounded ${isActive('/pages/chanson.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/chanson.html') ? '/pages/chanson.html' : '#'}">🎵Il code l'avenir🎵</a>
+                        </li>                        
                     </ul>
                 </div>
             </div>
@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
   </footer>`;
 
     var header = document.querySelector('header'); // Ou un autre élément dans lequel vous souhaitez insérer le menu
-    var footer = document.querySelector('main'); // Ou un autre élément dans lequel vous souhaitez insérer le menu
+    var main = document.querySelector('main'); // Ou un autre élément dans lequel vous souhaitez insérer le menu
     if (header) {
         header.insertAdjacentHTML('beforeend', menuHtml);
     }
-    if (footer) {
-        footer.insertAdjacentHTML('afterend', footerHtml);
+    if (main) {
+        main.insertAdjacentHTML('afterend', footerHtml);
     }
 });
 
