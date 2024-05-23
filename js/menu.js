@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          href="https://kraktu.github.io/Blindcode/output/html/tutoriels/accueil-tutoriels.html">Cours de Philip</a>
                         </li>                        
                         <li class="nav-item">
-                            <a class="nav-link rounded ${isActive('/pages/chanson.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/chanson.html') ? '/pages/chanson.html' : '#'}">🎵Il code l'avenir🎵</a>
+                            <a class="nav-link rounded ${isActive('/pages/chanson.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/chanson.html') ? '/pages/chanson.html' : '#'}">Il code l'avenir🎵</a>
                         </li>                        
                     </ul>
                 </div>
