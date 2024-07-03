@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>BlindCode - Animation Interactive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        h1, h2 {
+            color: #007bff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .cours {
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: none !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cours:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="container content">
+        <h1 class="text-center mb-5">BlindCode - Liste des cours</h1>
+        <div class="row justify-content-center" id="courses-container">
+            <!-- Les éléments de cours seront ajoutés ici dynamiquement -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Configuration de l'animation
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray = [];
+        const numberOfParticles = 200;
+
+        // Classe Particle
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+                this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.1;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Initialisation des particules
+        function init() {
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
+            }
+        }
+
+        // Animation des particules
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                
+                if (particlesArray[i].size <= 0.2) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                    particlesArray.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Gestion du redimensionnement de la fenêtre
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Interaction avec la souris
+        window.addEventListener('mousemove', function(e) {
+            for (let i = 0; i < 5; i++) {
+                particlesArray.push(new Particle(e.x, e.y));
+            }
+        });
+
+        // Initialisation et démarrage de l'animation
+        init();
+        animateParticles();
+
+        // Ajout dynamique des cours
+        const coursesData = [
+            { title: "Laravel", icon: "fa-laravel", link: "https://github.com/ZamBoyle/Eqla_Laravel/blob/master/README.md" },
+            { title: "JavaScript", icon: "fa-square-js", link: "https://github.com/ZamBoyle/Eqla_JavaScript?tab=readme-ov-file#--------sommaire-du-cours-dhtml" },
+            { title: "Git / GitHub", icon: "fa-git-alt", link: "https://github.com/ZamBoyle/Eqla_Git/blob/master/README.md#--------cours-git--github" },
+            { title: "HTML", icon: "fa-html5", link: "https://github.com/ZamBoyle/Eqla_HTML/blob/master/README.md#--------sommaire-du-cours-dhtml" },
+            { title: "Bootstrap", icon: "fa-bootstrap", link: "https://github.com/ZamBoyle/Eqla_Bootstrap5/tree/master#bootstrap-5" },
+            { title: "Base de données", icon: "fa-database", link: "https://github.com/ZamBoyle/Eqla-SGBD" }
+        ];
+
+        const coursesContainer = document.getElementById('courses-container');
+
+        coursesData.forEach(course => {
+            const courseElement = document.createElement('div');
+            courseElement.className = 'col-md-6 col-lg-4 mb-4';
+            courseElement.innerHTML = `
+                <div class="cours p-3 rounded">
+                    <h2><i class="fab ${course.icon}"></i> ${course.title}</h2>
+                    <ul>
+                        <li><a href="${course.link}" target="_blank">Page d'accueil du dépôt</a></li>
+                    </ul>
+                </div>
+            `;
+            coursesContainer.appendChild(courseElement);
+        });
+    </script>
+</body>
+</html>

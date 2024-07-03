@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlindCode - Cité des Connaissances (Autonome)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+        #debugInfo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            max-width: 300px;
+            max-height: 80%;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <div id="debugInfo">
+        <h3>Informations de débogage :</h3>
+        <pre id="debugText"></pre>
+    </div>
+
+    <script>
+        function debug(message) {
+            console.log(message);
+            const debugText = document.getElementById('debugText');
+            debugText.textContent += message + '\n';
+        }
+
+        // Version minimale de Babylon.js
+        var BABYLON = {
+            Vector3: function(x, y, z) { this.x = x; this.y = y; this.z = z; },
+            Color3: function(r, g, b) { this.r = r; this.g = g; this.b = b; },
+            Engine: function(canvas) {
+                this.getRenderWidth = function() { return canvas.width; };
+                this.getRenderHeight = function() { return canvas.height; };
+                this.runRenderLoop = function(callback) { setInterval(callback, 16); };
+                this.resize = function() { /* Simulation de redimensionnement */ };
+            },
+            Scene: function(engine) {
+                this.clearColor = new BABYLON.Color3(0, 0, 0);
+                this.render = function() { /* Simulation de rendu */ };
+            },
+            FreeCamera: function(name, position, scene) {
+                this.position = position;
+                this.attachControl = function() { /* Simulation de contrôle de caméra */ };
+            },
+            HemisphericLight: function(name, direction, scene) {
+                this.direction = direction;
+            },
+            MeshBuilder: {
+                CreateBox: function(name, options, scene) {
+                    return { position: new BABYLON.Vector3(0, 0, 0) };
+                }
+            },
+            GUI: {
+                AdvancedDynamicTexture: {
+                    CreateFullscreenUI: function() {
+                        return {
+                            addControl: function() { /* Simulation d'ajout de contrôle */ }
+                        };
+                    }
+                },
+                TextBlock: function() {
+                    this.text = "";
+                    this.color = "";
+                    this.fontSize = 0;
+                    this.top = "";
+                }
+            }
+        };
+
+        BABYLON.Engine.Version = "Simulation 1.0";
+
+        function createScene() {
+            debug('Début de la création de la scène');
+            const canvas = document.getElementById('renderCanvas');
+            const engine = new BABYLON.Engine(canvas);
+            debug('Moteur créé');
+
+            const scene = new BABYLON.Scene(engine);
+            scene.clearColor = new BABYLON.Color3(0.5, 0.5, 0.5);
+            debug('Scène créée');
+
+            const camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 5, -10), scene);
+            camera.attachControl(canvas, true);
+            debug('Caméra créée');
+
+            const light = new BABYLON.HemisphericLight('light1', new BABYLON.Vector3(0, 1, 0), scene);
+            debug('Lumière créée');
+
+            const box = BABYLON.MeshBuilder.CreateBox('box', {size: 2}, scene);
+            box.position.y = 1;
+            debug('Cube créé');
+
+            const advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+            const text1 = new BABYLON.GUI.TextBlock();
+            text1.text = "BlindCode";
+            text1.color = "white";
+            text1.fontSize = 24;
+            text1.top = "-40%";
+            advancedTexture.addControl(text1);
+            debug('Texte GUI créé');
+
+            debug('Scène complètement créée');
+
+            engine.runRenderLoop(function() {
+                scene.render();
+            });
+
+            window.addEventListener('resize', function() {
+                engine.resize();
+            });
+        }
+
+        window.addEventListener('load', function() {
+            debug('Page chargée, début de la création de la scène');
+            createScene();
+        });
+    </script>
+</body>
+</html>
