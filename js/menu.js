@@ -12,24 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link ${isActive('/index.html', '/') ? 'active" aria-current="page"' : '"'} href="${!isActive('/index.html', '/') ? '/index.html' : '#'}">Accueil</a>
-                        </li>
+                        </li>`+
+                        /*
                         <li class="nav-item">
                             <a class="nav-link ${isActive('/pages/horaire.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/horaire.html') ? '/pages/horaire.html' : '#'}">Horaire des cours</a>
                         </li>
-                        <li class="nav-item">
+                         <li class="nav-item">
                             <a class="nav-link ${isActive('/pages/zoom.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/zoom.html') ? '/pages/zoom.html' : '#'}">Zoom</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link rounded ${isActive('/pages/depots.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/depots.html') ? '/pages/depots.html' : '#'}">Liste des dépôts Github</a>
-                        </li>
-                        <li class="nav-item">
+                        </li> */
+                        `<li class="nav-item">
                             <a class="nav-link rounded ${isActive('/pages/chatbots.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/chatbots.html') ? '/pages/chatbots.html' : '#'}">Liste de chatbots</a>
-                        </li>
-                        <li class="nav-item">
+                        </li>`+
+/*                         <li class="nav-item">
                         <a class="nav-link rounded " target="_blank" noreferrer
                          href="https://kraktu.github.io/Blindcode/output/html/tutoriels/accueil-tutoriels.html">Cours de Philip</a>
-                        </li>                        
-                        <li class="nav-item">
+                        </li>   */                      
+                        `<li class="nav-item">
                             <a class="nav-link rounded ${isActive('/pages/chanson.html') ? 'active" aria-current="page"' : '"'} href="${!isActive('/pages/chanson.html') ? '/pages/chanson.html' : '#'}">Il code l'avenir🎵</a>
                         </li>                        
                     </ul>
