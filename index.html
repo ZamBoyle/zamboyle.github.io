@@ -1,154 +1,228 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Le portfolio d'une personne curieuse qui transforme des idées en code."
+    />
+    <meta name="theme-color" content="#08090d" />
+    <title>about_me.exe — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>BlindCode</title>
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v6.4.2/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-    type="text/css" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
+    <header class="nav shell">
+      <a class="brand" href="#top" aria-label="Retour en haut"
+        ><span>~/</span>about_me</a
+      >
+      <nav aria-label="Navigation principale">
+        <a href="#about">01. profil</a>
+        <a href="#projects">02. projets</a>
+        <a href="#contact">03. contact</a>
+      </nav>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Changer de thème"
+        title="Changer de thème"
+      >
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
 
-<body>
-  <header></header>
-  <main class="mt-5 mb-5 pt-1">
-    <div class="container" id="content">
-      <!-- Portfolio Section Heading-->
-      <h2 class="page-section-heading text-center text-uppercase mb-3 mt-4">Liste des cours</h2>
-      <!-- Portfolio Grid Items-->
-      <div class="row justify-content-center mt-4">
-
-        <!-- Portfolio Item 6-->
-        <div class="col-md-6 col-lg-4 mb-5 border border-2 rounded mx-auto cours">
-          <h2>Laravel <i class="fa-brands fa-laravel"></i></h2>
-          <ul>
-            <li><a href="https://github.com/ZamBoyle/Eqla_Laravel/blob/master/README.md">Page d'accueil du dépôt</a></li>
-          </ul>
+    <main id="top">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="status reveal">
+          <span class="status-dot"></span> Disponible pour de nouvelles quêtes
         </div>
-
-
-        <div class="col-md-6 col-lg-4 mb-5 border border-2 rounded cours mx-auto">
-
-          <h2>JavaScript <i class="fas fa-brands fa-square-js fa-1x"></i></h2>
-          <ul>
-            <li><a href="https://github.com/ZamBoyle/Eqla_JavaScript?tab=readme-ov-file#--------sommaire-du-cours-dhtml">Page
-                d'accueil du dépôt</a></li>
-          </ul>
+        <p class="eyebrow reveal">HELLO, WORLD! JE SUIS</p>
+        <h1 id="hero-title" class="reveal">
+          <span data-profile="name">TON PRÉNOM</span
+          ><span class="pixel-dot">.</span>
+        </h1>
+        <p class="hero-copy reveal">
+          Je transforme <span class="strike">du café</span> des idées en
+          expériences numériques<br />
+          <strong>utiles, élégantes et un peu inattendues.</strong>
+        </p>
+        <div class="hero-actions reveal">
+          <a class="button primary" href="#projects"
+            >Explorer mes projets <span>↘</span></a
+          >
+          <a
+            class="button ghost"
+            data-profile-link="github"
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub <span>↗</span></a
+          >
         </div>
-        <!-- Portfolio Item 1-->
-        <div class="col-md-6 col-lg-4 mb-5 border border-2 rounded cours mx-auto">
-
-          <h2>Git / GitHub <i class="fas fa-brands fa-git-alt fa-1x"></i></h2>
-          <ul>
-            <li><a href="https://github.com/ZamBoyle/Eqla_Git/blob/master/README.md#--------cours-git--github">Page
-                d'accueil du dépôt</a></li>
-          </ul>
+        <button class="scroll-cue" type="button" data-scroll-to="about">
+          <span>scroll_to_discover()</span><i></i>
+        </button>
+        <div class="orbital" aria-hidden="true">
+          <div class="orbit orbit-one"><span>⌘</span></div>
+          <div class="orbit orbit-two"><span>01</span></div>
+          <div class="core">&lt;/&gt;</div>
         </div>
+      </section>
 
-        <!-- Portfolio Item 5-->
-        <div class="col-md-6 col-lg-4 mb-5   border border-2 rounded cours mx-auto">
-          <h2>HTML <i class="fa-brands fa-bootstrap"></i></h2>
-          <ul>
-            <li><a
-                href="https://github.com/ZamBoyle/Eqla_HTML/blob/master/README.md#--------sommaire-du-cours-dhtml">Page
-                d'accueil du
-                dépôt</a></li>
-          </ul>
+      <section class="section shell" id="about">
+        <div class="section-heading reveal">
+          <span>01</span>
+          <h2>Quelques données<br />sur l'humain</h2>
+          <p>// WHO_AM_I</p>
         </div>
-
-
-        <!-- Portfolio Item 5-->
-        <div class="col-md-6 col-lg-4 mb-5   border border-2 rounded cours mx-auto">
-          <h2>Bootstrap <i class="fa-brands fa-bootstrap"></i></h2>
-          <ul>
-            <li><a href="https://github.com/ZamBoyle/Eqla_Bootstrap5/tree/master#bootstrap-5">Page d'accueil du
-                dépôt</a></li>
-            <li><a href="https://zamboyle.github.io/htmlpreview/?https://github.com/ZamBoyle/Eqla_Bootstrap5/blob/master/Exercices/ExerciceFinal.html">Exercice Final</a>.</li>
-          </ul>
-        </div>
-        <!-- Portfolio Item 4-->
-        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 border border-2 rounded mx-auto cours">
-          <h2>Base de données <i class="fa-solid fa-database"></i></h2>
-
-          <ul>
-            <li><a href="https://github.com/ZamBoyle/Eqla-SGBD">Page d'accueil du dépôt</a></li>
-          </ul>
-
-        </div>
-
-
-
-        <!-- Portfolio Item 2-->
-        <div class="col-md-6 col-lg-4 mb-5   border border-2 rounded cours mx-auto">
-          <h2>Culture numérique <i class="fa-solid fa-book"></i></h2>
-          <h3>Théorie <i class="fa-solid fa-graduation-cap"></i></h3>
-          <div>
-            <ul>
-              <li>
-                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/1.%20Informatique.md">
-                  Histoire de l'informatique
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/2.%20Boole.md">
-                  Algèbre de Boole
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/3.%20Binaire.md">
-                  Le Binaire
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/4.%20Hexadecimal.md">
-                  L'hexadecimal
-                </a>
-              </li>
-            </ul>
+        <div class="about-grid">
+          <div class="terminal reveal">
+            <div class="terminal-bar">
+              <div><i></i><i></i><i></i></div>
+              <span>visitor@portfolio: ~</span><b>⌁</b>
+            </div>
+            <div class="terminal-body" aria-label="Terminal de présentation">
+              <p><span class="prompt">❯</span> cat profile.json</p>
+              <pre>{
+  <em>"rôle"</em>: <strong>"créateur·rice numérique"</strong>,
+  <em>"carburant"</em>: <strong>"curiosité + café"</strong>,
+  <em>"super_pouvoir"</em>: <strong>"apprendre vite"</strong>,
+  <em>"mission"</em>: <strong>"rendre le complexe simple"</strong>,
+  <em>"status"</em>: <strong>true</strong>
+}</pre>
+              <p>
+                <span class="prompt">❯</span> <span id="typed-command"></span
+                ><span class="caret">▋</span>
+              </p>
+              <p class="command-output" id="command-output">
+                Toujours partant·e pour construire quelque chose de cool.
+              </p>
+            </div>
           </div>
-          <h3>Exercices <i class="fa-solid fa-book"></i></h3>
-          <ul>
-            <li>
-              <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/1.%20Binaire.md">
-                Le binaire.
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/2.%20Boole.md">
-                L'algèbre de Boole
-              </a>
-            </li>
-          </ul>
-          <h3>Corrections <i class="fa-solid fa-book"></i></h3>
-          <ul>
-            <li>
-              <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/Corrections/1.%20Binaire.md">
-                Le binaire.
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ZamBoyle/CultureNumerique/blob/master/Exercices/Corrections/2.%20Boole.md">
-                L'algèbre de Boole
-              </a>
-            </li>
-          </ul>
+          <div class="manifesto reveal">
+            <p class="big-copy">
+              J'aime les interfaces qui ont une <em>âme</em>, le code qui résout
+              de vrais problèmes et les idées qui commencent par&nbsp;:
+            </p>
+            <blockquote>« Et si on essayait… »</blockquote>
+            <p>
+              Ce site est mon petit coin d'internet : un laboratoire pour mes
+              expérimentations, projets et autres obsessions du moment.
+            </p>
+            <div class="chips" aria-label="Centres d'intérêt">
+              <span>✦ code</span><span>◉ design</span><span>⌁ open source</span
+              ><span>⚗ side projects</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </main>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-  <script src="js/menu.js"></script>
-</body>
+      </section>
 
+      <section class="section projects-section" id="projects">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <span>02</span>
+            <h2>Projets dans<br />le multivers</h2>
+            <p>// SELECTED_WORK</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card card-lime reveal">
+              <div class="card-meta">
+                <span>01 / OPEN SOURCE</span><span>↗</span>
+              </div>
+              <div class="card-visual">
+                <div class="mini-window">
+                  <span></span><span></span><span></span
+                  ><code>npm run make-awesome</code>
+                </div>
+              </div>
+              <h3>Le prochain projet génial</h3>
+              <p>
+                Une place est déjà prête pour cette idée qui mérite de sortir du
+                dossier <code>/soon</code>.
+              </p>
+              <div class="tags">
+                <span>TypeScript</span><span>Curiosité</span>
+              </div>
+            </article>
+            <article class="project-card card-purple reveal">
+              <div class="card-meta">
+                <span>02 / EXPÉRIMENTATION</span><span>↗</span>
+              </div>
+              <div class="card-visual game-visual">
+                <div class="pixel-alien">▟█▙<br />█▀█<br />▜ ▛</div>
+                <div class="score">SCORE<br /><b>1337</b></div>
+              </div>
+              <h3>Le laboratoire secret</h3>
+              <p>
+                Des prototypes, des pixels et juste assez de chaos pour
+                découvrir des choses intéressantes.
+              </p>
+              <div class="tags"><span>Creative code</span><span>Web</span></div>
+            </article>
+            <article class="project-card card-orange reveal">
+              <div class="card-meta">
+                <span>03 / SIDE QUEST</span><span>↗</span>
+              </div>
+              <div class="card-visual wave-visual">
+                <div class="sun"></div>
+                <div class="wave"></div>
+                <div class="wave second"></div>
+              </div>
+              <h3>Une idée en construction</h3>
+              <p>
+                Parce que les meilleures aventures commencent souvent avec un
+                dépôt vide et beaucoup trop d'onglets.
+              </p>
+              <div class="tags"><span>WIP</span><span>Fun first</span></div>
+            </article>
+          </div>
+          <p class="edit-hint reveal">
+            Psst… remplace ces cartes par tes vrais projets dans
+            <code>index.html</code> <span>↑</span>
+          </p>
+        </div>
+      </section>
+
+      <section class="contact shell" id="contact">
+        <p class="eyebrow reveal">03. INITIER UNE CONNEXION</p>
+        <h2 class="reveal">
+          On fabrique quelque<br />chose de <em>cool ?</em>
+        </h2>
+        <p class="reveal">
+          Une idée, un projet ou juste envie de parler tech ?<br />Ma boîte de
+          réception est ouverte.
+        </p>
+        <a
+          class="button primary reveal"
+          data-profile-link="email"
+          href="mailto:hello@example.com"
+          >Envoyer un signal <span>↗</span></a
+        >
+        <div class="contact-code" aria-hidden="true">
+          while (curious) {<br />&nbsp;&nbsp;keepBuilding();<br />}<span></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <p>Conçu avec <span>♥</span>, du code et quelques raccourcis clavier.</p>
+      <p>
+        © <span id="year"></span> <span data-profile="name">TON PRÉNOM</span> —
+        <button type="button" id="konami-hint">↑ ↑ ↓ ↓ ← → ← → B A</button>
+      </p>
+    </footer>
+    <div class="toast" role="status" aria-live="polite">
+      Achievement unlocked: tu as trouvé l'easter egg ✨
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
