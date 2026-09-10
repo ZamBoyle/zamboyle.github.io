@@ -1,8 +1,8 @@
 // Personnalise ces trois valeurs avant de publier sur GitHub Pages.
 const profile = {
-  name: "TON PRÉNOM",
-  github: "https://github.com/",
-  email: "hello@example.com",
+  name: "Johnny Piette",
+  github: "https://github.com/zamboyle",
+  email: "johnny.piette@gmail.com",
 };
 
 document.querySelectorAll('[data-profile="name"]').forEach((node) => {
